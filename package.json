@@ -1,0 +1,74 @@
+{
+  "name": "futeboldesabado-webapp",
+  "version": "0.0.1",
+  "description": "http://www.futeboldesabado.com.br",
+  "main": "js/main/futeboldesabado.js",
+  "dependencies": {
+    "accounting": "^0.4.1",
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "^1.10.2",
+    "bower": "~1.3.12",
+    "browserify-middleware": "^4.1.0",
+    "browserify-shim": "^3.8.2",
+    "ejs": "^1.0.0",
+    "express": "~4.10.6",
+    "mongoose": "^3.8.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node server.js"
+  },
+  "browser": {
+    "jquery": "./dist/jquery/jquery.js",
+    "knockout": "./dist/knockout/knockout.js",
+    "listnav": "./dist/listnav/listnav.js",
+    "bootstrap": "./dist/bootstrap/bootstrap.js",
+    "unslider": "./dist/unslider/unslider.js",
+    "require": "./dist/require/require.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "knockout": "ko",
+    "listnav": "listnav",
+    "bootstrap": {
+      "depends": [
+        "jquery"
+      ]
+    },
+    "unslider": {
+      "depends": [
+        "jquery"
+      ]
+    },
+    "tabber": {
+      "depends": [
+        "jquery"
+      ]
+    },
+    "jquery-zoom": {
+      "depends": [
+        "jquery"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tfrodrigues/futeboldesabado-webapp.git"
+  },
+  "keywords": [
+    "futeboldesabado"
+  ],
+  "author": "Thômas Frederico Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tfrodrigues/futeboldesabado-webapp/issues"
+  },
+  "homepage": "https://github.com/tfrodrigues/futeboldesabado-webapp"
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-BR">
+  <% include ../partials/head %>
+</head>
+<body class="<%= path %>">
+
+  <% include ../partials/header %>
+
+  <div id="main" class="container main-container">
+    <img src="/styles/img/banner-min.jpg" alt="Futebol de Sábado" class="fullwidthbanner-container">
+    <div class="content">
+      <div class="container">
+        <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm- col-xs-12" id="contact-form">
+           <h3 class="title">Cadastre seu time</h3>
+           <p style="text-align: left">
+            Preencha os dados e pronto! O seu time estará cadastrado no futeboldesabado.com.br
+          </p>
+        </div>
+      </div>
+      <form method="post" class="reply" id="cadastreseutime" data-bind="submit: saveEquipe">
+       <fieldset>
+        <div class="row">
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Nome:<span>*</span></label>
+          <input class="form-control" id="nome" maxlength="60" name="nome" type="text" data-bind="value: dataModel.nome" required>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Página: <span>*</span></label>
+          <input class="form-control" type="text" data-bind="value: dataModel.pagina"  required>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Campo: <span>*</span></label>
+          <input class="form-control" type="text"  data-bind="value: dataModel.campo"  required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Modalidade: <span>*</span></label>
+          <input class="form-control" id="name" maxlength="60" name="name" type="text"  data-bind="value: dataModel.modalidade" required>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Estado: <span>*</span></label>
+          <select class="form-control" id="estado" name="estado" data-bind="value: dataModel.estadoObj, options: estadoList, optionsCaption: 'Selecione...',  optionsText: 'sigla', click: loadCidades();"></select>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Cidade: <span>*</span></label>
+           <select class="form-control" id="cidade" name="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
+        </div>        
+      </div>
+      <div class="row"><p/><p/><p/></div>
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <label>Nome do Representante: <span>*</span></label>
+          <input class="form-control" id="name" maxlength="60" name="name" type="text"  data-bind="value: dataModel.representante"  required>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Telefone: <span>*</span></label>
+          <input type="text" class="form-control" id="telefone" name="telefone"  data-bind="value: dataModel.senha" required>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+        <label>Email: <span>*</span></label>
+        <input class="form-control" id="name" maxlength="60" name="name" type="email" value="" required>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+        <label>Senha: <span>*</span></label>
+        <input class="form-control" id="name" name="name" maxlength="15" type="password" value="" required>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+        <label>Confirmar Senha: <span>*</span></label>
+        <input class="form-control" id="name" name="name" maxlength="15" type="password" value="" required>
+      </div>
+    </div>
+  </fieldset>
+  <button class="btn-normal btn-color submit  bottom-pad" type
+  ="submit" style="margin-top: 10px;">CADASTRAR</button>
+</form>
+</div> 
+</div>   
+</div>
+</div>
+<% include ../partials/footer %>
+</body>
+</html>

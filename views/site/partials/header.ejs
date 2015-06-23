@@ -1,0 +1,77 @@
+ <head>
+ <meta charset="utf-8"  content="application/json">
+ <title>Pixma Responsive HTML5/CSS3 Template | FIFO THEMES</title>
+ <meta name="description" content="Pixma Responsive HTML5/CSS3 Template from FIFOTHEMES.COM">
+ <meta name="author" content="FIFOTHEMES.COM">
+ <!-- Mobile Metas -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Google Fonts -->
+ <header id="header">
+ <!-- Header Top Bar End -->
+ <!-- Main Header Start -->
+ <div class="main-header">
+ <div class="container">
+ <!-- TopNav Start -->
+ <div class="topnav navbar-header">
+ <a class="navbar-toggle down-button" data-toggle="collapse" data-target=".slidedown">
+ <i class="fa fa-angle-down icon-current"></i>
+ </a> 
+ </div>
+ <!-- TopNav End -->
+ <!-- Logo Start -->
+ <div class="logo pull-left">
+ <h1>
+ <a href="/views/home">
+ <img src="/styles/img/logo.jpg" alt="Futebol de Sábado">
+ </a>
+ </h1>
+ </div>
+ <!-- Logo End -->
+ <!-- Mobile Menu Start -->
+ <div class="mobile navbar-header">
+ <a class="navbar-toggle" data-toggle="collapse" href=".navbar-collapse">
+ <i class="fa fa-bars fa-2x"></i>
+ </a> 
+ </div>
+ <!-- Mobile Menu End -->
+ <!-- Menu Start -->
+ <nav class="collapse navbar-collapse menu">
+ <ul class="nav navbar-nav sf-menu">
+ <li>
+ <a id="menu-times" href="/views/equipes">
+ <img style="margin-left: 5px;padding-bottom:5px;" src="/styles/img/menus/times-header.gif"></img>
+ <h4>TIMES</h4>
+ </a>
+ <ul class="ui-alfabeto">
+ 	<div id="div-alfabeto" class="div-alfabeto" data-bind="foreach: { data: equipeList, as: 'equipe' }">
+ 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+	 		<li>
+	 			<a href="#" class="link-equipe-menu" data-bind="text: equipe.nome, click:$parent.openEquipe.bind($data, equipe.pagina)"></a>
+	 		</li>
+ 		</div>
+ 	</div>
+ </ul>
+ </li>
+ <li>
+ <a id="menu-cadastreseutime" href="/views/cadastreseutime">
+ <img style="margin-left: 50px;padding-bottom:5px;" src="/styles/img/menus/cadastreseutime-header.gif"></img>
+ <h4>CADASTRE SEU TIME</h4>
+ </a>
+ </li>
+ <li>
+ <a id="menu-faleconosco" href="/views/faleconosco">
+ <img style="margin-left: 40px;padding-bottom:5px;" src="/styles/img/menus/faleconosco-header.gif"></img>
+ <h4>FALE CONOSCO</h4>
+ </a>
+ </li>
+ <li>
+ <a id="menu-login" href="/views/login">
+ <img style="margin-left: 5px;padding-bottom:5px;" src="/styles/img/menus/login-header.gif"></img>
+ <h4>LOGIN</h4>
+ </a>
+ </li>
+ </ul>
+ </nav>
+ <!-- Menu End --> 
+ </header>
+ </head>
