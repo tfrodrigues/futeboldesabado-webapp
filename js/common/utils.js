@@ -4,6 +4,7 @@ accounting.settings = {
         precision: 0,
         thousand: '.',
         decimal: ','
+        
     }
 };
 
