@@ -3,7 +3,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 /*var sass = require('node-sass-middleware');*/
 var browserify = require('browserify-middleware');
-var utils = require('./js/common/utils');
+andres
+
 
 var isDevelopment = process.env.NODE_ENV == 'development';
 
@@ -16,6 +17,7 @@ var renderPage = function(res, name, path, query) {
 };
 
 var app = express();
+aqui vai uma alteração
 
 app.engine('html', require('ejs').renderFile);
 
