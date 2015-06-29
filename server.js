@@ -1,7 +1,6 @@
 var db = require('./js/db/database');
 var express = require('express');
 var bodyParser = require('body-parser');
-var basicAuth = require('basic-auth-connect');
 /*var sass = require('node-sass-middleware');*/
 var browserify = require('browserify-middleware');
 var utils = require('./js/common/utils');
@@ -35,8 +34,6 @@ app.use(bodyParser.json());
 */
 app.use('/images', express.static(__dirname + '/images'));
 
-app.use('/styles/css/spinner', express.static(__dirname + '/libs/spinkit/css/spinners'));
-
 app.use('/styles/css/bootstrap', express.static(__dirname + '/libs/bootstrap/dist/css'));
 
 app.use('/styles', express.static(__dirname + '/styles'));
@@ -45,10 +42,6 @@ app.use('/js', browserify(__dirname + '/js/entry-points'));
 
 app.get('/', function (req, res) {
     res.redirect('/views/home');
-});
-
-app.get('/cms', function (req, res) {
-    res.redirect('/cms/views/menu');
 });
 
 app.get('/views/product/:className?/:productName?', function (req, res) {

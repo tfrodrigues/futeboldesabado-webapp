@@ -6,7 +6,6 @@
   "Thômas Frederico Rodrigues"
   ],
   "description": "http://www.futeboldesabado.com.br",
-  "main": "js/main/main.js",
   "keywords": [
   "futeboldesabado"
   ],
@@ -21,11 +20,7 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "knockout": "~3.2.0",
-    "unslider": "~1.0.0",
-    "bourbon": "~3.2.3",
-    "Tabber": "~3.0.13",
-    "jquery-zoom": "~1.7.13",
-    "spinkit": "~1.0.1",
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "jquery-listnav" : "~2.4.9"
   }
 }
