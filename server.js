@@ -17,6 +17,7 @@ var renderPage = function(res, name, path, query) {
 };
 
 var app = express();
+aqui vai uma alteração
 
 app.engine('html', require('ejs').renderFile);
 
