@@ -47,3 +47,19 @@ exports.removeAccents = function (text) {
 exports.urlKey = function (text) {
     return this.removeAccents(text).replace(/\s+/g, '-').toLowerCase();
 };
+
+exports.showErrorMessage = function (arrayMessage, arrayField) {
+    var message = "<li><strong>Ocorreram erros:</strong></li>";
+    for (var i=0; i<=arrayMessage.length - 1; i++) {
+        message += arrayMessage[i] + "<br>";
+    }
+    for (var i=0; i<=arrayField.length - 1; i++) {
+        $('#' + arrayField[i]).addClass('error-field');
+    }
+    $('.error-container').css('display', 'block');
+    $('.alert-error > span').html(message);
+    setTimeout(function() {
+        $('.alert-error > span').html('');
+        $('.error-container').css('display', 'none');
+    }, 10000);
+}
