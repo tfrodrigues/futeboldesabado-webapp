@@ -23,64 +23,77 @@
        <fieldset>
         <div class="row">
          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Nome:<span>*</span></label>
-          <input class="form-control" id="nome" maxlength="60" name="nome" type="text" data-bind="value: dataModel.nome" required>
+          <label>Nome: <span>*</span></label>
+          <input class="form-control" id="nome" name="nome" maxlength="60" type="text" data-bind="value: dataModel.nome" required>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Página: <span>*</span></label>
-          <input class="form-control" type="text" data-bind="value: dataModel.pagina"  required>
+          <input class="form-control" id="pagina" type="text" data-bind="value: dataModel.pagina"  required>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Campo: <span>*</span></label>
-          <input class="form-control" type="text"  data-bind="value: dataModel.campo"  required>
+          <input class="form-control" type="text"  data-bind="value: dataModel.campo">
         </div>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Modalidade: <span>*</span></label>
-          <input class="form-control" id="name" maxlength="60" name="name" type="text"  data-bind="value: dataModel.modalidade" required>
+          <input class="form-control" id="modalidade" maxlength="60" name="modalidade" type="text"  data-bind="value: dataModel.modalidade" >
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Estado: <span>*</span></label>
-          <select class="form-control" id="estado" name="estado" data-bind="value: dataModel.estadoObj, options: estadoList, optionsCaption: 'Selecione...',  optionsText: 'sigla', click: loadCidades();"></select>
+          <select class="form-control" id="estado" name="estado" data-bind="value: dataModel.estadoObj, options: estadoList, optionsCaption: 'Selecione...',  optionsText: 'sigla', event: {change: loadCidades()}"></select>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Cidade: <span>*</span></label>
-           <select class="form-control" id="cidade" name="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
+          <select class="form-control" id="cidade" name="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
         </div>        
       </div>
       <div class="row"><p/><p/><p/></div>
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
           <label>Nome do Representante: <span>*</span></label>
-          <input class="form-control" id="name" maxlength="60" name="name" type="text"  data-bind="value: dataModel.representante"  required>
+          <input class="form-control" id="name" maxlength="60" name="name" type="text"  data-bind="value: dataModel.representante"  >
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Telefone: <span>*</span></label>
-          <input type="text" class="form-control" id="telefone" name="telefone"  data-bind="value: dataModel.senha" required>
+          <input type="text" class="form-control" id="telefone" name="telefone"  data-bind="value: dataModel.telefone" >
         </div>
       </div>
       <div class="row">
        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
         <label>Email: <span>*</span></label>
-        <input class="form-control" id="name" maxlength="60" name="name" type="email" value="" required>
+        <input class="form-control" id="email" maxlength="60" type="email" data-bind="value: dataModel.email" required >
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
         <label>Senha: <span>*</span></label>
-        <input class="form-control" id="name" name="name" maxlength="15" type="password" value="" required>
+        <input class="form-control" id="senha" maxlength="15" type="password" data-bind="value: dataModel.senha" >
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
         <label>Confirmar Senha: <span>*</span></label>
-        <input class="form-control" id="name" name="name" maxlength="15" type="password" value="" required>
+        <input class="form-control" id="confirmarSenha" maxlength="15" type="password" data-bind="value: dataModel.confirmarSenha">
       </div>
     </div>
   </fieldset>
-  <button class="btn-normal btn-color submit  bottom-pad" type
-  ="submit" style="margin-top: 10px;">CADASTRAR</button>
+  <div class="row">
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="text-align: left"><button class="btn-normal btn-color submit  bottom-pad" type
+    ="submit" style="margin-top: 10px;">CADASTRAR</button></div>
+   <!--  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 alert alert-error" style="display:none">
+    </div> -->
+  </div>
+
+ <div class="error-container" style="display: none">
+    <div style="padding: 5px;">
+        <div id="error-container-inner-message" class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <span></span>
+        </div>
+    </div>
+</div>
+
 </form>
 </div> 
 </div>   
-</div>
 </div>
 <% include ../partials/footer %>
 </body>
