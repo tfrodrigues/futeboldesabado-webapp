@@ -65,7 +65,7 @@ h3.title:after {
     background: url(../img/img-bg-blur.jpg) 50% 0 no-repeat fixed;
     margin: 0 auto;
     padding: 50px 0;
-	background-position: center center;
+    background-position: center center;
     background-size: cover;
 }
 
@@ -104,7 +104,7 @@ ul,li,ol {
 a:hover,a:focus {
     text-decoration: none;
     outline: none;
-	color: #666;
+    color: #666;
 }
 
 .btn-special,.btn-normal,.btn-small,.btn-large,.comment-des,.steps .popup,.testimonial p,.contact-box {
@@ -118,7 +118,7 @@ a:hover,a:focus {
     z-index: 9999;
     width: 100%;
     position: fixed;
-	background:black !important;
+    background:black !important;
     -webkit-box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
     box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
 }
@@ -126,7 +126,7 @@ a:hover,a:focus {
 header .top-bar {
     min-height: 30px;
     background: #25292C;
-	border-bottom: 1px solid #414f5a;
+    border-bottom: 1px solid #414f5a;
     padding: 7px 0;
 }
 
@@ -267,21 +267,21 @@ h1 i, h2 i, h3 i, h4 i, h5 i {
     border: 1px solid #DDD;
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-	
-	/* Safari 4-5,Chrome 1-9 */ 
-	background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
-	
-	/* Safari 5.1,Chrome 10+*/ 
-	background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* Firefox 3.6+*/ 
-	background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* IE 10 */ 
-	background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* Opera 11.10+*/ 
-	background:-o-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Safari 4-5,Chrome 1-9 */ 
+    background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
+
+    /* Safari 5.1,Chrome 10+*/ 
+    background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Firefox 3.6+*/ 
+    background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* IE 10 */ 
+    background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Opera 11.10+*/ 
+    background:-o-linear-gradient(top,#f8f8f8,#fafafa);
 }
 
 h2.title {
@@ -503,7 +503,7 @@ h2.title {
 /* Main Content */
 #main {
     background-color: #EEEEEE;
-	padding: 0 0 60px;
+    padding: 0 0 60px;
 }
 
 .home #main, .home-3 #main, .home-4 #main, .page-services #main, .about #main {
@@ -622,7 +622,7 @@ ol.commentlist, ol.commentlist li {
     text-align: center;
     text-decoration: none;
     width: 55px;
-	border-radius:2px;
+    border-radius:2px;
 }
 
 .post-date a.date strong {
@@ -708,16 +708,16 @@ ol.commentlist, ol.commentlist li {
 #horizontal-tabs ul.tabs {
     border-left: 1px solid #ddd;
     overflow: hidden;
-	border-radius:2px;
-	list-style:none;
-	margin:0;
-	padding:0;
+    border-radius:2px;
+    list-style:none;
+    margin:0;
+    padding:0;
 }
 
 #horizontal-tabs .contents {
     border: 1px solid #ddd;
     margin-top: -1px;
-	border-radius:2px;
+    border-radius:2px;
 }
 
 #horizontal-tabs .tabscontent.no-padding {
@@ -774,7 +774,7 @@ ol.commentlist, ol.commentlist li {
 
 .widget .ads-img img {
     margin-bottom: 30px;
-	max-width: 100%;
+    max-width: 100%;
 }
 
 
@@ -790,7 +790,7 @@ ol.commentlist, ol.commentlist li {
 .author-content .avatar {
     float: left;
     margin: 0 20px 0 0;
-	
+
 }
 
 .avatar {
@@ -854,7 +854,7 @@ ol.commentlist li:first-child {
 .comment-des {
     float: left;
     background: #fafafa;
-	border: 1px solid #ddd;
+    border: 1px solid #ddd;
     color: #888;
     -webkit-box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.06);
     box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.06);
@@ -991,7 +991,7 @@ ol.commentlist li:first-child {
 
 .get-started {
     padding-top: 1px;
-	vertical-align:middle;
+    vertical-align:middle;
 }
 
 /* Product Lead Section*/
@@ -1047,8 +1047,8 @@ div.content-box.big:hover {
 
 div.content-box.big div.content-box-info {
     padding-left: 0;
-	text-align:center;
-	margin:25px 0 0;
+    text-align:center;
+    margin:25px 0 0;
 }
 
 div.content-box.big div.content-box-info p {
@@ -1094,16 +1094,16 @@ ul.graph-container {
  *   Bars Fill                       *
  * Just an example of filling 3 bars *
  *************************************/
-.graph-container > li:nth-child(1) .bar-inner { height: 25%; bottom: 0; }
-.graph-container > li:nth-child(2) .bar-inner { height: 50%; bottom: 0; }
-.graph-container > li:nth-child(3) .bar-inner { height: 75%; bottom: 0; }
-.graph-container > li:nth-child(4) .bar-inner { height: 85%; bottom: 0; }
-.graph-container > li:nth-child(5) .bar-inner { height: 90%; bottom: 0; }
+ .graph-container > li:nth-child(1) .bar-inner { height: 25%; bottom: 0; }
+ .graph-container > li:nth-child(2) .bar-inner { height: 50%; bottom: 0; }
+ .graph-container > li:nth-child(3) .bar-inner { height: 75%; bottom: 0; }
+ .graph-container > li:nth-child(4) .bar-inner { height: 85%; bottom: 0; }
+ .graph-container > li:nth-child(5) .bar-inner { height: 90%; bottom: 0; }
 
 
 
-/* Portfolio */
-ul#filters {
+ /* Portfolio */
+ ul#filters {
     list-style: none;
     padding: 0;
 }
@@ -1182,14 +1182,14 @@ ul#filters {
 .project_details span a {
     background-color: #fafafa;
     border-radius: 3px;
-	border:1px solid #ddd;
+    border:1px solid #ddd;
     color: #666;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
     margin: 0 0 5px 5px;
     padding: 3px 10px;
-	display:inline-block;
+    display:inline-block;
 }
 
 .recentworks {
@@ -1199,21 +1199,21 @@ ul#filters {
     padding: 60px 0;
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-	
-	/* Safari 4-5,Chrome 1-9 */ 
-	background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
-	
-	/* Safari 5.1,Chrome 10+*/ 
-	background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* Firefox 3.6+*/ 
-	background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* IE 10 */ 
-	background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* Opera 11.10+*/ 
-	background:-o-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Safari 4-5,Chrome 1-9 */ 
+    background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
+
+    /* Safari 5.1,Chrome 10+*/ 
+    background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Firefox 3.6+*/ 
+    background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* IE 10 */ 
+    background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Opera 11.10+*/ 
+    background:-o-linear-gradient(top,#f8f8f8,#fafafa);
 }
 
 
@@ -1225,7 +1225,7 @@ ul#filters {
     z-index: 10;
     bottom: 0;
     left: 50%;
-	overflow: hidden;
+    overflow: hidden;
     margin-left: -185px;
     border: 1px solid #ddd;
     -webkit-transition: all .3s ease;
@@ -1276,7 +1276,7 @@ ul#filters {
     position: absolute;
     bottom: -6.75em;
     right: -6.75em;
-	overflow: hidden;
+    overflow: hidden;
     text-decoration: none;
     -webkit-transition: background-color .3s ease, -webkit-transform .8s ease;
     -moz-transition: background-color .3s ease, -moz-transform .8s ease;
@@ -1319,7 +1319,7 @@ ul#filters {
 }
 
 .cn-content {
-    
+
 	overflow:hidden;
 	
 }
@@ -1401,28 +1401,28 @@ a.prev.disabled,a.next.disabled {
     font-weight: 500;
     margin: 0;
     padding: 27px 25px;
-	border: 1px solid #ddd;
-	
-	/* Safari 4-5,Chrome 1-9 */ 
-	background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
-	
-	/* Safari 5.1,Chrome 10+*/ 
-	background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* Firefox 3.6+*/ 
-	background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* IE 10 */ 
-	background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
-	
-	/* Opera 11.10+*/ 
-	background:-o-linear-gradient(top,#f8f8f8,#fafafa);
+    border: 1px solid #ddd;
+
+    /* Safari 4-5,Chrome 1-9 */ 
+    background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
+
+    /* Safari 5.1,Chrome 10+*/ 
+    background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Firefox 3.6+*/ 
+    background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* IE 10 */ 
+    background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
+
+    /* Opera 11.10+*/ 
+    background:-o-linear-gradient(top,#f8f8f8,#fafafa);
 }
 
 .our-clients .testimonial p, .our-clients .testimonials-arrow {
 	border: none;
 }
-	
+
 
 .testimonials-arrow {
     display: block;
@@ -1438,8 +1438,8 @@ a.prev.disabled,a.next.disabled {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     margin-bottom: 10px;
-	border-bottom: 1px solid #ddd;
-	border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
     border-top: 0;
 }
 
@@ -1458,8 +1458,8 @@ a.prev.disabled,a.next.disabled {
     border-radius: 50px;
     height: 70px !important;
     width: 70px !important;
-	border:1px solid #ddd;
-	padding:4px;
+    border:1px solid #ddd;
+    padding:4px;
 }
 
 .our-clients .testimonial-image img {
@@ -1498,7 +1498,7 @@ span.color {
 
 .footer-top {
     background: #000;
-	border-bottom: 1px solid #414f5a;
+    border-bottom: 1px solid #414f5a;
     color: #A1A1A1;
     padding: 50px 0;
     text-align: center;
@@ -1641,7 +1641,7 @@ footer .contact-us a {
     text-shadow: none;
     font-size: 14px;
     border: none;
-	text-shadow: 0 1px #555555 !important;
+    text-shadow: 0 1px #555555 !important;
 }
 
 .subscribe {
@@ -1728,7 +1728,7 @@ ul.why li:before {
     display: block;
     float: none;
     position: relative;
-	padding: 4px;
+    padding: 4px;
 }
 
 .services-big .content-box-icon span {
@@ -1850,7 +1850,7 @@ input:focus, textarea:focus {
     color: #fff;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-	text-shadow:1px 1px 1px #666;
+    text-shadow:1px 1px 1px #666;
 }
 
 .contact-box,.contact-box i,.contact-box p,.contact-box h3 {
@@ -2012,7 +2012,7 @@ input:focus, textarea:focus {
     font-size: 16px;
     text-decoration: none;
     padding: 7px 20px;
-	border:1px solid #ddd;
+    border:1px solid #ddd;
 }
 
 .portfolio-pad {
@@ -2105,7 +2105,7 @@ a.mobile-menu {
 }
 
 .google-maps img {
-  	max-width: none;
+   max-width: none;
 }
 
 .tabs ul.posts li img,.author-content,li.work img,.recentworks .pic,.img-caption,a.prev,a.next,.scrollup,#options li a,.portfolio img.pic,.portfolio .img-caption {
@@ -2159,8 +2159,8 @@ ul#projects-carousel {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
     padding: 4px;
-	overflow:hidden;
-	display:block;
+    overflow:hidden;
+    display:block;
 }
 
 .portfolio-item img {
@@ -2178,7 +2178,7 @@ ul#projects-carousel {
     margin-left: -24px;
     width: 60px;
     height: 60px;
-	opacity:0;
+    opacity:0;
 }
 
 .fullscreen i {
@@ -2234,7 +2234,7 @@ a.portfolio-item-link {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
- /* IE 8 */
+    /* IE 8 */
     top: 0;
     left: 0;
     -webkit-transition: all 0.35s ease-out;
@@ -2274,7 +2274,7 @@ a.portfolio-item-link {
     font-style: italic;
     font-size: 12px;
     margin-bottom: 0;
-	text-align:center;
+    text-align:center;
 }
 
 
@@ -2294,7 +2294,7 @@ a.portfolio-item-link {
     line-height: 80px;
     position: relative;
     z-index: 5;
-	text-shadow:0 3px 0 rgba(0, 0, 0, 0.1);
+    text-shadow:0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .ch-info-wrap {
@@ -2324,13 +2324,13 @@ a.portfolio-item-link {
 
 .ch-info > div {
     display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	background-position: center center;
-	
-	-webkit-backface-visibility: hidden; /*Just for webkit to have a smooth font*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-position: center center;
+
+    -webkit-backface-visibility: hidden; /*Just for webkit to have a smooth font*/
 }
 
 .ch-info .ch-info-front {
@@ -2343,20 +2343,20 @@ a.portfolio-item-link {
 
 .ch-info .ch-info-back {
     -webkit-transform: scale(1.5);
-	-moz-transform: scale(1.5);
-	-o-transform: scale(1.5);
-	-ms-transform: scale(1.5);
-	transform: scale(1.5);
-	box-shadow: inset 0 0 3px rgba(0,0, 0, 0.6);
-	-moz-box-shadow: inset 0 0 3px rgba(0,0, 0, 0.6);
-	-webkit-box-shadow: inset 0 0 3px rgba(0,0, 0, 0.6);
-	
-	-webkit-transition: all 0.4s ease-in-out 0.2s;
-	-moz-transition: all 0.4s ease-in-out 0.2s;
-	-o-transition: all 0.4s ease-in-out 0.2s;
-	-ms-transition: all 0.4s ease-in-out 0.2s;
-	transition: all 0.4s ease-in-out 0.2s;
-	opacity: 0;
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    box-shadow: inset 0 0 3px rgba(0,0, 0, 0.6);
+    -moz-box-shadow: inset 0 0 3px rgba(0,0, 0, 0.6);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0, 0, 0.6);
+
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+    -moz-transition: all 0.4s ease-in-out 0.2s;
+    -o-transition: all 0.4s ease-in-out 0.2s;
+    -ms-transition: all 0.4s ease-in-out 0.2s;
+    transition: all 0.4s ease-in-out 0.2s;
+    opacity: 0;
 }
 
 .ch-item:hover .ch-info-front {
@@ -2493,7 +2493,7 @@ header .social li.rss:hover,footer .social li.rss:hover {
 
 .team-member-description p {
     margin-bottom: 0;
-	text-align:center;
+    text-align:center;
 }
 
 .member-social.dark a {
@@ -2519,7 +2519,7 @@ header .social li.rss:hover,footer .social li.rss:hover {
     text-align: center;
     margin: 0 6px 6px 0;
     padding: 7px 0 6px;
-	border-radius: 2px;
+    border-radius: 2px;
 }
 
 .member-social a i {
@@ -2639,7 +2639,7 @@ a h4 {
 .menu ul li a {
     padding-bottom: 12px !important;
     padding-top: 20px !important;
-/*    height: 89px !important;*/
+    /*    height: 89px !important;*/
 }
 
 .menu ul>li:hover>a {
@@ -2733,4 +2733,31 @@ form {
     color: #000 !important;
     padding: 10px 16px !important;
     height: 40px !important;
+}
+
+.alert {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.alert-success {
+    margin-top: 10px;
+    height: 48px;
+    padding: 10px;
+}
+
+.alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+}
+
+.error-field {
+  border: solid 1px #b94a48 !important;
+}
+
+
+.error-container {
+    top: 0;
+    left: 0;
 }
