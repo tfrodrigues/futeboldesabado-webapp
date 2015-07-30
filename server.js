@@ -1,7 +1,6 @@
 var db = require('./js/db/database');
 var express = require('express');
 var bodyParser = require('body-parser');
-/*var sass = require('node-sass-middleware');*/
 var browserify = require('browserify-middleware');
 var utils = require('./js/common/utils');
 
@@ -17,21 +16,25 @@ var renderPage = function(res, name, path, query) {
 
 var app = express();
 
+var fs = require('fs'); 
+/*app.engine('html', function (filePath, options, callback) {
+  fs.readFile(filePath, function (err, content) {
+    if (err) {
+        return callback(new Error(err));
+    }
+    var rendered = content.toString().replace('#title#', '<title>'+ options.title +'</title>')
+    .replace('#message#', '<h1>'+ options.message +'</h1>');
+    return callback(null, rendered);
+  })
+});*/
+
+app.set('view engine', 'html'); // register the template engine*/
+
+
 app.engine('html', require('ejs').renderFile);
 
 app.use(bodyParser.json());
 
-//app.use('/cms', basicAuth('isdralit', 'admin123'));
-
-/*app.use(sass({
-    src: __dirname + '/styles/scss/entry-points',
-    dest: __dirname + '/styles/css',
-    outputStyle: 'compressed',
-    prefix: '/styles/css',
-    force: isDevelopment,
-    debug: isDevelopment
-}));
-*/
 app.use('/images', express.static(__dirname + '/images'));
 
 app.use('/styles/css/bootstrap', express.static(__dirname + '/libs/bootstrap/dist/css'));
@@ -62,6 +65,22 @@ app.get('/views/product/:className?/:productName?', function (req, res) {
 
 app.get('/views/:name', function (req, res) {
     renderPage(res, req.params.name, 'site', req.query);
+});
+
+app.get('/:pagina', function(req,res) {
+    db['Equipe'].Model.findOne({ pagina: req.params.pagina}, function (err, value){
+    if (err) {
+        res.status(404).send(err);
+    } else {
+        res.render('site/pages/equipe.html', {
+        path: 'site',
+        name: 'equipe',
+        query: req.query,
+        equipe: value
+    });
+      /*  res.render('site/pages/equipe', { title: value['nome'], message: value['pagina']});*/
+    }
+    });
 });
 
 app.get('/cms/views/:name', function (req, res) {

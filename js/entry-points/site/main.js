@@ -18,7 +18,7 @@ ViewModel = function () {
     });
 
     self.openEquipe = function (pagina) {
-        window.location = '/views/equipe/' + pagina;
+        window.location = '/' + pagina;
     };
 
 	ko.utils.extend(self, new base.ViewModel());

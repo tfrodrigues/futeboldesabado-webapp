@@ -23,7 +23,7 @@ ViewModel = function () {
 		self.errorFieldList = ko.observableArray([]);
 		if (self.validateExistingData()) {
 			crud.save('equipe', self.dataModel, function () {
-				window.location = '/views/equipe/' + self.dataModel.pagina;
+				window.location = '/' + self.dataModel.pagina;
 			});	
 		}	
 	};

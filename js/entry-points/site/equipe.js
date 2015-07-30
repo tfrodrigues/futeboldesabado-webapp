@@ -9,7 +9,7 @@ ViewModel = function () {
     var self = this;
 
     self.openEquipe = function (data, event) {
-        window.location = '/views/equipe/' + (data.path || '');
+        window.location = '/' + (data.path || '');
     };
 
     ko.utils.extend(self, new base.ViewModel());
