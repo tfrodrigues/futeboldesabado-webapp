@@ -5,14 +5,40 @@
 </head>
 <body class="<%= path %>">
   <% include ../partials/header %>  
-   <div id="main" class="container main-container">
-    <img src="/styles/img/banner-min.jpg" alt="Futebol de Sábado" class="fullwidthbanner-container">
-    <div class="content">
-      <div class="container">
-        <%= equipe.pagina %>
+  <div id="main" class="container-fixed">
+    <div class="background-resumo-time">
+      <div class="col-lg-2 col-md-2 col-sm-2">
+        <div class="content-box big ch-item foto-time">
+        </div>
       </div>
+      <div class="col-lg-10 col-md-10 col-sm-10">
+        <div class="content-box informacoes-time ch-item">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <span class="label-titulo">Cidade: </span><%= equipe.cidade %> - <%= equipe.siglaEstado %> 
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <span class="label-titulo">Representante: </span><%= equipe.representante %>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <span class="label-titulo">Campo: </span><%= equipe.campo %>
+          </div>
+           <div class="col-lg-6 col-md-6 col-sm-6">
+            <span class="label-titulo">Fone: </span><%= equipe.telefone %>
+          </div>
+           <div class="col-lg-6 col-md-6 col-sm-6">
+            <span class="label-titulo">Modalidade: </span> <%= equipe.modalidade %>
+          </div>
+           <div class="col-lg-6 col-md-6 col-sm-6">
+           <span class="label-titulo">Email: </span> <%= equipe.email %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
+
+   <div id="main" class="container-comentarios">
+    <div></div>
+   </div>
   <% include ../partials/footer %>
-  </body>
+</body>
 </html>
