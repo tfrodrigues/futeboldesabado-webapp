@@ -5,13 +5,21 @@
 </head>
 <body class="<%= path %>">
   <% include ../partials/header %>  
-  <div id="main" class="container-fixed">
+   <div id="main" class="container main-container">
+    <img src="/styles/img/escalacao-padrao.png" alt="Escalação">
     <div class="background-resumo-time">
       <div class="col-lg-2 col-md-2 col-sm-2">
         <div class="content-box big ch-item foto-time">
+          <img src="/styles/img/logo-padrao.png" alt="Logo">
         </div>
       </div>
       <div class="col-lg-10 col-md-10 col-sm-10">
+        <span>
+          <span class="informacoes-time-header">
+            <span class="titulo-time"><%= equipe.nome %></span><br/><br/>
+            <span class="historico-time">Breve histórico do time</span>
+          </span>
+        </span>
         <div class="content-box informacoes-time ch-item">
           <div class="col-lg-6 col-md-6 col-sm-6">
             <span class="label-titulo">Cidade: </span><%= equipe.cidade %> - <%= equipe.siglaEstado %> 
@@ -35,10 +43,6 @@
       </div>
     </div>
   </div>
-
-   <div id="main" class="container-comentarios">
-    <div></div>
-   </div>
   <% include ../partials/footer %>
 </body>
 </html>

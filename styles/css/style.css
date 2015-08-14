@@ -2772,6 +2772,7 @@ form {
     margin-left: 200px;
     background-color: #EFE7E7 !important;
     border-bottom: none !important;
+    text-align: center;
 }
 
 .informacoes-time {
@@ -2781,7 +2782,7 @@ form {
     height: 100px;
     margin-left: 190px;
     width: 70%;
-    margin-top: 110px;
+    margin-top: 70px;
     background-color: #ddd;
 }
 
@@ -2793,8 +2794,11 @@ form {
     height: 230px;
     background-color: #FFF;
     border-bottom: 1px;
-    padding-top: 90px;
     height: 330px;
+}
+
+img {
+    margin: 0px;
 }
 
 .container-fixed {
@@ -2810,4 +2814,22 @@ form {
 .label-titulo {
     font-weight: bold;
     line-height: 32px;
+}
+
+.informacoes-time-header {
+    margin-left: 190px;
+}
+
+.titulo-time {
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.historico-time {
+    position: absolute;
+    font-size: 16px;
+    margin-left: 190px;
+    margin-top: 20px;
 }
