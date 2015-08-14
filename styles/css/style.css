@@ -114,8 +114,8 @@ a:hover,a:focus {
 
 /* Header */
 #header .main-header {
-    min-height: 89px;
-    height: 89px;
+    min-height: 86px;
+    height: 86px;
     z-index: 9999;
     width: 100%;
     position: fixed;
@@ -333,7 +333,7 @@ h2.title {
     background-repeat: no-repeat;
     background-position: 50%;
     padding: 0;
-    margin-top: 89px;
+    margin-top: 86px;
 }
 
 .tp-leftarrow.default,.nivo-prevNav {
@@ -2713,7 +2713,7 @@ form {
     position: fixed !important;
     width: 100% !important;
     top: 96px !important;
-    margin-top: -7px !important;
+    margin-top: -10px !important;
     border: none !important;
     left: 0 !important;
 }
