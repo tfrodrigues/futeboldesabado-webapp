@@ -1,8 +1,9 @@
 body {
-    color: #727272;
     font-family: "Open Sans",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 24px;
+    background-color: #E2D9D9;
+    color: #727272;
 }
 
 label {
@@ -2756,8 +2757,57 @@ form {
   border: solid 1px #b94a48 !important;
 }
 
-
 .error-container {
     top: 0;
     left: 0;
+}
+
+.content-time-line {
+    padding-top: 10px;
+}
+
+.foto-time {
+    margin-top: -70px;
+    height: 180px;
+    margin-left: 200px;
+    background-color: #EFE7E7 !important;
+    border-bottom: none !important;
+}
+
+.informacoes-time {
+    border-style: solid;
+    border-width: 1px 1px 3px;
+    border-color: #ddd;
+    height: 100px;
+    margin-left: 190px;
+    width: 70%;
+    margin-top: 110px;
+    background-color: #ddd;
+}
+
+.background-time-line {
+
+}
+
+.background-resumo-time {
+    height: 230px;
+    background-color: #FFF;
+    border-bottom: 1px;
+    padding-top: 90px;
+    height: 330px;
+}
+
+.container-fixed {
+    width: 100%;
+    padding-top: 90px !important;
+    height: 420px;
+}
+
+.container-comentarios {
+    height: 500px;
+}
+
+.label-titulo {
+    font-weight: bold;
+    line-height: 32px;
 }

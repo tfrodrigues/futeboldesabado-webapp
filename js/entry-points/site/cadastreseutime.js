@@ -21,9 +21,10 @@ ViewModel = function () {
 	self.saveEquipe = function () {
 		self.errorMessageList = ko.observableArray([]);
 		self.errorFieldList = ko.observableArray([]);
+		self.dataModel.siglaEstado = self.dataModel.estado.sigla;
 		if (self.validateExistingData()) {
 			crud.save('equipe', self.dataModel, function () {
-				window.location = '/views/equipe/' + self.dataModel.pagina;
+				window.location = '/' + self.dataModel.pagina;
 			});	
 		}	
 	};
@@ -66,9 +67,9 @@ ViewModel = function () {
 	};
 
 	self.loadCidades = function () {
-		if (self.dataModel.estadoObj) {
+		if (self.dataModel.estado) {
 			self.cidadeList.removeAll();
-			ko.utils.arrayPushAll(self.cidadeList, self.dataModel.estadoObj.cidades);
+			ko.utils.arrayPushAll(self.cidadeList, self.dataModel.estado.cidades);
 		}
 	};
 

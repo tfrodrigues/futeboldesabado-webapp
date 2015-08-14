@@ -1,11 +1,8 @@
 var db = require('./js/db/database');
 var express = require('express');
 var bodyParser = require('body-parser');
-/*var sass = require('node-sass-middleware');*/
 var browserify = require('browserify-middleware');
 var utils = require('./js/common/utils');
-
-var isDevelopment = process.env.NODE_ENV == 'development';
 
 var renderPage = function(res, name, path, query) {
     res.render(path + '/pages/' + name + '.html', {
@@ -17,21 +14,14 @@ var renderPage = function(res, name, path, query) {
 
 var app = express();
 
+var fs = require('fs'); 
+
+app.set('view engine', 'html');
+
 app.engine('html', require('ejs').renderFile);
 
 app.use(bodyParser.json());
 
-//app.use('/cms', basicAuth('isdralit', 'admin123'));
-
-/*app.use(sass({
-    src: __dirname + '/styles/scss/entry-points',
-    dest: __dirname + '/styles/css',
-    outputStyle: 'compressed',
-    prefix: '/styles/css',
-    force: isDevelopment,
-    debug: isDevelopment
-}));
-*/
 app.use('/images', express.static(__dirname + '/images'));
 
 app.use('/styles/css/bootstrap', express.static(__dirname + '/libs/bootstrap/dist/css'));
@@ -62,6 +52,21 @@ app.get('/views/product/:className?/:productName?', function (req, res) {
 
 app.get('/views/:name', function (req, res) {
     renderPage(res, req.params.name, 'site', req.query);
+});
+
+app.get('/:pagina', function(req,res) {
+    db['Equipe'].Model.findOne({ pagina: req.params.pagina}, function (err, value){
+    if (err) {
+        res.status(404).send(err);
+    } else {
+        res.render('site/pages/equipe.html', {
+        path: 'site',
+        name: 'equipe',
+        query: req.query,
+        equipe: value
+        });
+    }
+    });
 });
 
 app.get('/cms/views/:name', function (req, res) {
@@ -108,4 +113,6 @@ app.delete('/:name/remove/:id', function (req, res) {
     });
 });
 
-app.listen(4000);
+app.set('port', process.env.PORT || 3000)
+
+app.listen(app.get('port'));    

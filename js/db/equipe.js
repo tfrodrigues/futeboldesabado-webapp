@@ -6,7 +6,8 @@ Equipe = mongoose.model('Equipe', mongoose.Schema({
     campo: String,
     modalidade: String,
     cidade: String,
-    estado: String,
+    siglaEstado: String,
+    telefone: String,
     representante: String,
     email: String,
     senha: String
