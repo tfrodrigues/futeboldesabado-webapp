@@ -4,8 +4,6 @@ var bodyParser = require('body-parser');
 var browserify = require('browserify-middleware');
 var utils = require('./js/common/utils');
 
-var isDevelopment = process.env.NODE_ENV == 'development';
-
 var renderPage = function(res, name, path, query) {
     res.render(path + '/pages/' + name + '.html', {
         name: name,
@@ -17,19 +15,8 @@ var renderPage = function(res, name, path, query) {
 var app = express();
 
 var fs = require('fs'); 
-/*app.engine('html', function (filePath, options, callback) {
-  fs.readFile(filePath, function (err, content) {
-    if (err) {
-        return callback(new Error(err));
-    }
-    var rendered = content.toString().replace('#title#', '<title>'+ options.title +'</title>')
-    .replace('#message#', '<h1>'+ options.message +'</h1>');
-    return callback(null, rendered);
-  })
-});*/
 
-app.set('view engine', 'html'); // register the template engine*/
-
+app.set('view engine', 'html');
 
 app.engine('html', require('ejs').renderFile);
 
@@ -77,8 +64,7 @@ app.get('/:pagina', function(req,res) {
         name: 'equipe',
         query: req.query,
         equipe: value
-    });
-      /*  res.render('site/pages/equipe', { title: value['nome'], message: value['pagina']});*/
+        });
     }
     });
 });
@@ -127,4 +113,6 @@ app.delete('/:name/remove/:id', function (req, res) {
     });
 });
 
-app.listen(4000);
+app.set('port', process.env.PORT || 3000)
+
+app.listen(app.get('port'));    
