@@ -6,7 +6,7 @@ var listnav = require('listnav');
 ViewModel = function () {
 	var self = this;
 
-	self.equipeList = ko.observableArray([]);
+    self.equipeList = ko.observableArray([]);
 
 	base.findAll('equipe', self.equipeList, {}, function (equipe) {
 	}, function () {
