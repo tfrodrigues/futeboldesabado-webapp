@@ -23,7 +23,6 @@
     "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.js",
     "jquery": "./bower_components/jquery/dist/jquery.js",
     "knockout": "./bower_components/knockout/dist/knockout.js",
-    "knockout-validation": "./bower_components/knockout-validation/dist/knockout.validation.min.js",
     "listnav": "./bower_components/jquery-listnav/jquery-listnav.js"
   },
   "browserify-shim": {
