@@ -61,6 +61,18 @@ app.get('/:name/find', function (req, res) {
     });
 });
 
+app.post('/:name/save', function (req, res) {
+    var name = utils.capitalize(req.params.name);
+    db.saveOrUpdate(db[name].Model, req.body, function (err, value) {
+        if (err) {
+            res.status(404).send(err);
+        } else {
+            res.send(value);
+        }
+    });
+});
+
+
 app.set('port', process.env.PORT || 3000)
 
 app.listen(app.get('port'));    
