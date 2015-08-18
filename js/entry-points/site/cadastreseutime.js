@@ -1,7 +1,6 @@
 var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
-var crud = require('../../common/crud');
 var utils = require('../../common/utils');
 
 ViewModel = function () {
@@ -21,6 +20,12 @@ ViewModel = function () {
 	self.saveEquipe = function () {
 		self.errorMessageList = ko.observableArray([]);
 		self.errorFieldList = ko.observableArray([]);
+		self.comentarioList = ko.observableArray([
+    		{titulo: "Procurando jogo", usuario: "admin", data: new Date(), conteudo: "Lorem ipsum dolor sit amet, pro malorum persius no, prima mediocrem ex mel. Eu mea unum omnis latine. Ad mea labore appetere, vocibus scaevola probatus ne eum. Pri cu vidit posse erant, at vix enim consequuntur. Ne consulatu dissentiet vim, his iriure mediocrem in. Percipitur instructior duo at. Esse assueverit mediocritatem id nam, ius cu adhuc gubergren concludaturque, ne eum quas quodsi cotidieque. Vix at tritani facilisis omittantur. Porro constituam no vix, sea homero percipit in. 						Adversarium contentiones at sea, falli paulo consequat nam in. Eum ut aeque ludus dissentiunt, choro ponderum adipisci mel ea. Quem pertinax his ex. Usu et enim tempor putant, id diam alienum est, qui ea detraxit posidonium appellantur. Ea usu diceret periculis."},
+    		{titulo: "Procurando jogo", usuario: "matheus", data: new Date(), conteudo: "Lorem ipsum dolor sit amet, pro malorum persius no, prima mediocrem ex mel. Eu mea unum omnis latine. Ad mea labore appetere, vocibus scaevola probatus ne eum. Pri cu vidit posse erant, at vix enim consequuntur. Ne consulatu dissentiet vim, his iriure mediocrem in. Percipitur instructior duo at. Esse assueverit mediocritatem id nam, ius cu adhuc gubergren concludaturque, ne eum quas quodsi cotidieque. Vix at tritani facilisis omittantur. Porro constituam no vix, sea homero percipit in. 						Adversarium contentiones at sea, falli paulo consequat nam in. Eum ut aeque ludus dissentiunt, choro ponderum adipisci mel ea. Quem pertinax his ex. Usu et enim tempor putant, id diam alienum est, qui ea detraxit posidonium appellantur. Ea usu diceret periculis."},
+    		{titulo: "Procurando jogo", usuario: "thomas", data: new Date(), conteudo: "Lorem ipsum dolor sit amet, pro malorum persius no, prima mediocrem ex mel. Eu mea unum omnis latine. Ad mea labore appetere, vocibus scaevola probatus ne eum. Pri cu vidit posse erant, at vix enim consequuntur. Ne consulatu dissentiet vim, his iriure mediocrem in. Percipitur instructior duo at. Esse assueverit mediocritatem id nam, ius cu adhuc gubergren concludaturque, ne eum quas quodsi cotidieque. Vix at tritani facilisis omittantur. Porro constituam no vix, sea homero percipit in. 						Adversarium contentiones at sea, falli paulo consequat nam in. Eum ut aeque ludus dissentiunt, choro ponderum adipisci mel ea. Quem pertinax his ex. Usu et enim tempor putant, id diam alienum est, qui ea detraxit posidonium appellantur. Ea usu diceret periculis."},
+		]);
+		self.dataModel.comentarios = self.comentarioList();
 		self.dataModel.siglaEstado = self.dataModel.estado.sigla;
 		if (self.validateExistingData()) {
 			crud.save('equipe', self.dataModel, function () {

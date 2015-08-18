@@ -1,5 +1,12 @@
 var mongoose = require('mongoose');
 
+Comentario = mongoose.Schema({
+    titulo: String,
+    conteudo: String,
+    usuario: String,
+    data: Date 
+});
+
 Equipe = mongoose.model('Equipe', mongoose.Schema({
     nome: String,
     pagina: String,
@@ -10,7 +17,8 @@ Equipe = mongoose.model('Equipe', mongoose.Schema({
     telefone: String,
     representante: String,
     email: String,
-    senha: String
+    senha: String,
+    comentarios: [Comentario]
 }));
 
 

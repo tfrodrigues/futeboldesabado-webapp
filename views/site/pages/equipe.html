@@ -27,7 +27,7 @@
               <span class="label-titulo">Cidade: </span><span data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado"></span>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-            <span class="label-titulo">Representante: </span><span data-bind="text: dataModel.representante"></span>
+              <span class="label-titulo">Representante: </span><span data-bind="text: dataModel.representante"></span>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
               <span class="label-titulo">Campo: </span><span data-bind="text: dataModel.campo"></span>
@@ -48,15 +48,25 @@
       <div class="col-lg-3 col-md-3 col-sm-3">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6">
-        <span>
-          comentários
+        <span data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
+          <div class="background-post">
+            <div class="post-title" data-bind="text: comentario.titulo"></div>
+            <div class="post-summary" data-bind="text: 'Postado por: ' + comentario.usuario + ' em: ' + comentario.data"></div>
+            <div class="post-content" data-bind="text: comentario.conteudo"></div>
+          </div>
         </span>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-3">
-      </div>
-     </div>
-   </div>
- </div>
- <% include ../partials/footer %>
+        <div class="row">
+         <button class="btn-normal btn-color submit  bottom-pad" type
+         ="submit" style="margin-top: 10px;text-align:center;">VER MAIS POSTS</button>
+   <!--  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 alert alert-error" style="display:none">
+ </div> -->
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3">
+</div>
+</div>
+</div>
+</div>
+<% include ../partials/footer %>
 </body>
 </html>
