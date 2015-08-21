@@ -5,15 +5,13 @@
 </head>
 <body class="<%= path %>">
   <% include ../partials/header %>  
-  <div id="main" class="container main-container">
+  <div id="main" class="container main-container" class="fullwidthbanner-container">
     <input type="hidden" id="equipe" value="<%= equipe %>">
-    <img src="/styles/img/escalacao-padrao.jpg" alt="Escalação">
+    <img src="/styles/img/thumb_capa_time.jpg" alt="Escalação" class="img-capa-time">
     <div class="background-resumo-time">
       <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-2">
-          <div class="content-box big ch-item foto-time">
-            <img src="/styles/img/logo-padrao.jpg" alt="Logo">
-          </div>
+          <img src="/styles/img/thumb_avatar_time.jpg" class="foto-time" alt="Logo">
         </div>
         <div class="col-lg-10 col-md-10 col-sm-10">
           <span>
@@ -22,7 +20,7 @@
               <span class="historico-time">Breve histórico do time</span>
             </span>
           </span>
-          <div class="content-box informacoes-time ch-item">
+          <div class="informacoes-time">
             <div class="col-lg-6 col-md-6 col-sm-6">
               <span class="label-titulo">Cidade: </span><span data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado"></span>
             </div>
@@ -44,28 +42,26 @@
          </div>
        </div>
      </div>
-     <div class="row">
+     <div class="row" data-bind="visible: dataModel.comentarios.length > 0">
       <div class="col-lg-3 col-md-3 col-sm-3">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6">
-        <span data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
+        <div data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
           <div class="background-post">
             <div class="post-title" data-bind="text: comentario.titulo"></div>
             <div class="post-summary" data-bind="text: 'Postado por: ' + comentario.usuario + ' em: ' + comentario.data"></div>
             <div class="post-content" data-bind="text: comentario.conteudo"></div>
           </div>
-        </span>
+        </div>
         <div class="row">
          <button class="btn-normal btn-color submit  bottom-pad" type
          ="submit" style="margin-top: 10px;text-align:center;">VER MAIS POSTS</button>
-   <!--  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 alert alert-error" style="display:none">
- </div> -->
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-3">
-</div>
-</div>
-</div>
+       </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-3">
+     </div>
+   </div>
+ </div>
 </div>
 <% include ../partials/footer %>
 </body>

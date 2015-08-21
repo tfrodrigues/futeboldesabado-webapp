@@ -20,6 +20,7 @@ body.boxed header {
 
 img {
     max-width: 100%;
+    padding: 0px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -234,11 +235,7 @@ header .main-header {
 }
 
 .logo {
-    height: 80px;
-}
-
-.logo h1 {
-    margin: 0;
+    margin-top: 5px;
 }
 
 .navbar-fixed-top {
@@ -2802,23 +2799,18 @@ form {
 }
 
 .foto-time {
-    margin-top: -70px;
-    height: 180px;
+    margin-top: -100px;
     margin-left: 200px;
-    background-color: #EFE7E7 !important;
-    border-bottom: none !important;
-    text-align: center;
+    background-color: #BEBEBE;
+    padding: 5px;
 }
 
 .informacoes-time {
-    border-style: solid;
-    border-width: 1px 1px 3px;
-    border-color: #ddd;
     height: 100px;
     margin-left: 190px;
     width: 70%;
     margin-top: 70px;
-    background-color: #ddd;
+    background-color: #EEE;
 }
 
 .background-post {
@@ -2841,7 +2833,7 @@ form {
 
 .post-summary {
     font-size: 12px;
-    color: #727272;
+    color: #CCC;
     padding-left: 20px;
 }
 
@@ -2855,10 +2847,9 @@ form {
 }
 
 .background-resumo-time {
-    height: 230px;
+    height: 240px;
     background-color: #FFF;
     border-bottom: 1px;
-    height: 230px;
 }
 
 img {
@@ -2888,7 +2879,7 @@ img {
 .titulo-time {
     font-size: 60px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 30px;
     position: absolute;
     color: #000;
 }
@@ -2897,6 +2888,15 @@ img {
     position: absolute;
     font-size: 16px;
     margin-left: 190px;
-    margin-top: 20px;
+    margin-top: 30px;
     color: #000;
+}
+
+.img-capa-time {
+    padding: 0px;
+    padding-top: 87px;
+}
+
+.img-menu-header {
+    padding-bottom: 5px;
 }
