@@ -2,6 +2,7 @@ var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
 var utils = require('../../common/utils');
+var cryptoJS = require('crypto-js');
 
 ViewModel = function () {
 	var self = this;
@@ -28,6 +29,7 @@ ViewModel = function () {
 		self.dataModel.comentarios = self.comentarioList();
 		self.dataModel.siglaEstado = self.dataModel.estado.sigla;
 		if (self.validateExistingData()) {
+			self.dataModel.senha = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(self.dataModel.senha, "futebolDeSabadoPassKey"));
 			crud.save('equipe', self.dataModel, function () {
 				window.location = '/' + self.dataModel.pagina;
 			});	
