@@ -3,12 +3,15 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var browserify = require('browserify-middleware');
 var utils = require('./js/common/utils');
+var cookieParser = require('cookie-parser');
+var cryptoJS = require('crypto-js');
 
-var renderPage = function(res, name, path, query, equipe) {
+var renderPage = function(res, name, path, query, logged, equipe) {
     res.render(path + '/pages/' + name + '.html', {
         name: name,
         path: path,
         query: query,
+        logged: logged,
         equipe: JSON.stringify(equipe)
     });
 };
@@ -20,6 +23,7 @@ app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
 
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.use('/images', express.static(__dirname + '/images'));
 
@@ -37,10 +41,17 @@ app.get('/views/:name', function (req, res) {
 
 app.get('/:pagina', function(req,res) {
     db['Equipe'].Model.findOne({ pagina: req.params.pagina}, function (err, value){
-        if (err) {
-            res.status(404).send(err);
+        if (value) {
+            var logged = false;
+            var cookie = req.cookies.SESSION_ID;
+            var crypt = value.pagina + value.email + value.senha;
+            var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
+            if (cookie !== undefined && cookie === SESSION_ID) {
+                logged = true;
+            }
+            renderPage(res, 'equipe', 'site', req.query, logged, value);
         } else {
-            renderPage(res, 'equipe', 'site', req.query, value);
+            //redirecionar para página não existente
         }
     });
 });
