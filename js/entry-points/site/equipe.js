@@ -1,6 +1,5 @@
 var $ = require('jquery');
 var ko = require('knockout');
-var utils = require('../../common/utils');
 var base = require('../../common/base');
 
 ViewModel = function () {
