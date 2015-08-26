@@ -6,12 +6,13 @@ var utils = require('./js/common/utils');
 var cookieParser = require('cookie-parser');
 var cryptoJS = require('crypto-js');
 
-var renderPage = function(res, name, path, query, logged, equipe) {
+var renderPage = function(res, name, path, query, logged, loggedOnPage, equipe) {
     res.render(path + '/pages/' + name + '.html', {
         name: name,
         path: path,
         query: query,
         logged: logged,
+        loggedOnPage: loggedOnPage,
         equipe: JSON.stringify(equipe)
     });
 };
@@ -42,14 +43,17 @@ app.get('/views/:name', function (req, res) {
 app.get('/:pagina', function(req,res) {
     db['Equipe'].Model.findOne({ pagina: req.params.pagina}, function (err, value){
         if (value) {
-            var logged = false;
+            var logged, loggedOnPage = false;
             var cookie = req.cookies.SESSION_ID;
             var crypt = value.pagina + value.email + value.senha;
             var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
-            if (cookie !== undefined && cookie === SESSION_ID) {
+            if (cookie !== undefined) {
                 logged = true;
+                if (cookie === SESSION_ID) {
+                    loggedOnPage = true;
+                }
             }
-            renderPage(res, 'equipe', 'site', req.query, logged, value);
+            renderPage(res, 'equipe', 'site', req.query, logged, loggedOnPage, value);
         } else {
             //redirecionar para página não existente
         }

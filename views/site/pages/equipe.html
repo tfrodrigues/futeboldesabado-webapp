@@ -6,12 +6,14 @@
 <body class="<%= path %>">
   <% include ../partials/header %>  
   <div id="main" class="container main-container" class="fullwidthbanner-container">
-    <input type="hidden" id="equipe" value="<%= equipe %>">
-    <img src="/styles/img/thumb_capa_time.jpg" alt="Escalação" class="img-capa-time">
+    <div data-bind="visible: false">
+      <input id="equipe" value="<%= equipe %>">
+    </div>
+    <img data-bind="attr: {src: '/styles/img/' + dataModel.imgCapa}" alt="Escalação" class="img-capa-time">
     <div class="background-resumo-time">
       <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-2">
-          <img src="/styles/img/thumb_avatar_time.jpg" class="foto-time" alt="Logo">
+          <img data-bind="attr: {src: '/styles/img/' + dataModel.imgAvatar}" class="foto-time" alt="Logo">
         </div>
         <div class="col-lg-10 col-md-10 col-sm-10">
           <span>
@@ -42,24 +44,42 @@
          </div>
        </div>
      </div>
-     <div class="row" data-bind="visible: dataModel.comentarios.length > 0">
+     <div class="row" data-bind="visible: <%= loggedOnPage %>">
       <div class="col-lg-3 col-md-3 col-sm-3">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6">
-        <div data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
-          <div class="background-post">
-            <div class="post-title" data-bind="text: comentario.titulo"></div>
-            <div class="post-summary" data-bind="text: 'Postado por: ' + comentario.usuario + ' em: ' + comentario.data"></div>
-            <div class="post-content" data-bind="text: comentario.conteudo"></div>
-          </div>
-        </div>
-        <div class="row">
-         <button class="btn-normal btn-color submit  bottom-pad" type
-         ="submit" style="margin-top: 10px;text-align:center;">VER MAIS POSTS</button>
+        <div class="background-post">
+          <div class="post-title" data-bind="text: 'Escrever Post'"></div>
+          <fieldset class="fsa-escrever-post">
+            <label>Título: <span>*</span></label>
+            <input class="form-control" id="titulo" name="titulo" maxlength="60" type="text" data-bind="value: comentario.titulo">
+            <label>Conteúdo: <span>*</span></label>
+            <textarea class="form-control" id="conteudo" name="conteudo" maxlength="255" rows="7" columns="50" data-bind="value: comentario.conteudo" res></textarea>
+          </fieldset>
+           <div class="row">
+         <button class="btn-normal btn-color submit bottom-pad fsa-btn-escrever-post" data-bind="click: publicar">PUBLICAR</button>
        </div>
-     </div>
-     <div class="col-lg-3 col-md-3 col-sm-3">
-     </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+    </div>
+  </div>
+
+
+  <div class="row" data-bind="visible: dataModel.comentarios.length > 0">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
+        <div class="background-post">
+          <div class="post-title" data-bind="text: comentario.titulo"></div>
+          <div class="post-summary" data-bind="text: 'Postado por ' + comentario.usuario + ' em ' + comentario.data"></div>
+          <div class="post-content" data-bind="text: comentario.conteudo"></div>
+        </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-md-3 col-sm-3">
    </div>
  </div>
 </div>

@@ -2699,3 +2699,11 @@ form {
 img {
     margin: 0px;
 }
+
+.row {
+    margin: 0px;
+}
+
+textarea {
+    resize: none;
+}
