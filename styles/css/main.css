@@ -1,3 +1,11 @@
+.fsa-none {
+    display: none;
+}
+
+.fsa-align-center {
+    text-align: center;
+}
+
 .img-logo {
     width: 50px;
     height: 50px;
@@ -24,7 +32,7 @@
 
 .content-box-text {
     text-align: left !important;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .content-box-info {
@@ -110,8 +118,8 @@
 }
 
 .informacoes-time {
-    height: 90px;
     background-color: #EEE;
+    border-bottom: 3px solid #BEBEBE;
 }
 
 .background-post {
@@ -121,7 +129,7 @@
     color: #000;
     margin-top: 35px;
     border: 1px solid #BEBEBE;
-    border-bottom: 3px solid #42A761;
+    border-bottom: 3px solid #BEBEBE;
 }
 
 .post-title {
@@ -135,7 +143,8 @@
 .post-summary {
     font-size: 12px;
     color: #CCC;
-    padding-left: 20px;
+    padding-right: 20px;
+    text-align: right;
 }
 
 .post-content {
