@@ -26,11 +26,10 @@ app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use('/images', express.static(__dirname + '/images'));
+app.use('/dist/img', express.static(__dirname + '/dist/img'));
+app.use('/dist/css', express.static(__dirname + '/dist/css'));
 
-app.use('/styles', express.static(__dirname + '/styles'));
-
-app.use('/js', browserify(__dirname + '/js/entry-points'));
+app.use('/js', browserify(__dirname + '/dist/js/entry-points'));
 
 app.get('/', function (req, res) {
     res.redirect('/views/home');
