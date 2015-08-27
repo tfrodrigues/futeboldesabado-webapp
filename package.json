@@ -28,7 +28,8 @@
     "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.js",
     "jquery": "./bower_components/jquery/dist/jquery.js",
     "knockout": "./bower_components/knockout/dist/knockout.js",
-    "listnav": "./bower_components/jquery-listnav/jquery-listnav.js"
+    "listnav": "./bower_components/jquery-listnav/jquery-listnav.js",
+    "jquery.lazyload": "./bower_components/jquery.lazyload/jquery.lazyload.js"
   },
   "browserify-shim": {
     "jquery": "$",

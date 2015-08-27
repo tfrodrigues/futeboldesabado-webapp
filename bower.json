@@ -21,6 +21,7 @@
     "jquery": "~2.1.1",
     "knockout": "~3.2.0",
     "bootstrap": "~3.3.2",
-    "jquery-listnav" : "~2.4.9"
+    "jquery-listnav" : "~2.4.9",
+    "jquery.lazyload": "^1.9.7"
   }
 }
