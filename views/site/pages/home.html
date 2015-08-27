@@ -6,69 +6,19 @@
 <body class="<%= path %>">
   <% include ../partials/header %>  
   <div id="main" class="container main-container">
-    <img src="/styles/img/banner.jpg" alt="Futebol de Sábado" class="fullwidthbanner-container">
-
+    <img data-original="/styles/img/banner.jpg" class="lazy fullwidthbanner-container"/>
     <div id="content" class="content" data-bind="foreach: { data: comentarioList, as: 'comentario' }">
       <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="content-box big ch-item bottom-pad-small">
+        <div class="content-box-time">
           <div class="content-box-info">
-            <div>
-              <img class="content-box-logo" src="/styles/img/logos/afc.png"/>
-            </div>
-            <!-- <span class="col-lg-12 col-md-12 col-sm-12 content-box-title" data-bind="html: equipe.key"></span> -->
-            <span class="col-lg-12 col-md-12 col-sm-12 content-box-title">Academia FC</span>
-            <p class="content-box-text">Procuramos super urgentíssimo adversário para esse sábado, e temos campo em Novo Hamburgo, 16 horas.
-              Contato com Dadi nos fones (51) 9181-8007 (CLARO) e 9689-5763 (VIVO)</p>
-              <a style="cursor: pointer;">Detalhes <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="content-box big ch-item bottom-pad-small">
-          <div class="content-box-info">
-            <div>
-              <img class="content-box-logo" src="/styles/img/logos/afc.png"/>
-            </div>
-            <!-- <span class="col-lg-12 col-md-12 col-sm-12 content-box-title" data-bind="html: equipe.key"></span> -->
-            <span class="col-lg-12 col-md-12 col-sm-12 content-box-title">Academia FC</span>
-            <p class="content-box-text">Procuramos super urgentíssimo adversário para esse sábado, e temos campo em Novo Hamburgo, 16 horas.
-              Contato com Dadi nos fones (51) 9181-8007 (CLARO) e 9689-5763 (VIVO)</p>
-              <a style="cursor: pointer;">Detalhes <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="content-box big ch-item bottom-pad-small">
-          <div class="content-box-info">
-            <div>
-              <img class="content-box-logo" src="/styles/img/logos/afc.png"/>
-            </div>
-            <!-- <span class="col-lg-12 col-md-12 col-sm-12 content-box-title" data-bind="html: equipe.key"></span> -->
-            <span class="col-lg-12 col-md-12 col-sm-12 content-box-title">Academia FC</span>
-            <p class="content-box-text">Procuramos super urgentíssimo adversário para esse sábado, e temos campo em Novo Hamburgo, 16 horas.
-              Contato com Dadi nos fones (51) 9181-8007 (CLARO) e 9689-5763 (VIVO)</p>
-              <a style="cursor: pointer;">Detalhes <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3">
-        <div class="content-box big ch-item bottom-pad-small">
-          <div class="content-box-info">
-            <div>
-              <img class="content-box-logo" src="/styles/img/logos/afc.png"/>
-            </div>
-            <!-- <span class="col-lg-12 col-md-12 col-sm-12 content-box-title" data-bind="html: equipe.key"></span> -->
-            <span class="col-lg-12 col-md-12 col-sm-12 content-box-title">Academia FC</span>
-            <p class="content-box-text">Procuramos super urgentíssimo adversário para esse sábado, e temos campo em Novo Hamburgo, 16 horas.
-              Contato com Dadi nos fones (51) 9181-8007 (CLARO) e 9689-5763 (VIVO)</p>
-              <a style="cursor: pointer;">Detalhes <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-
-    </div>    
-    <% include ../partials/footer %>
-  </body>
-  </html>
+           <img data-bind="attr: {'src': '/styles/img/logos/' + comentario.imgAvatar}" class="lazy content-box-logo"/>
+           <label class="col-lg-12 col-md-12 col-sm-12 content-box-title" data-bind="text: comentario.nome"></label>
+           <p class="content-box-text" data-bind="text: comentario.conteudo"></p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <% include ../partials/footer %>
+</body>
+</html>

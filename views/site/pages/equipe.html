@@ -3,51 +3,51 @@
 <head lang="pt-BR">
   <% include ../partials/head %>
 </head>
+<input id="equipe" value="<%= equipe %>" type="hidden">
 <body class="<%= path %>">
   <% include ../partials/header %>  
   <div id="main" class="container main-container" class="fullwidthbanner-container">
-    <div data-bind="visible: false">
-      <input id="equipe" value="<%= equipe %>">
-    </div>
-    <img data-bind="attr: {src: '/styles/img/' + dataModel.imgCapa}" alt="Escalação" class="img-capa-time">
+    <img data-bind="attr: {'data-original': '/styles/img/' + dataModel.imgCapa}" class="img-capa-time lazy"/>
     <div class="background-resumo-time">
       <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-2">
-          <img data-bind="attr: {src: '/styles/img/' + dataModel.imgAvatar}" class="foto-time" alt="Logo">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <img data-bind="attr: {'data-original': '/styles/img/logos/' + dataModel.imgAvatar}" class="foto-time lazy">
         </div>
-        <div class="col-lg-10 col-md-10 col-sm-10">
-          <span>
-            <span class="informacoes-time-header">
-              <span class="titulo-time" data-bind="text: dataModel.nome"></span><br/><br/>
-              <span class="historico-time">Breve histórico do time</span>
-            </span>
-          </span>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <label class="titulo-time" data-bind="text: dataModel.nome"></label><br/>
+          <label class="historico-time" data-bind="text: 'Breve histórico do time'"></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
           <div class="informacoes-time">
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <span class="label-titulo">Cidade: </span><span data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado"></span>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-13">
               <span class="label-titulo">Representante: </span><span data-bind="text: dataModel.representante"></span>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <span class="label-titulo">Campo: </span><span data-bind="text: dataModel.campo"></span>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <span class="label-titulo">Fone: </span><span data-bind="text: dataModel.telefone"></span>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <span class="label-titulo">Modalidade: </span><span data-bind="text: dataModel.modalidade"></span>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
              <span class="label-titulo">Email: </span><span data-bind="text: dataModel.email"></span>
            </div>
          </div>
        </div>
      </div>
      <div class="row" data-bind="visible: <%= loggedOnPage %>">
-      <div class="col-lg-3 col-md-3 col-sm-3">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="background-post">
           <div class="post-title" data-bind="text: 'Escrever Post'"></div>
           <fieldset class="fsa-escrever-post">
@@ -56,32 +56,32 @@
             <label>Conteúdo: <span>*</span></label>
             <textarea class="form-control" id="conteudo" name="conteudo" maxlength="255" rows="7" columns="50" data-bind="value: comentario.conteudo" res></textarea>
           </fieldset>
-           <div class="row">
-         <button class="btn-normal btn-color submit bottom-pad fsa-btn-escrever-post" data-bind="click: publicar">PUBLICAR</button>
+          <div class="row">
+           <button class="btn-normal btn-color submit bottom-pad fsa-btn-escrever-post" data-bind="click: publicar">PUBLICAR</button>
+         </div>
        </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3">
-    </div>
-  </div>
-
-
-  <div class="row" data-bind="visible: dataModel.comentarios.length > 0">
-    <div class="col-lg-3 col-md-3 col-sm-3">
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6">
-      <div data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
-        <div class="background-post">
-          <div class="post-title" data-bind="text: comentario.titulo"></div>
-          <div class="post-summary" data-bind="text: 'Postado por ' + comentario.usuario + ' em ' + comentario.data"></div>
-          <div class="post-content" data-bind="text: comentario.conteudo"></div>
-        </div>
-      </div>
+     </div>
    </div>
-   <div class="col-lg-3 col-md-3 col-sm-3">
+   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
    </div>
  </div>
+
+
+ <div class="row" data-bind="visible: dataModel.comentarios.length > 0">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
+      <div class="background-post">
+        <div class="post-title" data-bind="text: comentario.titulo"></div>
+        <div class="post-summary" data-bind="text: 'Postado por ' + comentario.usuario + ' em ' + comentario.data"></div>
+        <div class="post-content" data-bind="text: comentario.conteudo"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+  </div>
+</div>
 </div>
 <% include ../partials/footer %>
 </body>

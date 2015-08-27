@@ -9,16 +9,22 @@
 }
 
 .content-box-logo {
-    margin-top: -80px;
+    width: 50%;
+    border: 1px solid #BEBEBE !important;
 }
 
 .content-box-title {
     color: black;
     text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .content-box-text {
     text-align: left !important;
+    font-size: 12px;
 }
 
 .content-box-info {
@@ -104,10 +110,7 @@
 }
 
 .informacoes-time {
-    height: 100px;
-    margin-left: 190px;
-    width: 70%;
-    margin-top: 70px;
+    height: 90px;
     background-color: #EEE;
 }
 
@@ -117,6 +120,8 @@
     background-color: #FFF;
     color: #000;
     margin-top: 35px;
+    border: 1px solid #BEBEBE;
+    border-bottom: 3px solid #42A761;
 }
 
 .post-title {
@@ -143,7 +148,7 @@
 }
 
 .background-resumo-time {
-    height: 240px;
+    height: 210px;
     background-color: #FFF;
     border-bottom: 1px;
 }
@@ -160,12 +165,8 @@
 
 .label-titulo {
     font-weight: bold;
-    line-height: 32px;
+    line-height: 28px;
     color: #000;
-}
-
-.informacoes-time-header {
-    margin-left: 190px;
 }
 
 .titulo-time {
@@ -179,8 +180,7 @@
 .historico-time {
     position: absolute;
     font-size: 16px;
-    margin-left: 190px;
-    margin-top: 30px;
+    margin-top: 50px;
     color: #000;
 }
 
@@ -191,10 +191,12 @@
 
 .img-menu-header {
     padding-bottom: 5px;
+    margin-left: 30%;
 }
 
 .fsa-escrever-post {
     margin: 10px 20px 10px 20px;
+    border: 1px solid #BEBEBE;
 }
 
 .fsa-btn-escrever-post {
@@ -212,4 +214,13 @@
     color: #42A761;
     font-weight: bold;
     padding-left: 18px;
+}
+
+.content-box-time {
+    width: 100%;
+    padding: 10px;
+    height: 400px;
+    border: 1px solid #BEBEBE;
+    border-bottom: 3px solid #42A761;
+    background-color: #FFF;
 }

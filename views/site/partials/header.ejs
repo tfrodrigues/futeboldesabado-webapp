@@ -61,11 +61,7 @@
                        </a>
                    </li>
                    <li>
-                    <div data-bind="visible: <%= logged %>">
-                        <p class="fsa-bem-vindo-login">Bem-vindo</p>
-                        <p class="fsa-usuario-login" data-bind="text: 'Fulano de Tal'"></p>
-                    </div>
-                    <a id="menu-login" href="/views/login" data-bind="visible: <%= !logged %>">
+                    <a id="menu-login" href="/views/login">
                        <img class="img-menu-header" src="/styles/img/menus/login-header.png"></img>
                        <h4>LOGIN</h4>
                    </a>
