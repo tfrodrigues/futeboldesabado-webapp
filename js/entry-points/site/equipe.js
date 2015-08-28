@@ -1,5 +1,5 @@
 var $ = require('jquery');
-require('jquery.lazyload');
+require('jquery-lazyload');
 var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');

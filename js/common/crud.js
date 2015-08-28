@@ -1,7 +1,6 @@
 var $ = require('jquery');
 var ko = require('knockout');
 var base = require('./base');
-require('bootstrap');
 
 var external = this;
 

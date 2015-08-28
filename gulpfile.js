@@ -17,19 +17,19 @@ gulp.task('clean', function () {
         .pipe(clean({force: true}));
 });
 
-gulp.task('minify-scripts', ['clean'],  function() {
+gulp.task('minify-scripts',  function() {
   return gulp.src(paths.scripts)
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('minify-css', ['clean'], function() {
+gulp.task('minify-css', function() {
     return gulp.src(paths.css)
   .pipe(minifyCss())
   .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('minify-images', ['clean'], function () {
+gulp.task('minify-images', function () {
     return gulp.src(paths.images)
         .pipe(imagemin({
             progressive: true,
@@ -44,4 +44,4 @@ gulp.task('watch', function() {
   gulp.watch(paths.images, ['minify-images']);
 });
 
-gulp.task('default', ['minify-css', 'minify-scripts', 'minify-images', 'watch']);
+gulp.task('default', ['clean', 'minify-css', 'minify-scripts', 'minify-images', 'watch']);
