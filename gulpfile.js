@@ -9,7 +9,7 @@ var paths = {
   target: 'dist',
   css: 'styles/css/*.css',
   images: 'styles/img/**/*',
-  scripts: 'js/**/*.js',
+  scripts: 'js/**/*.js'
 };
 
 gulp.task('clean', function () {
