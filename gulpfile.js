@@ -13,29 +13,29 @@ var paths = {
 };
 
 gulp.task('clean', function () {
-    return gulp.src(paths.target)
-        .pipe(clean({force: true}));
+  return gulp.src(paths.target)
+  .pipe(clean({force: true}));
 });
 
 gulp.task('minify-scripts',  function() {
   return gulp.src(paths.scripts)
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
+  .pipe(uglify())
+  .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('minify-css', function() {
-    return gulp.src(paths.css)
+  return gulp.src(paths.css)
   .pipe(minifyCss())
   .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('minify-images', function () {
-    return gulp.src(paths.images)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}]
-        }))
-        .pipe(gulp.dest('dist/img'));
+  return gulp.src(paths.images)
+  .pipe(imagemin({
+    progressive: true,
+    svgoPlugins: [{removeViewBox: false}]
+  }))
+  .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('watch', function() {

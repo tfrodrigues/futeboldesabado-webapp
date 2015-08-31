@@ -5,6 +5,7 @@ var browserify = require('browserify-middleware');
 var utils = require('./js/common/utils');
 var cookieParser = require('cookie-parser');
 var cryptoJS = require('crypto-js');
+var compression = require('compression');
 
 var renderPage = function(res, name, path, query, logged, loggedOnPage, equipe) {
     res.render(path + '/pages/' + name + '.html', {
@@ -18,6 +19,7 @@ var renderPage = function(res, name, path, query, logged, loggedOnPage, equipe) 
 };
 
 var app = express();
+app.use(compression());
 
 app.set('view engine', 'html');
 
