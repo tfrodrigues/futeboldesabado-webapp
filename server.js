@@ -28,8 +28,9 @@ app.engine('html', require('ejs').renderFile);
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use('/dist/img', express.static(__dirname + '/dist/img'));
-app.use('/dist/css', express.static(__dirname + '/dist/css'));
+var oneMonth = 2592000000;
+app.use('/dist/img', express.static(__dirname + '/dist/img', { maxAge: oneMonth }));
+app.use('/dist/css', express.static(__dirname + '/dist/css', { maxAge: oneMonth }));
 
 app.use('/dist/js', browserify(__dirname + '/dist/js/entry-points'));
 
