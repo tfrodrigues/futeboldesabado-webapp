@@ -13,6 +13,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.ln-no-match {
+    padding: 10px 16px !important;
+}
+
 .listNavHide {
     display: none
 }

@@ -9,7 +9,6 @@ var compression = require('compression');
 var cacheResponseDirective = require('express-cache-response-directive');
 
 var renderPage = function(res, name, path, query, logged, loggedOnPage, equipe) {
-   res.cacheControl({maxAge: oneMonth});
    res.render(path + '/pages/' + name + '.html', {
     name: name,
     path: path,
@@ -46,7 +45,6 @@ app.get('/views/:name', function (req, res) {
 });
 
 app.get('/:pagina', function(req,res) {
-    res.cacheControl({maxAge: oneMonth});
     db['Equipe'].Model.findOne({ pagina: req.params.pagina}, function (err, value){
         if (value) {
             var logged, loggedOnPage = false;
@@ -67,7 +65,6 @@ app.get('/:pagina', function(req,res) {
 });
 
 app.get('/:name/find', function (req, res) {
- res.cacheControl({maxAge: oneMonth});
  var name = utils.capitalize(req.params.name);
  var query = req.query;
 
@@ -84,7 +81,6 @@ app.get('/:name/find', function (req, res) {
 });
 
 app.post('/:name/save', function (req, res) {
- res.cacheControl({maxAge: oneMonth});
  var name = utils.capitalize(req.params.name);
  db.saveOrUpdate(db[name].Model, req.body, function (err, value) {
     if (err) {

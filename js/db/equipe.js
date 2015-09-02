@@ -4,7 +4,8 @@ Comentario = mongoose.Schema({
     titulo: String,
     conteudo: String,
     usuario: String,
-    data: Date 
+    data: Date,
+    dataFormatada: String
 });
 
 Equipe = mongoose.model('Equipe', mongoose.Schema({

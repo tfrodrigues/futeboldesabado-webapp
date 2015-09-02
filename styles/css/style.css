@@ -993,11 +993,6 @@ ol.commentlist li:first-child {
     color:#fff;
 }
 
-/* Main Content Boxes */
-.main-content,.content {
-    padding: 60px 0 0;
-}
-
 .home-3 .main-content, .home-4 .main-content {
 	margin: 45px 0 40px;
 	padding:0;
@@ -2586,7 +2581,6 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
 
 /*** ESSENTIAL STYLES ***/
 .sf-menu,.sf-menu * {
-    margin:0;
     padding:0;
     list-style:none;
 }
@@ -2625,8 +2619,7 @@ a h4 {
 
 .menu ul li a {
     padding-bottom: 12px !important;
-    padding-top: 20px !important;
-    /*    height: 89px !important;*/
+    padding-top: 18px !important;
 }
 
 .menu ul ul li a {
@@ -2651,6 +2644,7 @@ a h4 {
 .menu ul li a:hover {
     background-color: #42A761;
     border-bottom: 0px !important;
+    height: 86px;
 }
 
 .btn-color, .subscribe-btn {

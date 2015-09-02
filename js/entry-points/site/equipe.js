@@ -3,7 +3,7 @@ require('jquery-lazyload');
 var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
-
+var utils = require('../../common/utils');
 
 ViewModel = function () {
     var self = this;
@@ -21,6 +21,7 @@ ViewModel = function () {
     self.publicar = function() {
         self.comentario.usuario = self.dataModel.email;
         self.comentario.data = new Date();
+        self.comentario.dataFormatada = utils.formatDate(new Date(), "dd/mm/yyyy HH:MM");
         self.dataModel.comentarios.push(self.comentario);
         crud.save('equipe', self.dataModel, function () {
             window.location.reload();

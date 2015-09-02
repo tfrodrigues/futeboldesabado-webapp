@@ -35,11 +35,6 @@
     font-size: 14px;
 }
 
-.content-box-info {
-    min-height: 200px;
-    max-height: 200px;
-}
-
 .main-container {
     width: 100%;
 }
@@ -226,10 +221,9 @@
 }
 
 .content-box-time {
-    width: 100%;
     padding: 10px;
-    height: 400px;
     border: 1px solid #BEBEBE;
     border-bottom: 3px solid #42A761;
     background-color: #FFF;
+    margin-top: 20px;
 }

@@ -1,4 +1,6 @@
 var accounting = require('accounting');
+var dateFormat = require('dateformat');
+
 accounting.settings = {
     number: {
         precision: 0,
@@ -6,6 +8,11 @@ accounting.settings = {
         decimal: ','
     }
 };
+
+exports.formatDate = function(date, format) {
+    console.log(dateFormat(date, format));
+    return dateFormat(date, format);
+}
 
 exports.capitalize = function (text) {
     return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
