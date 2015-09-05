@@ -31,8 +31,7 @@
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
     "knockout": "./bower_components/knockout/dist/knockout.js",
-    "listnav": "./bower_components/jquery-listnav/jquery-listnav.min.js",
-    "jquery-lazyload": "./bower_components/jquery.lazyload/jquery.lazyload.js"
+    "listnav": "./bower_components/jquery-listnav/jquery-listnav.min.js"
   },
   "browserify-shim": {
     "jquery": "$"

@@ -1,5 +1,4 @@
 var $ = require('jquery');
-require('jquery-lazyload');
 var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
@@ -8,10 +7,6 @@ var utils = require('../../common/utils');
 ViewModel = function () {
     var self = this;
 
-    $("img.lazy").lazyload({
-        effect : "fadeIn"
-    });
-    
     self.dataModel = {};
     self.comentario = {};
 
