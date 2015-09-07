@@ -3,6 +3,7 @@ var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
 var utils = require('../../common/utils');
+require('jquery-modal');
 
 ViewModel = function () {
     var self = this;
@@ -11,7 +12,15 @@ ViewModel = function () {
     self.comentario = {};
 
     var equipe = JSON.parse($("#equipe").val());
-    self.dataModel = equipe;
+    self.dataModel = equipe
+
+
+    $.get('/dist/img/logos/' + self.dataModel.pagina + '.png')
+    .done(function() { 
+        self.dataModel.imgAvatar = self.dataModel.pagina + '.png';
+    }).fail(function() { 
+        self.dataModel.imgAvatar = 'thumb_avatar_time.jpg'; 
+    })
 
     self.publicar = function() {
         self.comentario.usuario = self.dataModel.email;
@@ -22,6 +31,40 @@ ViewModel = function () {
             window.location.reload();
         });
     };
+
+    self.escolherAvatarTime = function(image) {
+        if (image) {
+            var img = $('.fsa-avatar-time-upload');
+            img.attr('src', null);
+            img.cropper('destroy');
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                img.attr('src', e.target.result);
+                img.cropper({
+                  aspectRatio: 1 / 1,
+                  background: false,
+                  minCropBoxWidth: 200,
+                  minCropBoxHeight: 200
+              });
+            }
+            reader.readAsDataURL(image);
+            $('.upload-avatar-time-modal').modal();
+        }
+    },
+
+    self.alterarAvatarTime = function() {
+        var imageCanvas = $('.fsa-avatar-time-upload').cropper('getCroppedCanvas');
+        $('.fsa-avatar-time').attr('src',imageCanvas.toDataURL('image/png'));
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            url: '/' + self.dataModel.pagina + '/uploadavatartime',
+            data: JSON.stringify({image: imageCanvas.toDataURL('image/png')})
+        });
+        $('.jquery-modal').css('display', 'none');
+        $('.upload-avatar-time-modal').css('display', 'none');
+    }
 
     self.dataModel.comentarios.reverse();
 

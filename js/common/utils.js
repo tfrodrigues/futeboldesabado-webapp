@@ -70,3 +70,13 @@ exports.showErrorMessage = function (arrayMessage, arrayField) {
         $('.error-container').css('display', 'none');
     }, 10000);
 }
+
+exports.objToString = function(obj) {
+    var str = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            str += p + '::' + obj[p] + '\n';
+        }
+    }
+    return str;
+}

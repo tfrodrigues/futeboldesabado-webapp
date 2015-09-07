@@ -8,6 +8,7 @@ var paths = {
   target: 'dist',
   css: 'styles/css/*.css',
   images: 'styles/img/**/*',
+  uploads: 'uploads/img/**/*',
   scripts: 'js/**/*.js'
 };
 
@@ -29,7 +30,7 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('minify-images', function () {
-  return gulp.src(paths.images)
+  return gulp.src([paths.images, paths.uploads])
   .pipe(imagemin({
     progressive: true,
     svgoPlugins: [{removeViewBox: false}]
@@ -40,7 +41,7 @@ gulp.task('minify-images', function () {
 gulp.task('watch', function() {
   gulp.watch(paths.css, ['minify-css']);
   gulp.watch(paths.scripts, ['minify-scripts']);
-  gulp.watch(paths.images, ['minify-images']);
+  gulp.watch([paths.images, paths.uploads], ['minify-images']);
 });
 
 gulp.task('default', ['minify-css', 'minify-scripts', 'minify-images', 'watch']);

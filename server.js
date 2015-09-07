@@ -7,9 +7,10 @@ var cookieParser = require('cookie-parser');
 var cryptoJS = require('crypto-js');
 var compression = require('compression');
 var cacheResponseDirective = require('express-cache-response-directive');
+var fs = require('fs');
 
 var renderPage = function(res, name, path, query, logged, loggedOnPage, equipe) {
-   res.render(path + '/pages/' + name + '.html', {
+ res.render(path + '/pages/' + name + '.html', {
     name: name,
     path: path,
     query: query,
@@ -44,6 +45,27 @@ app.get('/views/:name', function (req, res) {
     renderPage(res, req.params.name, 'site', req.query);
 });
 
+function objToString (obj) {
+    var str = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            str += p + '::' + obj[p] + '\n';
+        }
+    }
+    return str;
+}
+
+app.post('/:pagina/uploadavatartime', function(req, res) {
+    var image = req.body;
+    image = objToString(image);
+    var noHeader = image.substring(image.indexOf(',') + 1);
+    var decoded = new Buffer(noHeader, 'base64');
+    var imgAvatar = req.params.pagina + '.png';
+    fs.writeFile('uploads/img/logos/' + imgAvatar, decoded, function(err){
+        res.send("without header " + noHeader + "decoded " + decoded);
+    });
+});
+
 app.get('/:pagina', function(req,res) {
     db['Equipe'].Model.findOne({ pagina: req.params.pagina}, function (err, value){
         if (value) {
@@ -65,13 +87,13 @@ app.get('/:pagina', function(req,res) {
 });
 
 app.get('/:name/find', function (req, res) {
- var name = utils.capitalize(req.params.name);
- var query = req.query;
+   var name = utils.capitalize(req.params.name);
+   var query = req.query;
 
- var fields = query['fields'];
- delete query['fields'];
+   var fields = query['fields'];
+   delete query['fields'];
 
- db.findAll(db[name].Model, query, fields, function (err, values) {
+   db.findAll(db[name].Model, query, fields, function (err, values) {
     if (err) {
         res.status(404).send(err);
     } else {
@@ -81,8 +103,8 @@ app.get('/:name/find', function (req, res) {
 });
 
 app.post('/:name/save', function (req, res) {
- var name = utils.capitalize(req.params.name);
- db.saveOrUpdate(db[name].Model, req.body, function (err, value) {
+   var name = utils.capitalize(req.params.name);
+   db.saveOrUpdate(db[name].Model, req.body, function (err, value) {
     if (err) {
         res.status(404).send(err);
     } else {
