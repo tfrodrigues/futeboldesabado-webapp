@@ -6,67 +6,47 @@
     text-align: center;
 }
 
-.img-logo {
-    width: 50px;
-    height: 50px;
-}
-
-.content-box-escalacao {
-    width: 300px;
-    height: 150px;
-}
-
-.content-box-logo {
+.fsa-content-box-logo {
     width: 50%;
     border: 1px solid #BEBEBE !important;
 }
 
-.content-box-title {
+.fsa-content-box-title {
     color: black;
-    text-align: center;
-    font-size: 18px;
+    text-align: center !important;
+    font-size: 16px;
     font-weight: bold;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
-.content-box-text {
+.fsa-content-box-time {
+    padding: 10px;
+    border: 1px solid #BEBEBE;
+    border-bottom: 3px solid #BEBEBE;
+    background-color: #FFF;
+    margin-top: 20px;
+}
+
+.fsa-content-box-time:hover {
+    border-color: #42A761;
+    border-bottom: 3px solid #42A761;
+    cursor: pointer;
+}
+
+.fsa-content-box-text {
     text-align: left !important;
-    font-size: 14px;
+    font-size: 13px;
 }
 
-.main-container {
+.fsa-main-container {
     width: 100%;
 }
 
-.div-alfabeto {
+.fsa-div-alfabeto {
     background: #42A761;
     height: 190px;
 }
 
-.letraMenu {
-    font-size: 26px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.letraMenu a {
-    font-family: Verdana;
-    color: #FFF;
-    padding: 5px; 
-}
-
-.nomeTimeMenu {
-    font-size: 14px;
-    text-align: center;
-}
-
-.nomeTimeMenu a {
-    font-family: Verdana;
-    color: #FFF;
-}
-
-.ui-alfabeto {
+.fsa-ui-alfabeto {
     position: fixed !important;
     width: 100% !important;
     top: 96px !important;
@@ -101,23 +81,34 @@
     left: 0;
 }
 
-.content-time-line {
-    padding-top: 10px;
-}
-
-.foto-time {
+.fsa-avatar-time {
     margin-top: -100px;
     margin-left: 200px;
     background-color: #BEBEBE;
     padding: 5px;
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    min-width: 200px;
 }
 
-.informacoes-time {
+.fsa-avatar-time:hover {
+    opacity: 0.8;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.fsa-avatar-time-upload {
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.fsa-informacoes-time {
     background-color: #EEE;
     border-bottom: 3px solid #BEBEBE;
 }
 
-.background-post {
+.fsa-background-post {
     width: 100%;
     height: 100%;
     background-color: #FFF;
@@ -127,7 +118,7 @@
     border-bottom: 3px solid #BEBEBE;
 }
 
-.post-title {
+.fsa-post-title {
     font-size: 28px;
     padding-top: 20px;
     padding-left: 20px;
@@ -135,45 +126,31 @@
     font-weight: bold;
 }
 
-.post-summary {
+.fsa-post-summary {
     font-size: 12px;
     color: #CCC;
     padding-right: 20px;
     text-align: right;
 }
 
-.post-content {
+.fsa-post-content {
     font-size: 14px;
     padding-left: 20px;
 }
 
-.background-time-line {
-
-}
-
-.background-resumo-time {
+.fsa-background-resumo-time {
     height: 210px;
     background-color: #FFF;
     border-bottom: 1px;
 }
 
-.container-fixed {
-    width: 100%;
-    padding-top: 90px !important;
-    height: 420px;
-}
-
-.container-comentarios {
-    height: 500px;
-}
-
-.label-titulo {
+.fsa-label-titulo {
     font-weight: bold;
     line-height: 28px;
     color: #000;
 }
 
-.titulo-time {
+.fsa-titulo-time {
     font-size: 60px;
     font-weight: bold;
     margin-top: 30px;
@@ -181,19 +158,19 @@
     color: #000;
 }
 
-.historico-time {
+.fsa-historico-time {
     position: absolute;
     font-size: 16px;
     margin-top: 50px;
     color: #000;
 }
 
-.img-capa-time {
+.fsa-img-capa-time {
     padding: 0px;
     padding-top: 87px;
 }
 
-.img-menu-header {
+.fsa-img-menu-header {
     padding-bottom: 5px;
     margin-left: 30%;
 }
@@ -207,23 +184,12 @@
     margin-left: 20px;
 }
 
-.fsa-bem-vindo-login {
-    color: #42A761;
-    margin-top: 20px;
-    font-weight: bold;
-    padding: 0px 18px 0px 18px;
-}
-
 .fsa-usuario-login {
     color: #42A761;
     font-weight: bold;
     padding-left: 18px;
 }
 
-.content-box-time {
-    padding: 10px;
-    border: 1px solid #BEBEBE;
-    border-bottom: 3px solid #42A761;
-    background-color: #FFF;
-    margin-top: 20px;
+.fsa-btn-upload-group {
+    padding-top: 20px;
 }
