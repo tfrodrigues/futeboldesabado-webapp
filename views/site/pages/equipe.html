@@ -11,8 +11,15 @@
     <div class="fsa-background-resumo-time">
       <div class="row" data-bind="visible: dataModel.nome">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <img data-bind="attr: {'src': '/dist/img/logos/' + dataModel.imgAvatar}, click: $('#upload-avatar-time').click()" class="fsa-avatar-time">
-          <input type='file' id="upload-avatar-time" style="display:none" data-bind="event: {change: escolherAvatarTime($element.files[0])}"/>
+          <div data-bind="css: {'fsa-avatar-time-logado': <%= loggedOnPage %>}" class="fsa-avatar-time">
+
+            <img data-bind="attr: {'src': '/dist/img/logos/' + dataModel.pagina + '.png'}, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null" onerror="this.src='/dist/img/logos/thumb_avatar_time.jpg'">
+            <div class="fsa-atualizar-foto-time">
+              <label>Atualizar foto do perfil</label>
+            </div>
+          </div>
+
+          <input type='file' id="upload-avatar-time" class="upload-avatar-time" style="display:none" data-bind="event: {change: escolherAvatarTime($element.files[0])}"/>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
           <label class="fsa-titulo-time" data-bind="text: dataModel.nome"></label><br/>

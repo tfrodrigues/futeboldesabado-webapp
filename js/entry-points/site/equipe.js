@@ -15,13 +15,6 @@ ViewModel = function () {
     self.dataModel = equipe
 
 
-    $.get('/dist/img/logos/' + self.dataModel.pagina + '.png')
-    .done(function() { 
-        self.dataModel.imgAvatar = self.dataModel.pagina + '.png';
-    }).fail(function() { 
-        self.dataModel.imgAvatar = 'thumb_avatar_time.jpg'; 
-    })
-
     self.publicar = function() {
         self.comentario.usuario = self.dataModel.email;
         self.comentario.data = new Date();
@@ -54,7 +47,7 @@ ViewModel = function () {
 
     self.alterarAvatarTime = function() {
         var imageCanvas = $('.fsa-avatar-time-upload').cropper('getCroppedCanvas');
-        $('.fsa-avatar-time').attr('src',imageCanvas.toDataURL('image/png'));
+        $('.fsa-avatar-time > img').attr('src',imageCanvas.toDataURL('image/png'));
         $.ajax({
             type: 'POST',
             contentType: 'application/json',

@@ -92,10 +92,15 @@
     min-width: 200px;
 }
 
-.fsa-avatar-time:hover {
-    opacity: 0.8;
+.fsa-avatar-time-logadogit:hover {
     background-color: #000;
     cursor: pointer;
+}
+
+.fsa-avatar-time-logado:hover .fsa-atualizar-foto-time {
+    opacity:1; 
+    background-color: #000;
+    opacity: 0.8;
 }
 
 .fsa-avatar-time-upload {
@@ -192,4 +197,21 @@
 
 .fsa-btn-upload-group {
     padding-top: 20px;
+}
+
+.fsa-atualizar-foto-time {
+    background: url('/dist/img/foto.png') no-repeat;
+    background-position-y: 50%;  
+    opacity: 0;
+    margin-top: -50px;
+    position: relative;
+    height: 50px;
+    cursor: pointer;
+}
+
+.fsa-atualizar-foto-time > label {
+    color: #FFF;
+    margin-left: 40px;
+    margin-top: 7%;
+    cursor: pointer;
 }
