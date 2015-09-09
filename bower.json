@@ -18,8 +18,10 @@
   "test"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
-    "knockout": "~3.2.0",
-    "jquery-listnav" : "~2.4.9"
+    "jquery": "^2.1.1",
+    "knockout": "^3.2.0",
+    "jquery-listnav" : "^2.4.9",
+    "jquery-modal": "^0.5.8",
+    "cropper": "^1.0.0-rc.1"
   }
 }

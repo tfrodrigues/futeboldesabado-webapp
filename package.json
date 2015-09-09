@@ -22,8 +22,7 @@
     "gulp-imagemin": "^2.3.0",
     "compression": "^1.5.2",
     "express-cache-response-directive": "^0.2.0",
-    "dateformat": "^1.0.11",
-    "jquery-modal": "^0.5.8"
+    "dateformat": "^1.0.11"
   },
   "devDependencies": {},
   "scripts": {
@@ -32,7 +31,9 @@
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
     "knockout": "./bower_components/knockout/dist/knockout.js",
-    "listnav": "./bower_components/jquery-listnav/jquery-listnav.min.js"
+    "listnav": "./bower_components/jquery-listnav/jquery-listnav.min.js",
+    "jquery-modal": "./bower_components/jquery-modal/jquery.modal.min.js",
+    "cropper": "./bower_components/cropper/dist/cropper.min.js"
   },
   "browserify-shim": {
     "jquery": "$"

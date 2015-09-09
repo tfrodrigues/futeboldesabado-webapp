@@ -23,7 +23,7 @@ var renderPage = function(res, name, path, query, logged, loggedOnPage, equipe) 
 var app = express();
 app.use(compression());
 app.use(cacheResponseDirective());
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '20mb'}));
 app.use(cookieParser());
 
 
