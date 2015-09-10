@@ -11,7 +11,6 @@ ViewModel = function () {
 
     base.findAll('equipe', [], {comentarios: {$not: {$size: 0}}}, function (equipe) {
         var comentario = equipe.comentarios[equipe.comentarios.length - 1];
-        comentario["imgAvatar"] = equipe.imgAvatar;
         comentario["nome"] = equipe.nome;
         comentario["pagina"] = equipe.pagina;
         self.comentarioList.push(comentario);

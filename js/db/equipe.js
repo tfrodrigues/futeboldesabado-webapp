@@ -19,8 +19,6 @@ Equipe = mongoose.model('Equipe', mongoose.Schema({
     representante: String,
     email: String,
     senha: String,
-    imgAvatar: {type: String, default: 'thumb_avatar_time.jpg'},
-    imgCapa: {type: String, default: 'thumb_capa_time.jpg'},
     comentarios: [Comentario]
 }));
 

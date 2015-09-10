@@ -7,14 +7,14 @@
 <body class="<%= path %>">
   <% include ../partials/header %>  
   <div id="main" class="container fsa-main-container" class="fullwidthbanner-container">
-    <img data-bind="attr: {'src': '/dist/img/capa/' + dataModel.imgCapa}" class="fsa-img-capa-time"/>
+    <img data-bind="attr: {'src': '/dist/img/capa/' + dataModel.pagina + '.png'}" class="fsa-img-capa-time" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'"/>
     <div class="fsa-background-resumo-time">
       <div class="row" data-bind="visible: dataModel.nome">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div data-bind="css: {'fsa-avatar-time-logado': <%= loggedOnPage %>}" class="fsa-avatar-time">
 
-            <img data-bind="attr: {'src': '/dist/img/logos/' + dataModel.pagina + '.png'}, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null" onerror="this.src='/dist/img/logos/thumb_avatar_time.jpg'">
-            <div class="fsa-atualizar-foto-time">
+            <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
+            <div class="fsa-atualizar-foto-time" data-bind="visible: <%= loggedOnPage %>, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null"> 
               <label>Atualizar foto do perfil</label>
             </div>
           </div>
