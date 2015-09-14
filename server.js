@@ -60,7 +60,7 @@ app.post('/:pagina/uploadavatartime', function(req, res) {
     image = objToString(image);
     var noHeader = image.substring(image.indexOf(',') + 1);
     var decoded = new Buffer(noHeader, 'base64');
-    fs.writeFile('uploads/img/logo/' + imgAvatar, decoded, function(err){
+    fs.writeFile('uploads/img/logo/' + req.params.pagina + '.png', decoded, function(err){
         res.send("without header " + noHeader + "decoded " + decoded);
     });
 });
