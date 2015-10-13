@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "homepage": "https://github.com/tfrodrigues/futeboldesabado-webapp",
   "authors": [
-  "Thômas Frederico Rodrigues"
+  "ThÃ´mas Frederico Rodrigues"
   ],
   "description": "http://www.futeboldesabado.com.br",
   "keywords": [
@@ -18,10 +18,9 @@
   "test"
   ],
   "dependencies": {
-    "jquery": "^2.1.1",
+    "jquery": "^2.1.4",
     "knockout": "^3.2.0",
     "jquery-listnav" : "^2.4.9",
-    "jquery-modal": "^0.5.8",
-    "cropper": "^1.0.0-rc.1"
+    "remodal": "^1.0.4"
   }
 }
