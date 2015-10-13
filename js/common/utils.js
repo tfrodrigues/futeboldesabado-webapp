@@ -10,7 +10,6 @@ accounting.settings = {
 };
 
 exports.formatDate = function(date, format) {
-    console.log(dateFormat(date, format));
     return dateFormat(date, format);
 }
 
@@ -56,19 +55,21 @@ exports.urlKey = function (text) {
 };
 
 exports.showErrorMessage = function (arrayMessage, arrayField) {
-    var message = "<li><strong>Ocorreram erros:</strong></li>";
+    var errorMessage = '';
     for (var i=0; i<=arrayMessage.length - 1; i++) {
-        message += arrayMessage[i] + "<br>";
+        errorMessage += arrayMessage[i] + "<br>";
     }
     for (var i=0; i<=arrayField.length - 1; i++) {
         $('#' + arrayField[i]).addClass('error-field');
     }
-    $('.error-container').css('display', 'block');
-    $('.alert-error > span').html(message);
-    setTimeout(function() {
-        $('.alert-error > span').html('');
-        $('.error-container').css('display', 'none');
-    }, 10000);
+    $.notify({
+	    icon: 'glyphicon glyphicon-warning-sign',
+	    title: '<strong>Ocorreram erros:</strong><br/>',
+	    message: errorMessage
+    },{
+      type: 'danger',
+      z_index: 99999
+    });
 }
 
 exports.objToString = function(obj) {

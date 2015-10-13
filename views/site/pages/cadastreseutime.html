@@ -24,11 +24,11 @@
         <div class="row">
          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Nome: <span>*</span></label>
-          <input class="form-control" id="nome" name="nome" maxlength="60" type="text" data-bind="value: dataModel.nome" required>
+          <input class="form-control" id="nome" name="nome" maxlength="60" type="text" data-bind="value: dataModel.nome">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Página: <span>*</span></label>
-          <input class="form-control" id="pagina" type="text" data-bind="value: dataModel.pagina"  required>
+          <label>URL: <span>*</span></label>
+          <input class="form-control" id="pagina" type="text" data-bind="value: dataModel.pagina" >
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Campo: <span>*</span></label>
@@ -47,7 +47,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Cidade: <span>*</span></label>
           <select class="form-control" id="cidade" name="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
-        </div>        
+        </div>
       </div>
       <div class="row"><p/><p/><p/></div>
       <div class="row">
@@ -63,7 +63,7 @@
       <div class="row">
        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
         <label>Email: <span>*</span></label>
-        <input class="form-control" id="email" maxlength="60" type="email" data-bind="value: dataModel.email" required >
+        <input class="form-control" id="email" maxlength="60" type="email" data-bind="value: dataModel.email" >
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
         <label>Senha: <span>*</span></label>
@@ -92,9 +92,10 @@
 </div>
 
 </form>
-</div> 
-</div>   
+</div>
+</div>
 </div>
 <% include ../partials/footer %>
+<script type="text/javascript" src="/dist/js/site/bootstrap-notify.min.js"></script>
 </body>
 </html>

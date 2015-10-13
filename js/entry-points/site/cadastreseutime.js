@@ -29,17 +29,17 @@ ViewModel = function () {
             document.cookie = "SESSION_ID="+SESSION_ID+";path=/";
 			crud.save('equipe', self.dataModel, function () {
 				window.location = '/' + self.dataModel.pagina;
-			});	
-		}	
+			});
+		}
 	};
 
 	self.validateExistingData = function () {
 		var nome, pagina, email;
 		if (self.equipeList()) {
 			for (var i=0; i<=self.equipeList().length - 1; i++) {
-				nome = self.equipeList()[i].nome; 
-				pagina = self.equipeList()[i].pagina; 
-				email = self.equipeList()[i].email; 
+				nome = self.equipeList()[i].nome;
+				pagina = self.equipeList()[i].pagina;
+				email = self.equipeList()[i].email;
 				if (nome && nome.toLowerCase() === self.dataModel.nome.toLowerCase()) {
 					self.errorMessageList.push("- Nome já cadastrado.");
 					self.errorFieldList.push("nome");
