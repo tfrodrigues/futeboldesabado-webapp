@@ -3,7 +3,7 @@ var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
 var utils = require('../../common/utils');
-require('jquery-modal');
+var remodal = require('remodal');
 
 ViewModel = function () {
     var self = this;
@@ -41,7 +41,7 @@ ViewModel = function () {
               });
             }
             reader.readAsDataURL(image);
-            $('.upload-avatar-time-modal').modal();
+            $('[data-remodal-id=upload-avatar-time-modal]').remodal().open();
         }
     },
 
@@ -55,8 +55,7 @@ ViewModel = function () {
             url: '/' + self.dataModel.pagina + '/uploadavatartime',
             data: JSON.stringify({image: imageCanvas.toDataURL('image/png')})
         });
-        $('.jquery-modal').css('display', 'none');
-        $('.upload-avatar-time-modal').css('display', 'none');
+        $('[data-remodal-id=upload-avatar-time-modal]').remodal().close();
     }
 
     self.dataModel.comentarios.reverse();

@@ -5,7 +5,7 @@
 </head>
 <input id="equipe" value="<%= equipe %>" type="hidden">
 <body class="<%= path %>">
-  <% include ../partials/header %>  
+  <% include ../partials/header %>
   <div id="main" class="container fsa-main-container" class="fullwidthbanner-container">
     <img data-bind="attr: {'src': '/dist/img/capa/' + dataModel.pagina + '.png'}" class="fsa-img-capa-time" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'"/>
     <div class="fsa-background-resumo-time">
@@ -14,7 +14,7 @@
           <div data-bind="css: {'fsa-avatar-time-logado': <%= loggedOnPage %>}" class="fsa-avatar-time">
 
             <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
-            <div class="fsa-atualizar-foto-time" data-bind="visible: <%= loggedOnPage %>, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null"> 
+            <div class="fsa-atualizar-foto-time" data-bind="visible: <%= loggedOnPage %>, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null">
               <label>Atualizar foto do perfil</label>
             </div>
           </div>
@@ -87,14 +87,16 @@
   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
   </div>
 </div>
-<!-- modal content -->
-<div class="upload-avatar-time-modal" style="display:none">
+
+<div data-remodal-id="upload-avatar-time-modal">
+  <button data-remodal-action="close" class="remodal-close"></button>
   <img class="fsa-avatar-time-upload"/>
   <div class="fsa-btn-upload-group">
     <button class="btn-small btn-color" data-bind="click: alterarAvatarTime">CONFIRMAR</button>
   </div>
 </div>
 </div>
+
 <% include ../partials/footer %>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cropper/0.11.1/cropper.min.js"></script>
 </body>
