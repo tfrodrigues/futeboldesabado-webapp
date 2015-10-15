@@ -261,19 +261,19 @@ h1 i, h2 i, h3 i, h4 i, h5 i {
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 
-    /* Safari 4-5,Chrome 1-9 */ 
+    /* Safari 4-5,Chrome 1-9 */
     background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
 
-    /* Safari 5.1,Chrome 10+*/ 
+    /* Safari 5.1,Chrome 10+*/
     background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* Firefox 3.6+*/ 
+    /* Firefox 3.6+*/
     background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* IE 10 */ 
+    /* IE 10 */
     background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* Opera 11.10+*/ 
+    /* Opera 11.10+*/
     background:-o-linear-gradient(top,#f8f8f8,#fafafa);
 }
 
@@ -315,17 +315,6 @@ h2.title {
     font-family: FontAwesome;
     font-size: 12px;
     margin: 0 9px 0 0;
-}
-/* Slider */
-.fullwidthbanner-container {
-    width: 100% !important;
-    position: relative;
-    max-height: 470px !important;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    padding: 0;
-    margin-top: 86px;
 }
 
 .tp-leftarrow.default,.nivo-prevNav {
@@ -1070,7 +1059,7 @@ div.content-box.big div.content-box-info p {
 	border-style:solid;
 	border-width: 1px 1px 3px;
 	border-color: #ddd;
-	
+
 }
 
 
@@ -1191,19 +1180,19 @@ ul.graph-container {
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 
-    /* Safari 4-5,Chrome 1-9 */ 
+    /* Safari 4-5,Chrome 1-9 */
     background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
 
-    /* Safari 5.1,Chrome 10+*/ 
+    /* Safari 5.1,Chrome 10+*/
     background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* Firefox 3.6+*/ 
+    /* Firefox 3.6+*/
     background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* IE 10 */ 
+    /* IE 10 */
     background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* Opera 11.10+*/ 
+    /* Opera 11.10+*/
     background:-o-linear-gradient(top,#f8f8f8,#fafafa);
 }
 
@@ -1312,7 +1301,7 @@ ul.graph-container {
 .cn-content {
 
 	overflow:hidden;
-	
+
 }
 
 .cn-content p {
@@ -1394,19 +1383,19 @@ a.prev.disabled,a.next.disabled {
     padding: 27px 25px;
     border: 1px solid #ddd;
 
-    /* Safari 4-5,Chrome 1-9 */ 
+    /* Safari 4-5,Chrome 1-9 */
     background:-webkit-gradient(linear,0% 0%,0% 100%,from(#f8f8f8),to(#fafafa));
 
-    /* Safari 5.1,Chrome 10+*/ 
+    /* Safari 5.1,Chrome 10+*/
     background:-webkit-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* Firefox 3.6+*/ 
+    /* Firefox 3.6+*/
     background:-moz-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* IE 10 */ 
+    /* IE 10 */
     background:-ms-linear-gradient(top,#f8f8f8,#fafafa);
 
-    /* Opera 11.10+*/ 
+    /* Opera 11.10+*/
     background:-o-linear-gradient(top,#f8f8f8,#fafafa);
 }
 
@@ -1691,7 +1680,7 @@ footer .contact-us a {
 
 /* Services */
 ul.why {
-	
+
 	list-style:none;
 	padding:0;
 	margin:0;
@@ -1749,7 +1738,7 @@ ul.why li:before {
 }
 
 .services-big img {
-	
+
 	width:100%;
 }
 
@@ -1788,7 +1777,7 @@ ul.why li:before {
 
 /* Form */
 
-input.form-control, textarea.form-control { 
+input.form-control, textarea.form-control {
 	border: solid 1px #CCC;
 	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF)) !important;
 	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px) !important;
@@ -1799,8 +1788,8 @@ input.form-control, textarea.form-control {
 
 
 input:hover, textarea:hover,
-input:focus, textarea:focus { 
-	border-color: #C9C9C9; 
+input:focus, textarea:focus {
+	border-color: #C9C9C9;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
 }
 
@@ -2291,7 +2280,7 @@ a.portfolio-item-link {
     height: 80px;
     border-radius: 50%;
     background: #666;
-    
+
     top: 10px;
     left: 10px;
 }
@@ -2353,7 +2342,7 @@ a.portfolio-item-link {
 	-o-transform: scale(0);
 	-ms-transform: scale(0);
 	transform: scale(0);
-} 
+}
 
 .ch-item:hover .ch-info-back {
 	-webkit-transform: scale(1);
@@ -2361,7 +2350,7 @@ a.portfolio-item-link {
 	-o-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
-	
+
 	opacity: 1;
 	pointer-events: auto;
 }
