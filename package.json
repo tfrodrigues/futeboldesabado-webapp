@@ -22,17 +22,17 @@
     "gulp-imagemin": "^2.3.0",
     "compression": "^1.5.2",
     "express-cache-response-directive": "^0.2.0",
-    "dateformat": "^1.0.11"
+    "dateformat": "^1.0.11",
+    "knockout": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
     "start": "node server.js"
   },
   "browser": {
+    "remodal": "./bower_components/remodal/dist/remodal.min.js",
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
-    "knockout": "./bower_components/knockout/dist/knockout.js",
-    "listnav": "./bower_components/jquery-listnav/jquery-listnav.min.js",
-    "remodal": "./bower_components/remodal/dist/remodal.min.js"
+    "listnav": "./bower_components/jquery-listnav/jquery-listnav.min.js"
   },
   "browserify-shim": {
     "jquery": "$"

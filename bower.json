@@ -19,7 +19,6 @@
   ],
   "dependencies": {
     "jquery": "^2.1.4",
-    "knockout": "^3.2.0",
     "jquery-listnav" : "^2.4.9",
     "remodal": "^1.0.4"
   }
