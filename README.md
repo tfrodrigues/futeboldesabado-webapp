@@ -1,16 +1,20 @@
-# FUTEBOL DE S¡BADO - GERENCIAMENTO DE TIMES
+# FUTEBOL DE S√ÅBADO - GERENCIAMENTO DE TIMES
 
-Site para gerenciamento de agenda e informaÁıes gerais de times amadores
+Site para gerenciamento de agenda e informa√ß√µes gerais de times amadores.
 
-## InstruÁıes para rodar
-- Utilizar a vers„o 0.12.4 do Node. 
-- Utilizar a vers„o 3.0.2 do MongoDB.
-- Navegar atÈ o diretÛrio raiz da aplicaÁ„o.
+## Instru√ß√µes para rodar
+- Utilizar a vers√£o 5.2 ou superior do NodeJS.
+- Utilizar a vers√£o 3.0.2 do MongoDB.
+- Navegar at√© o diret√≥rio ra√≠z da aplica√ß√£o.
 - Executar o comando ```npm install```.
-- Rodar o mongodb com ```mongod --dbpath XXX```, onde XXX È o diretÛrio de armazenamento dos dados.  
-- Rodar o node com ```node server.js```
-- Acessar a aplicaÁ„o em http://localhost:4000.
+- Executar o comando ```bower install```
+- Iniciar o servi√ßo do mongodb com ```sudo service mongod start```
+- Criar database chamado ```futebolDeSabado```
+- Executar a cria√ß√£o de scripts iniciais com  ```npm run create-essential-data```
+- Executar o server com ```npm start```
+- Executar o comando ```gulp```
+- Acessar a aplica√ß√£o em http://localhost:3000.
 
-## Links ˙teis
+## Links √∫teis
 - **Node JS:** https://nodejs.org/download
 - **MongoDB:** https://mongodb.org/downloads
