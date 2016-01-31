@@ -27,6 +27,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "create-essential-data": "mongoimport --db futebolDeSabado --collection estados db/estados-cidades.json --jsonArray",
     "start": "node server.js"
   },
   "browser": {
