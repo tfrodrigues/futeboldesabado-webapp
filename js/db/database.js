@@ -34,4 +34,5 @@ exports.removeAll = function (model, callback) {
 };
 
 exports.Equipe = require('./equipe');
+exports.Modalidade = require('./modalidade');
 exports.Estado = require('./estado');

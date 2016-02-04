@@ -27,37 +27,41 @@
           <input class="form-control" id="nome" name="nome" maxlength="60" type="text" data-bind="value: dataModel.nome">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>URL: <span>*</span></label>
+          <label>Página: <span>*</span></label>
           <input class="form-control" id="pagina" type="text" data-bind="value: dataModel.pagina" >
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Campo: <span>*</span></label>
-          <input class="form-control" type="text"  data-bind="value: dataModel.campo">
+          <label>Nome do Representante: <span>*</span></label>
+          <input class="form-control" id="nomeRepresentante" maxlength="60" type="text"  data-bind="value: dataModel.representante"  >
         </div>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Modalidade: <span>*</span></label>
-          <input class="form-control" id="modalidade" maxlength="60" name="modalidade" type="text"  data-bind="value: dataModel.modalidade" >
+          <select class="form-control" id="cidade" data-bind="value: dataModel.modalidade, options: modalidadeList, optionsCaption: 'Selecione...', optionsText: 'nome'"></select>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Estado: <span>*</span></label>
-          <select class="form-control" id="estado" name="estado" data-bind="value: dataModel.estado, options: estadoList, optionsCaption: 'Selecione...',  optionsText: 'sigla', event: {change: loadCidades()}"></select>
+          <select class="form-control" id="estado" data-bind="value: dataModel.estado, options: estadoList, optionsCaption: 'Selecione...',  optionsText: 'sigla', event: {change: loadCidades()}"></select>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Cidade: <span>*</span></label>
-          <select class="form-control" id="cidade" name="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
+          <select class="form-control" id="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
         </div>
       </div>
       <div class="row"><p/><p/><p/></div>
       <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <label>Nome do Representante: <span>*</span></label>
-          <input class="form-control" id="name" maxlength="60" name="name" type="text"  data-bind="value: dataModel.representante"  >
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Nome do Campo: </label>
+          <input class="form-control" id="campo" type="text"  data-bind="value: dataModel.campo">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <label>Endereço do Campo: </label>
+          <input class="form-control" id="enderecoCampo" type="text"  data-bind="value: dataModel.enderecoCampo">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <label>Telefone: <span>*</span></label>
-          <input type="text" class="form-control" id="telefone" name="telefone"  data-bind="value: dataModel.telefone" >
+          <input type="text" class="form-control" id="telefone" data-bind="value: dataModel.telefone" >
         </div>
       </div>
       <div class="row">
