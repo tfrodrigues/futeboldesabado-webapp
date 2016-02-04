@@ -41,6 +41,7 @@
   "browserify": {
     "transform": [
       "browserify-shim"
+
     ]
   },
   "repository": {
