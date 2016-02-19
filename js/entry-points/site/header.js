@@ -6,22 +6,24 @@ var listnav = require('listnav');
 ViewModel = function () {
 	var self = this;
 
-    self.equipeList = ko.observableArray([]);
+  self.equipeList = ko.observableArray([]);
 
-	base.findAll('equipe', self.equipeList, {}, function (equipe) {
-	}, function () {
-        $('#div-alfabeto').listnav({ 
-			includeAll: false,
-			noMatchText: 'Nenhum time cadastrado.',
-			showCounts: false
-		});
+	self.alfabetoList = ko.observableArray(['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y', 'Z']);
+
+	base.findAll('equipe', self.equipeList, {}, function () {
+	});
+
+  self.openEquipe = function (pagina) {
+      window.location = '/' + pagina;
+  };
+
+  self.findEquipeByInitialLetter = function(letter) {
+    return ko.utils.arrayFilter(self.equipeList(), function(item) {
+      return ko.utils.stringStartsWith(item.nome.toUpperCase(), letter);
     });
-
-    self.openEquipe = function (pagina) {
-        window.location = '/' + pagina;
-    };
+  };
 
 	ko.utils.extend(self, new base.ViewModel());
 };
 
-ko.applyBindings(new ViewModel(), document.getElementById('header'));
+ko.applyBindings(new ViewModel(), document.getElementById('fb-header'));

@@ -12,7 +12,7 @@ ViewModel = function () {
     self.comentario = {};
 
     var equipe = JSON.parse($("#equipe").val());
-    self.dataModel = equipe
+    self.dataModel = equipe;
 
 
     self.publicar = function() {
@@ -43,7 +43,7 @@ ViewModel = function () {
             reader.readAsDataURL(image);
             $('[data-remodal-id=upload-avatar-time-modal]').remodal().open();
         }
-    },
+    };
 
     self.alterarAvatarTime = function() {
         var imageCanvas = $('.fsa-avatar-time-upload').cropper('getCroppedCanvas');
@@ -56,6 +56,10 @@ ViewModel = function () {
             data: JSON.stringify({image: imageCanvas.toDataURL('image/png')})
         });
         $('[data-remodal-id=upload-avatar-time-modal]').remodal().close();
+    };
+
+    self.enderecoCompletoCampo = function() {
+        return self.dataModel.enderecoCampo + ', ' + self.dataModel.cidade + ' - ' + self.dataModel.siglaEstado;
     }
 
     self.dataModel.comentarios.reverse();
@@ -63,4 +67,4 @@ ViewModel = function () {
     ko.utils.extend(self, new base.ViewModel());
 };
 
-ko.applyBindings(new ViewModel(), document.getElementById('main'));
+ko.applyBindings(new ViewModel(), document.getElementById('fb-equipe-page'));

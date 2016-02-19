@@ -22,7 +22,7 @@ ViewModel = function () {
         for (var i = 0, j = self.comentarioList().length; i < j; i++) {
             if (i % 6 === 0) {
                 if (row) {
-                  self.comentarioListHome.push(row);     
+                  self.comentarioListHome.push(row);
                 }
                 row = [];
             }

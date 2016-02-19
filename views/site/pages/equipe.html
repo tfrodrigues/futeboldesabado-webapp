@@ -1,103 +1,165 @@
 <!DOCTYPE html>
-<html>
-<head lang="pt-BR">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil</title>
   <% include ../partials/head %>
 </head>
 <input id="equipe" value="<%= equipe %>" type="hidden">
 <body class="<%= path %>">
   <% include ../partials/header %>
-  <div id="main" class="container fsa-main-container" class="fullwidthbanner-container">
-    <img data-bind="attr: {'src': '/dist/img/capa/' + dataModel.pagina + '.png'}" class="fsa-img-capa-time" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'"/>
-    <div class="fsa-background-resumo-time">
-      <div class="row" data-bind="visible: dataModel.nome">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div data-bind="css: {'fsa-avatar-time-logado': <%= loggedOnPage %>}" class="fsa-avatar-time">
+  <div class="fb-page" id="fb-equipe-page">
+    <div class="fb-container">
+      <div class="fb-team">
+        <div class="fb-team__cover" data-bind="style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
+        <div class="fb-team__info">
+          <div class="fb-team__picture">
+            <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'" alt="" class="fb-team__picture__img">
+          </div>
+          <h1 class="fb-team__name" data-bind="text: dataModel.nome"></h1>
+        </div>
 
-            <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
-            <div class="fsa-atualizar-foto-time" data-bind="visible: <%= loggedOnPage %>, click:<%= loggedOnPage %> ? $('.upload-avatar-time').click() : null">
-              <label>Atualizar foto do perfil</label>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="fb-team__description">
+              <h2>Sobre:</h2>
+              <p>XXXXXXXXXXXXXXXXXXXXXXX</p>
             </div>
           </div>
 
-          <input type='file' id="upload-avatar-time" class="upload-avatar-time" style="display:none" data-bind="event: {change: escolherAvatarTime($element.files[0])}"/>
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-          <label class="fsa-titulo-time" data-bind="text: dataModel.nome"></label><br/>
-          <label class="fsa-historico-time" data-bind="text: 'Breve histórico do time'"></label>
+          <div class="col-md-7">
+            <div class="fb-team__box">
+              <div class="custom-row">
+                <div class="custom-col">
+                  <div class="fb-team_information">
+                    <span>Cidade: <strong data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado" data-js="fb-cidade"></strong>
+                  </div>
+                  <div class="fb-team_information">
+                    <span>Cor: <strong>YYYYYYYYYYYYYYYYYYYYYYYYYY</strong>
+                  </div>
+                  <div class="fb-team_information">
+                    <span>Campo: <strong data-bind="text: dataModel.campo"></strong>
+                  </div>
+                </div>
+                <div class="custom-col">
+                  <div class="fb-team_information">
+                    <span>Contato para jogos: <strong data-bind="text: dataModel.representante"></strong>
+                  </div>
+                  <div class="fb-team_information">
+                    <span>Fone: <strong data-bind="text: dataModel.telefone"></strong>
+                  </div>
+                  <div class="fb-team_information">
+                    <span>E-mail: <strong data-bind="text: dataModel.email"></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row" data-bind="visible: dataModel.representante">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 fsa-informacoes-time">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <span class="fsa-label-titulo">Cidade: </span><span data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado"></span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-13">
-            <span class="fsa-label-titulo">Representante: </span><span data-bind="text: dataModel.representante"></span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <span class="fsa-label-titulo">Campo: </span><span data-bind="text: dataModel.campo"></span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <span class="fsa-label-titulo">Fone: </span><span data-bind="text: dataModel.telefone"></span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <span class="fsa-label-titulo">Modalidade: </span><span data-bind="text: dataModel.modalidade"></span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-           <span class="fsa-label-titulo">Email: </span><span data-bind="text: dataModel.email"></span>
-         </div>
-       </div>
-     </div>
-     <div class="row" data-bind="visible: <%= loggedOnPage %>">
-      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="fsa-background-post" data-bind="visible: <%= loggedOnPage %>">
-          <div class="fsa-post-title" data-bind="text: 'Escrever Post'"></div>
-          <fieldset class="fsa-escrever-post">
-            <label>Título: <span>*</span></label>
-            <input class="form-control" id="titulo" name="titulo" maxlength="60" type="text" data-bind="value: comentario.titulo">
-            <label>Conteúdo: <span>*</span></label>
-            <textarea class="form-control" id="conteudo" name="conteudo" maxlength="255" rows="7" columns="50" data-bind="value: comentario.conteudo" res></textarea>
-          </fieldset>
-          <div class="row">
-           <button class="btn-normal btn-color submit bottom-pad fsa-btn-escrever-post" data-bind="click: publicar">PUBLICAR</button>
-         </div>
-       </div>
-     </div>
-   </div>
-   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-   </div>
- </div>
 
- <div class="row" data-bind="visible: dataModel.comentarios.length > 0">
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-  </div>
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div data-bind="foreach: { data: dataModel.comentarios, as: 'comentario' }">
-      <div class="fsa-background-post" data-bind="visible: comentario.titulo">
-        <div class="fsa-post-title" data-bind="text: comentario.titulo"></div>
-        <div class="fsa-post-summary" data-bind="text: 'Postado em ' + comentario.dataFormatada"></div>
-        <div class="fsa-post-content" data-bind="text: comentario.conteudo"></div>
+      <div class="row">
+        <div class="col-md-7">
+          <div class="fb-box" data-bind="visible: <%= loggedOnPage %>">
+            <div data-bind="text: 'Escrever Post'"></div>
+            <fieldset>
+              <textarea class="form-control" id="conteudo" name="conteudo" maxlength="255" rows="7" columns="50" data-bind="value: comentario.conteudo" res></textarea>
+            </fieldset>
+            <div class="row">
+             <button data-bind="click: publicar">PUBLICAR</button>
+           </div>
+         </div>
+
+        <span data-bind="visible: dataModel.comentarios.length > 0, foreach: { data: dataModel.comentarios, as: 'comentario' }">
+          <div class="fb-box" data-bind="visible: comentario.conteudo" >
+            <div class="fb-box__title">
+              <span class="fb-box__postdate__label" data-bind="text: comentario.dataFormatada"></span>
+            </div>
+            <div class="fb-box__title">
+              <span class="fb-box__text__label" data-bind="text: comentario.conteudo"></span>
+            </div>
+          </div>
+        </span>
+
+
+        </div>
+        <div class="col-md-5">
+          <div class="fb-box">
+            <div class="fb-box__title fb-box__title--top">
+              <h3>Agenda de jogos</h3>
+              <a href="#" class="fb-box__title__link">ver agenda completa »</a>
+            </div>
+            <!--<div class="row">
+              <div class="col-md-6">
+                <div class="fb-jogo">
+                  <div class="fb-jogo__col fb-jogo__col--first">
+                    <img src="img/time_perfil.jpg" class="fb-jogo__time__img">
+                    <span class="fb-jogo__score">5</span>
+                  </div>
+                  <div class="fb-jogo__col fb-jogo__col--middle">x</div>
+                  <div class="fb-jogo__col fb-jogo__col--last">
+                    <span class="fb-jogo__score">5</span>
+                    <img src="img/time2.jpg" class="fb-jogo__time__img">
+                  </div>
+                </div>
+                <p class="fb-jogo__description">
+                  <strong>Último jogo</strong>
+                  30 de agosto de 2014<br>
+                  14:00
+                </p>
+              </div>
+
+              <div class="col-md-6">
+                <div class="fb-jogo fb-jogo--soon">
+                  <div class="fb-jogo__col fb-jogo__col--first">
+                    <img src="img/time_perfil.jpg" class="fb-jogo__time__img">
+                  </div>
+                  <div class="fb-jogo__col fb-jogo__col--middle">x</div>
+                  <div class="fb-jogo__col fb-jogo__col--last">
+                    <img src="img/time3.jpg" class="fb-jogo__time__img">
+                  </div>
+                </div>
+                <p class="fb-jogo__description">
+                  <strong>Próximo jogo</strong>
+                  30 de agosto de 2014<br>
+                  14:00
+                </p>
+              </div>
+            </div>!-->
+          </div>
+          <div class="fb-box">
+            <div class="fb-box__title">
+              <h3>Ver quadro de atletas</h3>
+              <span class="fb-box__title__label">(em breve)</span>
+            </div>
+          </div>
+          <div class="fb-box">
+            <div class="fb-box__title">
+              <h3>Localização do campo</h3>
+              <a href="#" class="fb-box__title__link">ver no mapa »</a>
+            </div>
+            <div class="fb-box__title">
+              <div id="mapa-campo" data-js="fb-mapa-campo" class="fb-box__mapa"></div>
+            </div>
+            <span class="fb-box__description__label" data-bind="text: enderecoCompletoCampo()"></span>
+          </div>
+          <div class="fb-box">
+            <div class="fb-box__title">
+              <h3>Fotos e Vídeos</h3>
+              <a href="#" class="fb-box__title__link">ver todos »</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <input data-js="fb-endereco-completo-campo" type="hidden" data-bind="text: enderecoCompletoCampo()">
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-  </div>
-</div>
-
-<div data-remodal-id="upload-avatar-time-modal">
-  <button data-remodal-action="close" class="remodal-close"></button>
-  <img class="fsa-avatar-time-upload"/>
-  <div class="fsa-btn-upload-group">
-    <button class="btn-small btn-color" data-bind="click: alterarAvatarTime">CONFIRMAR</button>
-  </div>
-</div>
-</div>
-
-<% include ../partials/footer %>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cropper/0.11.1/cropper.min.js"></script>
+  <% include ../partials/footer %>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+  <script type="text/javascript" src="/dist/js/<%= path %>/googlemapsintegration.js"></script>
+  <script type="text/javascript">
+    var address = $('[data-js="fb-endereco-completo-campo"]').text();
+    showMap(address, document.getElementById('mapa-campo'));
+  </script>
 </body>
 </html>

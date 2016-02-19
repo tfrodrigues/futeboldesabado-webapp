@@ -32,3 +32,18 @@ cadastrados no Futebol de Sábado
 
 <% include ../../common/partials/variables %>
 <% include ../../common/partials/script %>
+
+<script>
+  $( function(){
+    $("[data-js='menu']").on("mouseup", function(){
+      if($(this).hasClass("is-active")) {
+        fechaMenu();
+      } else {
+        abreMenu($(this).data().menu);
+      }
+    });
+    $("[data-js='letra']").on("mouseup", function(){
+      abreLetra($(this).data().letra);
+    });
+  });
+</script>

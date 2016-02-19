@@ -98,7 +98,7 @@
 }
 
 .fsa-avatar-time-logado:hover .fsa-atualizar-foto-time {
-    opacity:1; 
+    opacity:1;
     background-color: #000;
     opacity: 0.8;
 }
@@ -201,7 +201,7 @@
 
 .fsa-atualizar-foto-time {
     background: url('/dist/img/foto.png') no-repeat;
-    background-position-y: 50%;  
+    background-position-y: 50%;
     opacity: 0;
     margin-top: -50px;
     position: relative;
@@ -214,4 +214,9 @@
     margin-left: 40px;
     margin-top: 7%;
     cursor: pointer;
+}
+
+.fsa-mapa-campo {
+  width: 400px;
+  height: 400px;
 }

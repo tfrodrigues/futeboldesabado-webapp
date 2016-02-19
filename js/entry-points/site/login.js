@@ -18,8 +18,6 @@ ViewModel = function () {
                 var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
                 document.cookie = "SESSION_ID="+SESSION_ID+";path=/";
                 window.location = '/' + equipe.pagina;
-            } else {
-                console.log('login errado');
             }
         });
     }

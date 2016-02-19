@@ -1,64 +1,16 @@
  <head>
-   <meta charset="utf-8"  content="application/json">
-   <!-- Mobile Metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Google Fonts -->
-   <header id="header">
-       <!-- Header Top Bar End -->
-       <!-- Main Header Start -->
-       <div class="main-header">
-           <div class="container">
-               <!-- TopNav Start -->
-               <!-- Logo Start -->
-               <a href="/views/home">
-                   <img src="/dist/img/logo.jpg"/>
-               </a>
-               <!-- Logo End -->
-               <!-- Mobile Menu Start -->
-               <div class="mobile navbar-header">
-                   <a class="navbar-toggle" data-toggle="collapse" href=".navbar-collapse">
-                       <i class="fa fa-bars fa-2x"></i>
-                   </a> 
-               </div>
-               <!-- Mobile Menu End -->
-               <!-- Menu Start -->
-               <nav class="collapse navbar-collapse menu">
-                   <ul class="nav navbar-nav sf-menu">
-                       <li>
-                           <a id="menu-times" href="/views/equipes">
-                               <img class="fsa-img-menu-header" src="/dist/img/menus/times-header.png"></img>
-                               <h4>TIMES</h4>
-                           </a>
-                           <ul class="fsa-ui-alfabeto">
-                              <div id="div-alfabeto" class="fsa-div-alfabeto" data-bind="foreach: { data: equipeList, as: 'equipe' }">
-                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    <li>
-                                       <a href="#" class="fsa-link-equipe-menu" data-bind="text: equipe.nome, click:$parent.openEquipe.bind($data, equipe.pagina)"></a>
-                                   </li>
-                               </div>
-                           </div>
-                       </ul>
-                   </li>
-                   <li>
-                       <a id="menu-cadastreseutime" href="/views/cadastreseutime">
-                           <img class="fsa-img-menu-header" src="/dist/img/menus/cadastreseutime-header.png"></img>
-                           <h4>CADASTRE SEU TIME</h4>
-                       </a>
-                   </li>
-                   <li>
-                       <a id="menu-faleconosco" href="/views/faleconosco">
-                           <img class="fsa-img-menu-header" src="/dist/img/menus/faleconosco-header.png"></img>
-                           <h4>FALE CONOSCO</h4>
-                       </a>
-                   </li>
-                   <li>
-                    <a id="menu-login" href="/views/login">
-                       <img class="fsa-img-menu-header" src="/dist/img/menus/login-header.png"></img>
-                       <h4>LOGIN</h4>
-                   </a>
-               </li>
-           </ul>
-       </nav>
-       <!-- Menu End --> 
-   </header>
+<div class="fb-header" id="fb-header">
+    <div class="fb-container">
+      <div class="fb-header__logo"><img src="dist/img/logo.png" alt="" class="fb-header__logo__img"></div>
+
+      <ul class="fb-header__nav">
+        <li class="fb-header__nav__item" data-js="menu" data-menu="0"><a href="#" class="fb-header__nav__link"><i class="fb-icon fb-icon--camiseta"></i>Times</a></li>
+        <li class="fb-header__nav__item" data-js="menu" data-menu="1"><a href="#" class="fb-header__nav__link"><i class="fb-icon fb-icon--grupo"></i>Cadastre seu time</a></li>
+        <li class="fb-header__nav__item" data-js="menu" data-menu="2"><a href="#" class="fb-header__nav__link"><i class="fb-icon fb-icon--chat"></i>Fale conosco</a></li>
+        <li class="fb-header__nav__item" data-js="menu" data-menu="3"><a href="#" class="fb-header__nav__link"><i class="fb-icon fb-icon--escudo"></i>Login</a></li>
+      </ul>
+    </div>
+
+    <% include ../partials/equipe-menu %>
+  </div>
 </head>
