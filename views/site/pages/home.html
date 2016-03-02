@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Futebol de Sábado</title>
   <% include ../partials/head %>
 </head>
 <body class="<%= path %>">
-  <% include ../partials/header %>  
-  <div id="main" class="container fsa-main-container">
-    <img src="/dist/img/banner.jpg" class="fullwidthbanner-container"/>
+  <% include ../partials/header %>
+  <div class="fb-page" id="fb-home-page">
+
+    <div class="fb-container fb-fluid">
+    <div class="row" data-bind="foreach: comentarioList, visible: comentarioList().length > 0">
+
+      <div class="col-md-3 col-sm-6">
+        <div class="fb-box fb-card">
+          <div class="fb-card-capa">
+            <img data-bind="attr: {'src': '/dist/img/capa/' + pagina + '.png'}" alt="" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'">
+          </div>
+          <div class="fb-card-info">
+            <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fb-card-time-small" alt="" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
+            <p data-bind="text: dataFormatada"><strong data-bind="text: nome"></strong>
+            </p>
+          </div>
+          <div class="fb-card-info-bottom">
+            <p data-bind="text: conteudo"></p>
+          </div>
+          <!--<ul>
+            <li><b>Data:</b> 19/12/2015</li>
+            <li><b>Cidade:</b> Parobé / RS</li>
+            <li><b>Joga em:</b> Casa</li>
+            <li><b>Campo:</b> Municipal de Parobé</li>
+            <li><b>Contato:</b> (51) 91918007</li>
+          </ul>-->
+
+          <a href="#" class="fb-card-action">Marcar Jogo</a>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
     <div id="content" class="content" data-bind="foreach: comentarioListHome, visible: comentarioListHome().length > 0">
       <div class="row" data-bind="foreach: $data, visible: $data">
         <div class="col-lg-2 col-md-2 col-sm-2" data-bind="visible: nome">

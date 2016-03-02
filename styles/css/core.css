@@ -34,7 +34,6 @@ a:hover {
 
 .fb-header {
   background-color: #000;
-  border-top: 2px solid #40a75f;
   position: relative;
   z-index: 101;
 }
@@ -243,6 +242,10 @@ a:hover {
   background-size: cover;
 }
 
+.fb-team__cover.is-active, .fb-team__picture.is-active {
+  cursor: pointer;
+}
+
 .fb-team__info {
   width: 760px;
   margin: 0 auto;
@@ -433,4 +436,97 @@ a:hover {
   width: 23px;
   height: 25px;
   background-position: -102px 0;
+}
+
+.fb-team__picture.is-active .fb-team__picture__upload__foto {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background-color: #000;
+  opacity: 0.7;
+  margin-top: -25%;
+}
+
+
+.fb-card {
+  background-color: #fff;
+  padding: 0;
+  overflow: hidden;
+  color: #444;
+}
+
+.fb-card-info {
+  position: relative;
+  padding: 8px 15px 8px 118px;
+}
+
+.fb-card-info strong {
+  display: block;
+  color: #444;
+}
+
+.fb-card-info p {
+  font-size: 12px;
+  margin: 0;
+  color: #999;
+}
+
+.fb-card-info strong {
+  font-size: 14px;
+}
+
+.fb-card-capa {
+  padding: 15px 15px 0 15px;
+}
+
+.fb-card-capa img {
+  width: 100%;
+}
+
+.fb-card-time-small {
+  display: block;
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  border: 1px solid #fff;
+  width: 82px;
+  height: 82px;
+}
+
+.fb-card-info-bottom {
+  padding: 15px;
+}
+
+.fb-card-action {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 7px 10px;
+  background: #f86915; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f86915 0%, #f97d1a 50%, #f9821a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #f86915 0%,#f97d1a 50%,#f9821a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #f86915 0%,#f97d1a 50%,#f9821a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f86915', endColorstr='#f9821a',GradientType=0 ); /* IE6-9 */
+}
+
+.fb-card-action:focus,
+.fb-card-action:hover {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.fb-card ul {
+  list-style: none;
+  margin: 0;
+}
+
+.fb-card li {
+  background-color: #f2f0f0;
+  border: 1px solid #fff;
+  margin-bottom: -1px;
+  padding: 5px 15px;
 }

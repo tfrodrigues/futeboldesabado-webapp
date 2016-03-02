@@ -23,7 +23,10 @@
     "compression": "^1.5.2",
     "express-cache-response-directive": "^0.2.0",
     "dateformat": "^1.0.11",
-    "knockout": "^3.3.0"
+    "knockout": "^3.3.0",
+    "jquery": "^2.2.1",
+    "remodal": "^1.0.6",
+    "cropper": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -31,12 +34,14 @@
     "start": "node server.js"
   },
   "browser": {
-    "remodal": "./bower_components/remodal/dist/remodal.min.js",
-    "jquery": "./bower_components/jquery/dist/jquery.min.js",
-    "listnav": "./bower_components/jquery-listnav/jquery-listnav.min.js"
+    "remodal": "./node_modules/remodal/dist/remodal.min.js",
+    "jquery": "./node_modules/jquery/dist/jquery.min.js",
+    "cropper": "./node_modules/cropper/dist/cropper.min.js"
   },
   "browserify-shim": {
-    "jquery": "$"
+    "jquery": "$",
+    "remodal": "remodal",
+    "cropper": "cropper"
   },
   "browserify": {
     "transform": [

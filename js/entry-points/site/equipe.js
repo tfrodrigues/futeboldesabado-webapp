@@ -3,6 +3,7 @@ var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
 var utils = require('../../common/utils');
+var cropper = require('cropper');
 var remodal = require('remodal');
 
 ViewModel = function () {
@@ -27,7 +28,7 @@ ViewModel = function () {
 
     self.escolherAvatarTime = function(image) {
         if (image) {
-            var img = $('.fsa-avatar-time-upload');
+            var img = $('[data-js="team-picture"] > img');
             img.attr('src', null);
             img.cropper('destroy');
             var reader = new FileReader();
@@ -41,13 +42,14 @@ ViewModel = function () {
               });
             }
             reader.readAsDataURL(image);
-            $('[data-remodal-id=upload-avatar-time-modal]').remodal().open();
+            console.log(image);
+            $('[data-remodal-id=fb-upload-team-picture-modal]').remodal().open();
         }
     };
 
     self.alterarAvatarTime = function() {
-        var imageCanvas = $('.fsa-avatar-time-upload').cropper('getCroppedCanvas');
-        $('.fsa-avatar-time > img').attr('src',imageCanvas.toDataURL('image/png'));
+        var imageCanvas = $('.fb-team-upload-picture').cropper('getCroppedCanvas');
+        $('[data-js="team-picture"] > img').attr('src',imageCanvas.toDataURL('image/png'));
         $.ajax({
             type: 'POST',
             contentType: 'application/json',

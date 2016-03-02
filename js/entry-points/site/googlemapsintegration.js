@@ -23,4 +23,6 @@ function initialize(latitude,longitude, element) {
   var marker = new google.maps.Marker({
     position: latlng,
   });
+
+  marker.setMap(map);
 }

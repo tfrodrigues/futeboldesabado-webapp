@@ -1,7 +1,6 @@
 var ko = require('knockout');
 var base = require('../../common/base');
 var $ = require('jquery');
-var listnav = require('listnav');
 
 ViewModel = function () {
 	var self = this;

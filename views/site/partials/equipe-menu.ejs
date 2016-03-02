@@ -34,12 +34,14 @@
 			<span data-bind="foreach: {data: alfabetoList, as: 'letra'}">
 				<ul class="fb-letras__sub" data-js="timesLetra"  data-bind="attr: {'data-timesletra': letra}">
 					<li class="fb-letras__sub__item" data-bind="foreach: { data: $parent.findEquipeByInitialLetter(letra), as: 'equipe' }">
-						<a href="#" class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome"></a>
+						<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: pagina}"></a>
 					</li>
 				</ul>
 			</span>
+			<div>
+			  <a href="#" class="fb-card-action">VER TODOS TIMES</a>
+			</div>
 		</div>
-
 	</div>
 </div>
 

@@ -7,7 +7,6 @@ Site para gerenciamento de agenda e informações gerais de times amadores.
 - Utilizar a versão 3.0.2 do MongoDB.
 - Navegar até o diretório raíz da aplicação.
 - Executar o comando ```npm install```.
-- Executar o comando ```bower install```
 - Iniciar o serviço do mongodb com ```sudo service mongod start```
 - Criar database chamado ```futebolDeSabado```
 - Executar a criação de scripts iniciais com  ```npm run create-essential-data```
