@@ -1,5 +1,3 @@
-var ko = require('knockout');
-var base = require('../../common/base');
 var crud = require('../../common/crud');
 var utils = require('../../common/utils');
 var cryptoJS = require('crypto-js');

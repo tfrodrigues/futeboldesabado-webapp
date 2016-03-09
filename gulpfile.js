@@ -75,9 +75,6 @@ gulp.task('start-prd', function () {
     ext: 'js html ejs',
     env: { 'NODE_ENV': 'production' }
   });
-  gulp.watch(paths.scss, ['sass']);
-  gulp.watch(paths.scripts, ['minify-scripts']);
-  gulp.watch([paths.images, paths.uploads], ['minify-images']);
 })
 
 gulp.task('dev', ['sass', 'minify-scripts', 'minify-images', 'start-dev']);

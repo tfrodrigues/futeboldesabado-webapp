@@ -1,6 +1,3 @@
-var ko = require('knockout');
-var base = require('../../common/base');
-
 ViewModel = function() {
   var self = this;
   var row;

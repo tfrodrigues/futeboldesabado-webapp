@@ -1,6 +1,3 @@
-var $ = require('jquery');
-var ko = require('knockout');
-var base = require('../../common/base');
 var crud = require('../../common/crud');
 var utils = require('../../common/utils');
 var cropper = require('cropper');
