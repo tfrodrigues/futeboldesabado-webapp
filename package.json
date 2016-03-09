@@ -6,7 +6,6 @@
     "accounting" : "^0.4.1",
     "basic-auth": "^1.0.2",
     "body-parser": "^1.13.1",
-    "bower": "^1.4.1",
     "browserify-shim": "^3.8.9",
     "browserify-middleware" : "^6.0.0",
     "ejs": "^2.3.2",

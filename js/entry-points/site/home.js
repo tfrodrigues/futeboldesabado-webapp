@@ -1,4 +1,3 @@
-var $ = require('jquery');
 var ko = require('knockout');
 var base = require('../../common/base');
 

@@ -1,6 +1,5 @@
 var ko = require('knockout');
 var base = require('../../common/base');
-var $ = require('jquery');
 var cryptoJS = require('crypto-js');
 
 ViewModel = function () {

@@ -25,4 +25,4 @@ ViewModel = function () {
     ko.utils.extend(self, new base.ViewModel());
 };
 
-ko.applyBindings(new ViewModel(), document.getElementById('main'));
+ko.applyBindings(new ViewModel(), document.getElementById('fb-login-page'));

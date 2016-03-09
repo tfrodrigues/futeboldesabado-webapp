@@ -10,9 +10,8 @@ Site para gerenciamento de agenda e informações gerais de times amadores.
 - Iniciar o serviço do mongodb com ```sudo service mongod start```
 - Criar database chamado ```futebolDeSabado```
 - Executar a criação de scripts iniciais com  ```npm run create-essential-data```
-- Executar o server com ```npm start```
-- Executar o comando ```gulp```
-- Acessar a aplicação em http://localhost:3000.
+- Executar o comando ```gulp dev```
+- Acessar a aplicação em http://localhost:3001.
 
 ## Links úteis
 - **Node JS:** https://nodejs.org/download

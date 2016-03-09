@@ -47,7 +47,7 @@ gulp.task('start-dev', ['start-nodemon'], function() {
   browserSync.init(null, {
   		proxy: "http://localhost:3000",
           files: "*",
-          port: 5000,
+          port: 3001,
   });
   gulp.watch([paths.html, paths.ejs, paths.targetContent]).on('change', browserSync.reload);
 });
@@ -79,6 +79,3 @@ gulp.task('start-prd', function () {
 gulp.task('dev', ['sass', 'minify-scripts', 'minify-images', 'start-dev']);
 
 gulp.task('production', ['start-prd']);
-
-gulp.task('default', ['browser-sync'], function () {
-});
