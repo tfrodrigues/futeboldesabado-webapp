@@ -1,64 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Futebol de Sábado</title>
   <% include ../partials/head %>
 </head>
+
 <body class="<%= path %>">
   <% include ../partials/header %>
-  <div class="fb-page" id="fb-home-page">
+    <div class="fb-page" id="fb-home-page">
 
-    <div class="fb-container fb-fluid">
-    <div class="row" data-bind="foreach: comentarioList, visible: comentarioList().length > 0">
+      <div class="fb-banner">
+        <div class="fb-banner__filter">
+          <div class="fb-container">
+            <div class="form-group form-group--icon" style="max-width: 170px;">
+              <input type="text" class="form-control" placeholder="Data">
+              <i class="fa fa-calendar"></i>
+            </div>
+            <div class="form-group form-group--icon" style="max-width: 170px;">
+              <input type="text" class="form-control" placeholder="Hora">
+              <i class="fa fa-clock-o"></i>
+            </div>
+            <div class="form-group form-group--icon">
+              <input type="text" class="form-control" placeholder="Quero jogar no meu campo">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg">Buscar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <div class="col-md-3 col-sm-6">
-        <div class="fb-box fb-card">
-          <div class="fb-card-capa">
-            <img data-bind="attr: {'src': '/dist/img/capa/' + pagina + '.png'}" alt="" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'">
-          </div>
-          <div class="fb-card-info">
-            <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fb-card-time-small" alt="" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
-            <p data-bind="text: dataFormatada"><strong data-bind="text: nome"></strong>
-            </p>
-          </div>
-          <div class="fb-card-info-bottom">
-            <p data-bind="text: conteudo"></p>
-          </div>
-          <!--<ul>
+      <div class="fb-page-top">
+        <div class="fb-container">
+          <ul class="fb-label-list">
+            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link is-active">TODOS</a></li>
+            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link">FUTEBOL CAMPO</a></li>
+            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link">FUTEBOL SETE</a></li>
+            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link">FUTSAL</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fb-page">
+        <div class="fb-container fb-fluid">
+          <div class="row" data-bind="foreach: comentarioList, visible: comentarioList().length > 0">
+            <div class="col-md-3 col-sm-6">
+              <div class="fb-box fb-card">
+                <a data-bind="attr: {href: pagina + '#' + _id}"><div class="fb-card-capa">
+                  <img data-bind="attr: {'src': '/dist/img/capa/' + pagina + '.png'}" alt="" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'">
+                </div>
+                </a>
+                <a data-bind="attr: {href: pagina + '#' + _id}">
+                <div class="fb-card-info">
+                  <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fb-card-time-small" alt="" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
+              </a>
+                  <p data-bind="text: dataFormatada"><strong data-bind="text: nome"></strong>
+                  </p>
+                </div>
+                <div class="fb-card-info-bottom">
+                  <p data-bind="text: conteudo"></p>
+                </div>
+                <!--<ul>
             <li><b>Data:</b> 19/12/2015</li>
             <li><b>Cidade:</b> Parobé / RS</li>
             <li><b>Joga em:</b> Casa</li>
             <li><b>Campo:</b> Municipal de Parobé</li>
             <li><b>Contato:</b> (51) 91918007</li>
           </ul>-->
-
-          <a href="#" class="fb-card-action">Marcar Jogo</a>
+                <a href="#" class="fb-card-action">Marcar Jogo</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-
-
-
     </div>
-  </div>
-
-    <div id="content" class="content" data-bind="foreach: comentarioListHome, visible: comentarioListHome().length > 0">
-      <div class="row" data-bind="foreach: $data, visible: $data">
-        <div class="col-lg-2 col-md-2 col-sm-2" data-bind="visible: nome">
-          <div class="fsa-content-box-time">
-            <div class="content-box-info">
-              <span class="col-lg-12 col-md-12 col-sm-12 fsa-align-center">
-               <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fsa-content-box-logo" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'"/>
-             </span>
-             <p class="col-lg-12 col-md-12 col-sm-12 fsa-content-box-title" data-bind="text: nome"></p>
-             <p class="fsa-content-box-text" data-bind="text: conteudo"></p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
- <% include ../partials/footer %>
+    <% include ../partials/footer %>
 </body>
+
 </html>

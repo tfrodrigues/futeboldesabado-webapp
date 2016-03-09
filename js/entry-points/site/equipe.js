@@ -28,7 +28,7 @@ ViewModel = function () {
 
     self.escolherAvatarTime = function(image) {
         if (image) {
-            var img = $('[data-js="team-picture"] > img');
+            var img = $('[data-js="cropper-image"] > img');
             img.attr('src', null);
             img.cropper('destroy');
             var reader = new FileReader();
@@ -37,18 +37,20 @@ ViewModel = function () {
                 img.cropper({
                   aspectRatio: 1 / 1,
                   background: false,
-                  minCropBoxWidth: 200,
-                  minCropBoxHeight: 200
+                  minCropBoxWidth: 150,
+                  minCropBoxHeight: 150,
               });
             }
             reader.readAsDataURL(image);
-            console.log(image);
             $('[data-remodal-id=fb-upload-team-picture-modal]').remodal().open();
         }
     };
 
     self.alterarAvatarTime = function() {
-        var imageCanvas = $('.fb-team-upload-picture').cropper('getCroppedCanvas');
+        var imageCanvas =  $('[data-js="cropper-image"] > img').cropper('getCroppedCanvas', {
+            width: 170,
+            height: 170
+        });
         $('[data-js="team-picture"] > img').attr('src',imageCanvas.toDataURL('image/png'));
         $.ajax({
             type: 'POST',
@@ -57,7 +59,7 @@ ViewModel = function () {
             url: '/' + self.dataModel.pagina + '/uploadavatartime',
             data: JSON.stringify({image: imageCanvas.toDataURL('image/png')})
         });
-        $('[data-remodal-id=upload-avatar-time-modal]').remodal().close();
+        $('[data-remodal-id=fb-upload-team-picture-modal]').remodal().close();
     };
 
     self.enderecoCompletoCampo = function() {

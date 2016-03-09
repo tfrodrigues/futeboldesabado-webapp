@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Perfil</title>
   <% include ../partials/head %>
 </head>
 <input id="equipe" value="<%= equipe %>" type="hidden">
+
 <body class="<%= path %>">
   <% include ../partials/header %>
-  <div class="fb-page" id="fb-equipe-page">
-    <div class="fb-container">
-      <div class="fb-team">
+    <div class="fb-page" id="fb-equipe-page">
+      <div class="fb-container">
+        <div class="fb-team">
 
-        <!-- ko if:  <%= loggedOnPage %> -->
-        <div class="fb-team__cover" data-js="team-cover" data-bind="style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
-        <!-- /ko -->
-        <!-- ko if:  <%= !loggedOnPage %> -->
-        <div class="fb-team__cover" data-bind="style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
-        <!-- /ko -->
-
-
-
-        <div class="fb-team__info">
           <!-- ko if:  <%= loggedOnPage %> -->
-          <div class="fb-team__picture" data-js="team-picture">
-            <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click: $('.upload-avatar-time').click();" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'" alt="" class="fb-team__picture__img">
-            <input type='file' id="upload-avatar-time" class="upload-avatar-time" style="display:none" data-bind="event: {change: escolherAvatarTime($element.files[0])}"/>
-            <span class="fb-team__picture__upload__foto"></span>
-          </div>
+          <div class="fb-team__cover" data-js="team-cover" data-bind="style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
           <!-- /ko -->
           <!-- ko if:  <%= !loggedOnPage %> -->
-          <div class="fb-team__picture">
-            <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'" alt="" class="fb-team__picture__img">
-          </div>
+          <div class="fb-team__cover" data-bind="style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
           <!-- /ko -->
 
-          <h1 class="fb-team__name" data-bind="text: dataModel.nome"></h1>
-        </div>
 
-        <div class="row">
-          <div class="col-md-5">
-            <div class="fb-team__description">
-              <h2>Sobre:</h2>
-              <p>XXXXXXXXXXXXXXXXXXXXXXX</p>
+
+          <div class="fb-team__info">
+            <!-- ko if:  <%= loggedOnPage %> -->
+            <div class="fb-team__picture" data-js="team-picture">
+              <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click: $('.upload-avatar-time').click();" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'" alt="" class="fb-team__picture__img">
+              <input type='file' id="upload-avatar-time" class="upload-avatar-time" style="display:none" data-bind="event: {change: escolherAvatarTime($element.files[0])}" />
+              <span class="fb-team__picture__upload__foto">
+              <i class="fa fa-camera"></i>
+            </span>
             </div>
+            <!-- /ko -->
+            <!-- ko if:  <%= !loggedOnPage %> -->
+            <div class="fb-team__picture">
+              <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'" alt="" class="fb-team__picture__img">
+            </div>
+            <!-- /ko -->
+
+            <h1 class="fb-team__name" data-bind="text: dataModel.nome"></h1>
           </div>
 
-          <div class="col-md-7">
-            <div class="fb-team__box">
-              <div class="custom-row">
-                <div class="custom-col">
-                  <div class="fb-team_information">
-                    <span>Cidade: <strong data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado" data-js="fb-cidade"></strong>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="fb-team__description">
+                <h2>Sobre:</h2>
+                <p>YYYYYY</p>
+              </div>
+            </div>
+
+            <div class="col-md-7">
+              <div class="fb-team__box">
+                <div class="custom-row">
+                  <div class="custom-col">
+                    <div class="fb-team_information">
+                      <span>Cidade: <strong data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado" data-js="fb-cidade"></strong>
                   </div>
                   <div class="fb-team_information">
                     <span>Cor: <strong>YYYYYYYYYYYYYYYYYYYYYYYYYY</strong>
@@ -80,37 +84,35 @@
       <div class="row">
         <div class="col-md-7">
           <!-- ko if:  <%= loggedOnPage %> -->
+
           <div class="fb-box">
-            <div class="fb-box__title">
-              <h3>Escrever Post</h3>
+            <div class="form-group form-group--icon">
+              <textarea type="text" class="form-control" id="conteudo" name="conteudo"placeholder="Escrever Post"  maxlength="255" rows="7" columns="50" data-bind="value: comentario.conteudo"></textarea>
             </div>
-            <fieldset>
-              <textarea class="form-control" id="conteudo" name="conteudo" maxlength="255" rows="7" columns="50" data-bind="value: comentario.conteudo" res></textarea>
-            </fieldset>
-            <div class="row">
-             <button data-bind="click: publicar" class="fb-card-action">PUBLICAR</button>
+            <div class="form-group">
+             <button data-bind="click: publicar" class="btn btn-primary btn-lg">PUBLICAR</button>
            </div>
          </div>
          <!-- /ko -->
 
         <span data-bind="visible: dataModel.comentarios.length > 0, foreach: { data: dataModel.comentarios, as: 'comentario' }">
-          <div class="fb-box" data-bind="visible: comentario.conteudo" >
+          <div class="fb-box" data-bind="visible: comentario.conteudo, attr: {id: comentario._id}" >
             <div class="fb-box__title">
               <span class="fb-box__postdate__label" data-bind="text: comentario.dataFormatada"></span>
-            </div>
-            <div class="fb-box__title">
-              <span class="fb-box__text__label" data-bind="text: comentario.conteudo"></span>
-            </div>
-          </div>
-        </span>
-        </div>
-        <div class="col-md-5">
-          <div class="fb-box">
-            <div class="fb-box__title fb-box__title--top">
-              <h3>Agenda de jogos</h3>
-              <a href="#" class="fb-box__title__link">ver agenda completa »</a>
-            </div>
-            <!--<div class="row">
+                    </div>
+                    <div class="fb-box__title">
+                      <span class="fb-box__text__label" data-bind="text: comentario.conteudo"></span>
+                    </div>
+                  </div>
+                  </span>
+                </div>
+                <div class="col-md-5">
+                  <div class="fb-box">
+                    <div class="fb-box__title fb-box__title--top">
+                      <h3>Agenda de jogos</h3>
+                      <a href="#" class="fb-box__title__link">ver agenda completa »</a>
+                    </div>
+                    <!--<div class="row">
               <div class="col-md-6">
                 <div class="fb-jogo">
                   <div class="fb-jogo__col fb-jogo__col--first">
@@ -147,65 +149,67 @@
                 </p>
               </div>
             </div>!-->
-          </div>
-          <div class="fb-box">
-            <div class="fb-box__title">
-              <h3>Ver quadro de atletas</h3>
-              <span class="fb-box__title__label">(em breve)</span>
+                  </div>
+                  <div class="fb-box">
+                    <div class="fb-box__title">
+                      <h3>Ver quadro de atletas</h3>
+                      <span class="fb-box__title__label">(em breve)</span>
+                    </div>
+                  </div>
+                  <div class="fb-box">
+                    <div class="fb-box__title">
+                      <h3>Localização do campo</h3>
+                      <a href="#" class="fb-box__title__link">ver no mapa »</a>
+                    </div>
+                    <div class="fb-box__title">
+                      <div id="mapa-campo" data-js="fb-mapa-campo" class="fb-box__mapa"></div>
+                    </div>
+                    <span class="fb-box__description__label" data-bind="text: enderecoCompletoCampo()"></span>
+                  </div>
+                  <div class="fb-box">
+                    <div class="fb-box__title">
+                      <h3>Fotos e Vídeos</h3>
+                      <a href="#" class="fb-box__title__link">ver todos »</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input data-js="fb-endereco-completo-campo" type="hidden" data-bind="text: enderecoCompletoCampo()">
+
+            <div data-remodal-id="fb-upload-team-picture-modal" data-js="cropper-image">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <img class="fb-team__upload__picture">
+              <div class="form-group" style="padding-top: 30px">
+                <button class="btn btn-primary btn-lg" data-bind="click: alterarAvatarTime">CONFIRMAR</button>
+              </div>
             </div>
           </div>
-          <div class="fb-box">
-            <div class="fb-box__title">
-              <h3>Localização do campo</h3>
-              <a href="#" class="fb-box__title__link">ver no mapa »</a>
-            </div>
-            <div class="fb-box__title">
-              <div id="mapa-campo" data-js="fb-mapa-campo" class="fb-box__mapa"></div>
-            </div>
-            <span class="fb-box__description__label" data-bind="text: enderecoCompletoCampo()"></span>
-          </div>
-          <div class="fb-box">
-            <div class="fb-box__title">
-              <h3>Fotos e Vídeos</h3>
-              <a href="#" class="fb-box__title__link">ver todos »</a>
-            </div>
-          </div>
+
         </div>
-      </div>
-    </div>
-    <input data-js="fb-endereco-completo-campo" type="hidden" data-bind="text: enderecoCompletoCampo()">
-  </div>
+        <% include ../partials/footer %>
+          <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+          <script type="text/javascript" src="/dist/js/<%= path %>/googlemapsintegration.js"></script>
+          <script type="text/javascript">
+            var address = $('[data-js="fb-endereco-completo-campo"]').text();
+            showMap(address, document.getElementById('mapa-campo'));
 
-  <div data-remodal-id="fb-upload-team-picture-modal">
-    <button data-remodal-action="close" class="remodal-close"></button>
-    <img class="fb-team-upload-picture"><  <div>
-      <button class="btn-small btn-color" data-bind="click: alterarAvatarTime">CONFIRMAR</button>
-    </div>
-  </div>
-  </div>
+            $("[data-js='team-picture']").on("mouseenter", function() {
+              $("[data-js='team-picture']").addClass('is-active');
+            });
 
-  <% include ../partials/footer %>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
-  <script type="text/javascript" src="/dist/js/<%= path %>/googlemapsintegration.js"></script>
-  <script type="text/javascript">
-    var address = $('[data-js="fb-endereco-completo-campo"]').text();
-    showMap(address, document.getElementById('mapa-campo'));
+            $("[data-js='team-picture']").on("mouseleave", function() {
+              $("[data-js='team-picture']").removeClass('is-active');
+            });
 
-    $("[data-js='team-picture']").on("mouseenter", function(){
-      $("[data-js='team-picture']").addClass('is-active');
-    });
+            $("[data-js='team-cover']").on("mouseenter", function() {
+              $("[data-js='team-cover']").addClass('is-active');
+            });
 
-    $("[data-js='team-picture']").on("mouseleave", function(){
-      $("[data-js='team-picture']").removeClass('is-active');
-    });
-
-    $("[data-js='team-cover']").on("mouseenter", function(){
-      $("[data-js='team-cover']").addClass('is-active');
-    });
-
-    $("[data-js='team-cover']").on("mouseleave", function(){
-      $("[data-js='team-cover']").removeClass('is-active');
-    });
-  </script>
+            $("[data-js='team-cover']").on("mouseleave", function() {
+              $("[data-js='team-cover']").removeClass('is-active');
+            });
+          </script>
 </body>
+
 </html>
