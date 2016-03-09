@@ -109,4 +109,4 @@ ViewModel = function () {
 
 };
 
-ko.applyBindings(new ViewModel(), document.getElementById('main'));
+ko.applyBindings(new ViewModel(), document.getElementById('fb-cadastreseutime-page'));

@@ -3,6 +3,7 @@ var ko = require('knockout');
 var base = require('../../common/base');
 var crud = require('../../common/crud');
 var utils = require('../../common/utils');
+var cropper = require('cropper');
 var remodal = require('remodal');
 
 ViewModel = function () {
@@ -12,7 +13,7 @@ ViewModel = function () {
     self.comentario = {};
 
     var equipe = JSON.parse($("#equipe").val());
-    self.dataModel = equipe
+    self.dataModel = equipe;
 
 
     self.publicar = function() {
@@ -27,7 +28,7 @@ ViewModel = function () {
 
     self.escolherAvatarTime = function(image) {
         if (image) {
-            var img = $('.fsa-avatar-time-upload');
+            var img = $('[data-js="cropper-image"] > img');
             img.attr('src', null);
             img.cropper('destroy');
             var reader = new FileReader();
@@ -36,18 +37,21 @@ ViewModel = function () {
                 img.cropper({
                   aspectRatio: 1 / 1,
                   background: false,
-                  minCropBoxWidth: 200,
-                  minCropBoxHeight: 200
+                  minCropBoxWidth: 150,
+                  minCropBoxHeight: 150,
               });
             }
             reader.readAsDataURL(image);
-            $('[data-remodal-id=upload-avatar-time-modal]').remodal().open();
+            $('[data-remodal-id=fb-upload-team-picture-modal]').remodal().open();
         }
-    },
+    };
 
     self.alterarAvatarTime = function() {
-        var imageCanvas = $('.fsa-avatar-time-upload').cropper('getCroppedCanvas');
-        $('.fsa-avatar-time > img').attr('src',imageCanvas.toDataURL('image/png'));
+        var imageCanvas =  $('[data-js="cropper-image"] > img').cropper('getCroppedCanvas', {
+            width: 170,
+            height: 170
+        });
+        $('[data-js="team-picture"] > img').attr('src',imageCanvas.toDataURL('image/png'));
         $.ajax({
             type: 'POST',
             contentType: 'application/json',
@@ -55,7 +59,11 @@ ViewModel = function () {
             url: '/' + self.dataModel.pagina + '/uploadavatartime',
             data: JSON.stringify({image: imageCanvas.toDataURL('image/png')})
         });
-        $('[data-remodal-id=upload-avatar-time-modal]').remodal().close();
+        $('[data-remodal-id=fb-upload-team-picture-modal]').remodal().close();
+    };
+
+    self.enderecoCompletoCampo = function() {
+        return self.dataModel.enderecoCampo + ', ' + self.dataModel.cidade + ' - ' + self.dataModel.siglaEstado;
     }
 
     self.dataModel.comentarios.reverse();
@@ -63,4 +71,4 @@ ViewModel = function () {
     ko.utils.extend(self, new base.ViewModel());
 };
 
-ko.applyBindings(new ViewModel(), document.getElementById('main'));
+ko.applyBindings(new ViewModel(), document.getElementById('fb-equipe-page'));

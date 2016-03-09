@@ -1,0 +1,64 @@
+<div class="fb-header__nav__sub">
+	<div class="fb-container" data-js="submenu" data-submenu="0">
+		<ul class="fb-letras">
+			<li class="fb-letras__letra" data-js="letra" data-letra="A"><span class="fb-letras__text">A</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="B"><span class="fb-letras__text">B</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="C"><span class="fb-letras__text">C</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="D"><span class="fb-letras__text">D</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="E"><span class="fb-letras__text">E</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="F"><span class="fb-letras__text">F</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="G"><span class="fb-letras__text">G</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="H"><span class="fb-letras__text">H</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="I"><span class="fb-letras__text">I</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="J"><span class="fb-letras__text">J</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="K"><span class="fb-letras__text">K</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="L"><span class="fb-letras__text">L</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="M"><span class="fb-letras__text">M</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="N"><span class="fb-letras__text">N</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="O"><span class="fb-letras__text">O</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="P"><span class="fb-letras__text">P</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="Q"><span class="fb-letras__text">Q</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="R"><span class="fb-letras__text">R</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="S"><span class="fb-letras__text">S</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="T"><span class="fb-letras__text">T</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="U"><span class="fb-letras__text">U</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="V"><span class="fb-letras__text">V</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="W"><span class="fb-letras__text">W</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="X"><span class="fb-letras__text">X</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="Y"><span class="fb-letras__text">Y</span></li>
+			<li class="fb-letras__letra" data-js="letra" data-letra="Z"><span class="fb-letras__text">Z</span></li>
+		</ul>
+
+		<div class="fb-leteqras__content">
+
+			<span data-bind="foreach: {data: alfabetoList, as: 'letra'}">
+				<ul class="fb-letras__sub" data-js="timesLetra"  data-bind="attr: {'data-timesletra': letra}">
+					<li class="fb-letras__sub__item" data-bind="foreach: { data: $parent.findEquipeByInitialLetter(letra), as: 'equipe' }">
+						<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: pagina}"></a>
+					</li>
+				</ul>
+			</span>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function abreMenuTimes(menu) {
+		$("[data-js='menu-times']").removeClass("is-active");
+		$("[data-menu='"+menu+"']").addClass("is-active");
+		$("[data-js='submenu']").removeClass("is-active");
+		$("[data-submenu='"+menu+"']").addClass("is-active");
+	}
+
+	function abreLetra(letra) {
+		$("[data-js='letra']").removeClass("is-active");
+		$("[data-letra='"+letra+"']").addClass("is-active");
+		$("[data-js='timesLetra']").removeClass("is-active");
+		$("[data-timesLetra='"+letra+"']").addClass("is-active");
+	}
+
+	function fechaMenuTimes() {
+		$("[data-js='menu-times']").removeClass("is-active");
+		$("[data-js='submenu']").removeClass("is-active");
+	}
+</script>

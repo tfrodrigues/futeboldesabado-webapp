@@ -1,4 +1,4 @@
-<footer id="footer">
+<!--<footer id="footer">
 <div class="footer-top">
 
 <div class="col-lg-4 col-md-4 col-sm-4 menu-footer">
@@ -28,7 +28,29 @@ cadastrados no Futebol de Sábado
 <button class="btn-normal btn-footer btn-color submit  bottom-pad">ENTRE EM CONTATO</button>
 </div>
 
-</footer>
+</footer>-->
 
 <% include ../../common/partials/variables %>
 <% include ../../common/partials/script %>
+
+<script>
+  $( function(){
+    $("[data-js='menu-times']").on("mouseup", function(){
+      if($(this).hasClass("is-active")) {
+        fechaMenuTimes();
+      } else {
+        abreMenuTimes($(this).data().menu);
+      }
+    });
+    $("[data-js='letra']").on("mouseup", function(){
+      abreLetra($(this).data().letra);
+    });
+    $("[data-js='menu-login']").on("mouseup", function(){
+      if($(this).hasClass("is-active")) {
+        fechaMenuLogin();
+      } else {
+        abreMenuLogin($(this).data().menu);
+      }
+    });
+  });
+</script>

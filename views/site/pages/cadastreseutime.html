@@ -1,105 +1,154 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="pt-BR">
   <% include ../partials/head %>
 </head>
+
 <body class="<%= path %>">
 
   <% include ../partials/header %>
 
-  <div id="main" class="container fsa-main-container">
-    <img src="/dist/img/banner-min.jpg" alt="Futebol de Sábado" class="fullwidthbanner-container">
-    <div class="content">
-      <div class="container">
-        <div class="row">
-         <div class="col-lg-12 col-md-12 col-sm- col-xs-12" id="contact-form">
-           <h3 class="title">Cadastre seu time</h3>
-           <p style="text-align: left">
-            Preencha os dados e pronto! O seu time estará cadastrado no futeboldesabado.com.br
-          </p>
-        </div>
+    <div id="fb-cadastreseutime-page" class="fb-page">
+
+      <div class="fb-banner fb-banner-min">
+
       </div>
-      <form method="post" class="reply" id="cadastreseutime" data-bind="submit: saveEquipe">
-       <fieldset>
-        <div class="row">
-         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Nome: <span>*</span></label>
-          <input class="form-control" id="nome" name="nome" maxlength="60" type="text" data-bind="value: dataModel.nome">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Página: <span>*</span></label>
-          <input class="form-control" id="pagina" type="text" data-bind="value: dataModel.pagina" >
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Nome do Representante: <span>*</span></label>
-          <input class="form-control" id="nomeRepresentante" maxlength="60" type="text"  data-bind="value: dataModel.representante"  >
+      <div class="row">
+        <div class="col-md-8 col-centered col-centered--bottom">
+          <div class="fb-box fb-box__highlight">
+            <div class="fb-box__title fb-box__title--center ">
+              <h3>CADASTRE AGORA O SEU TIME E AGENDE SEUS JOGOS!</h3>
+              <p>
+                Visando oferecer um maior entendimento do funcionamento do site, o Futebol de Sábado promove o cadastramento gratuito de sua equipe, e você poderá ter acesso livre a todos os nossos serviços. Se você conhece times que ainda não participam do Futebol de
+                Sábado, esta será a sua oportunidade de certificar-se que somos a melhor opção para a gestão da sua equipe, e assim, poderá convidá-las a juntar-se à nossa comunidade. Solicitamos aos times já cadastrados não repetir o cadastro. Após
+                cadastrar o seu time, você será comunicado via e-mail da liberação do acesso. Qualquer dúvida ou comentário, ligue para nosso suporte técnico - (51) 8182-5285 - ou envie e-mail para contato@futeboldesabado.com.br, que nossa equipe de
+                atendimento efetuará o retorno assim que possível.
+              </p>
+              <h4>#FACAOFUTEBOLACONTECER</h4>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Modalidade: <span>*</span></label>
-          <select class="form-control" id="cidade" data-bind="value: dataModel.modalidade, options: modalidadeList, optionsCaption: 'Selecione...', optionsText: 'nome'"></select>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Estado: <span>*</span></label>
-          <select class="form-control" id="estado" data-bind="value: dataModel.estado, options: estadoList, optionsCaption: 'Selecione...',  optionsText: 'sigla', event: {change: loadCidades()}"></select>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Cidade: <span>*</span></label>
-          <select class="form-control" id="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
+        <div class="col-md-8 col-centered">
+          <div class="fb-box">
+            <div class="fb-box__title fb-box__title--center">
+              <h3>CADASTRE O SEU TIME</h3>
+            </div>
+            <form method="post" class="reply" id="cadastreseutime" data-bind="submit: saveEquipe">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nome do time" maxlength="60" data-bind="value: dataModel.nome" id="nome">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Página" maxlength="30"
+                    data-bind="value: dataModel.pagina" id="pagina">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nome do representante" maxlength="60" data-bind="value: dataModel.representante" id="representante">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Cores" maxlength="30"
+                    data-bind="value: dataModel.cores" id="cores">
+                  </div>
+                </div>
+                </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea type="text" class="form-control" placeholder="História" maxlength="255" rows="7" columns="50" data-bind="value: dataModel.historia" id="historia"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-group--icon">
+                    <select class="form-control" placeholder="Modalidade" data-bind="value: dataModel.modalidade, options: modalidadeList, optionsCaption: 'Selecione...', optionsText: 'nome'"></select>
+                    <!--<i class="fa fa-arrow-down"></i>-->
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-group--icon">
+                    <select class="form-control" id="estado" data-bind="value: dataModel.estado, options: estadoList, optionsCaption: 'Selecione...',  optionsText: 'sigla', event: {change: loadCidades()}"></select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-group--icon">
+                    <select class="form-control" id="cidade" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione...'"></select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nome do campo" maxlength="60" data-bind="value: dataModel.campo" id="campo">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Endereço do campo" maxlength="60"
+                    data-bind="value: dataModel.enderecoCampo" id="enderecoCampo">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Telefone" maxlength="60" data-bind="value: dataModel.telefone" id="telefone">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="E-mail" maxlength="60"
+                    data-bind="value: dataModel.email" id="email">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Senha" maxlength="8" data-bind="value: dataModel.senha" id="telefone">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="confirmarSenha" class="form-control" placeholder="Confirmar Senha" maxlength="8"
+                    data-bind="value: dataModel.confirmarSenha" id="confirmarSenha">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-group--icon">
+                    <button class="btn btn-primary">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-      <div class="row"><p/><p/><p/></div>
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Nome do Campo: </label>
-          <input class="form-control" id="campo" type="text"  data-bind="value: dataModel.campo">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Endereço do Campo: </label>
-          <input class="form-control" id="enderecoCampo" type="text"  data-bind="value: dataModel.enderecoCampo">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <label>Telefone: <span>*</span></label>
-          <input type="text" class="form-control" id="telefone" data-bind="value: dataModel.telefone" >
-        </div>
-      </div>
-      <div class="row">
-       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
-        <label>Email: <span>*</span></label>
-        <input class="form-control" id="email" maxlength="60" type="email" data-bind="value: dataModel.email" >
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
-        <label>Senha: <span>*</span></label>
-        <input class="form-control" id="senha" maxlength="15" type="password" data-bind="value: dataModel.senha" >
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="text-align: left">
-        <label>Confirmar Senha: <span>*</span></label>
-        <input class="form-control" id="confirmarSenha" maxlength="15" type="password" data-bind="value: dataModel.confirmarSenha">
       </div>
     </div>
-  </fieldset>
-  <div class="row">
-     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="text-align: left"><button class="btn-normal btn-color submit  bottom-pad" type
-    ="submit" style="margin-top: 10px;">CADASTRAR</button></div>
-   <!--  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 alert alert-error" style="display:none">
-    </div> -->
-  </div>
-
- <div class="error-container" style="display: none">
-    <div style="padding: 5px;">
-        <div id="error-container-inner-message" class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <span></span>
-        </div>
-    </div>
-</div>
-
-</form>
-</div>
-</div>
-</div>
-<% include ../partials/footer %>
-<script type="text/javascript" src="/dist/js/site/bootstrap-notify.min.js"></script>
+    <% include ../partials/footer %>
+      <script type="text/javascript" src="/dist/js/site/bootstrap-notify.min.js"></script>
 </body>
+
 </html>
