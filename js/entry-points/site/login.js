@@ -8,7 +8,7 @@ ViewModel = function () {
     self.equipeList = ko.observableArray([]);
 
     self.login = function (req, res) {
-        var cryptPass = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(self.dataModel.senha, "futebolDeSabadoPassKey"));
+        /*var cryptPass = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(self.dataModel.senha, "futebolDeSabadoPassKey"));
         var query = {};
         query['email'] = self.dataModel.email;
         query['senha'] = cryptPass;
@@ -19,7 +19,7 @@ ViewModel = function () {
                 document.cookie = "SESSION_ID="+SESSION_ID+";path=/";
                 window.location = '/' + equipe.pagina;
             }
-        });
+        });*/
     }
 
     ko.utils.extend(self, new base.ViewModel());

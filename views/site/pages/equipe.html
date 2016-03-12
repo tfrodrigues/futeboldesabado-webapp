@@ -15,22 +15,21 @@
         <div class="fb-team">
 
           <!-- ko if:  <%= loggedOnPage %> -->
-          <div class="fb-team__cover" data-js="team-cover" data-bind="style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
+          <div class="fb-team__cover" data-js="team-cover" data-bind="click: $('[data-js=upload-capa-time]').click(), style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}">
+            <span class="fb-team__picture__upload__foto">
+            <i class="fa fa-camera"></i>
+          </div>
+          <input type='file' data-js="upload-capa-time" data-bind="event: {change: showModalCoverPicture($element.files[0])}" />
           <!-- /ko -->
-          <!-- ko if:  <%= !loggedOnPage %> -->
-          <div class="fb-team__cover" data-bind="style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
-          <!-- /ko -->
-
-
 
           <div class="fb-team__info">
             <!-- ko if:  <%= loggedOnPage %> -->
             <div class="fb-team__picture" data-js="team-picture">
-              <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click: $('.upload-avatar-time').click();" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'" alt="" class="fb-team__picture__img">
-              <input type='file' id="upload-avatar-time" class="upload-avatar-time" style="display:none" data-bind="event: {change: escolherAvatarTime($element.files[0])}" />
+              <img data-bind="attr: {'src': '/dist/img/logo/' + dataModel.pagina + '.png'}, click: $('[data-js=upload-avatar-time]').click()" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'" alt="" class="fb-team__picture__img">
               <span class="fb-team__picture__upload__foto">
               <i class="fa fa-camera"></i>
             </span>
+            <input type='file' data-js="upload-avatar-time" data-bind="event: {change: showModalTeamPicture($element.files[0])}" />
             </div>
             <!-- /ko -->
             <!-- ko if:  <%= !loggedOnPage %> -->
@@ -181,7 +180,15 @@
               <button data-remodal-action="close" class="remodal-close"></button>
               <img class="fb-team__upload__picture">
               <div class="form-group" style="padding-top: 30px">
-                <button class="btn btn-primary btn-lg" data-bind="click: alterarAvatarTime">CONFIRMAR</button>
+                <button class="btn btn-primary btn-lg" data-bind="click: updateTeamPicture">CONFIRMAR</button>
+              </div>
+            </div>
+
+            <div data-remodal-id="fb-upload-cover-picture-modal" data-js="cropper-image">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <img class="fb-team__upload__picture">
+              <div class="form-group" style="padding-top: 30px">
+                <button class="btn btn-primary btn-lg" data-bind="click: updateCoverPicture">CONFIRMAR</button>
               </div>
             </div>
           </div>

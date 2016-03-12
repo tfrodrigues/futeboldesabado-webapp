@@ -54,13 +54,10 @@ exports.urlKey = function (text) {
     return this.removeAccents(text).replace(/\s+/g, '-').toLowerCase();
 };
 
-exports.showErrorMessage = function (arrayMessage, arrayField) {
+exports.showErrorMessage = function (arrayMessage) {
     var errorMessage = '';
     for (var i=0; i<=arrayMessage.length - 1; i++) {
         errorMessage += arrayMessage[i] + "<br>";
-    }
-    for (var i=0; i<=arrayField.length - 1; i++) {
-        $('#' + arrayField[i]).addClass('error-field');
     }
     $.notify({
 	    icon: 'glyphicon glyphicon-warning-sign',
@@ -70,7 +67,14 @@ exports.showErrorMessage = function (arrayMessage, arrayField) {
       type: 'danger',
       z_index: 99999
     });
-}
+};
+
+exports.compareTwoFieldsContent = function(field1, field2) {
+  if (field1 && field1.toLowerCase() === field2.toLowerCase()) {
+     return true;
+  }
+  return false;
+};
 
 exports.objToString = function(obj) {
     var str = '';

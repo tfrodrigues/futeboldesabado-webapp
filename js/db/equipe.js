@@ -12,6 +12,8 @@ Equipe = mongoose.model('Equipe', mongoose.Schema({
     nome: String,
     pagina: String,
     campo: String,
+    historia: String,
+    cores: String,
     enderecoCampo: String,
     modalidade: String,
     cidade: String,
