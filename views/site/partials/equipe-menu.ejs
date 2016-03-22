@@ -29,12 +29,12 @@
 			<li class="fb-letras__letra" data-js="letra" data-letra="Z"><span class="fb-letras__text">Z</span></li>
 		</ul>
 
-		<div class="fb-leteqras__content">
+		<div class="fb-letras__content">
 
 			<span data-bind="foreach: {data: alfabetoList, as: 'letra'}">
 				<ul class="fb-letras__sub" data-js="timesLetra"  data-bind="attr: {'data-timesletra': letra}">
 					<li class="fb-letras__sub__item" data-bind="foreach: { data: $parent.findEquipeByInitialLetter(letra), as: 'equipe' }">
-						<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: pagina}"></a>
+						<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: '/' + pagina}"></a>
 					</li>
 				</ul>
 			</span>
@@ -48,6 +48,7 @@
 		$("[data-menu='"+menu+"']").addClass("is-active");
 		$("[data-js='submenu']").removeClass("is-active");
 		$("[data-submenu='"+menu+"']").addClass("is-active");
+		abreLetra('A');
 	}
 
 	function abreLetra(letra) {

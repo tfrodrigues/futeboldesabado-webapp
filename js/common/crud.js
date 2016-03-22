@@ -4,6 +4,21 @@ var base = require('./base');
 
 var external = this;
 
+exports.uploadPicture = function(name, pagina, imageCanvas, successfulAction) {
+  $.ajax({
+    type: 'POST',
+    contentType: 'application/json',
+    url: '/' + pagina + '/uploadpicture/' + name,
+    data: JSON.stringify({
+      image: imageCanvas.toDataURL('image/png')
+    })
+  }).done(function(value) {
+    if (successfulAction) {
+      successfulAction(value);
+    }
+  });
+};
+
 exports.save = function(name, data, successfulAction) {
   $.ajax({
     type: 'POST',

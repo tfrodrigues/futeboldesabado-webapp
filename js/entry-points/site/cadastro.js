@@ -76,8 +76,8 @@ ViewModel = function() {
       utils.showErrorMessage(self.errorMessageList());
       self.showErrors(true);
     } else if (self.validateExistingData()) {
-      self.dataModel.siglaEstado = self.dataModel.estado.sigla;
-      self.dataModel.modalidade = self.dataModel.modalidade.nome;
+      self.dataModel.siglaEstado = self.dataModel.estado().sigla;
+      self.dataModel.modalidade = self.dataModel.modalidade().nome;
       crud.save('equipe', ko.toJSON(self.dataModel), function() {
         $.ajax({
           type: 'POST',

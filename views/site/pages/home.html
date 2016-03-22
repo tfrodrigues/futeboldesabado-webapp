@@ -49,14 +49,16 @@
           <div class="row" data-bind="foreach: comentarioList, visible: comentarioList().length > 0">
             <div class="col-md-3 col-sm-6">
               <div class="fb-box fb-card">
-                <a data-bind="attr: {href: pagina + '#' + _id}"><div class="fb-card-capa">
-                  <img data-bind="attr: {'src': '/dist/img/capa/' + pagina + '.png'}" alt="" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'">
-                </div>
+                <a data-bind="attr: {href: pagina + '#' + _id}">
+                  <div class="fb-card-capa">
+                    <img data-bind="attr: {'src': '/dist/img/capa/' + pagina + '.png'}" alt="" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'">
+                  </div>
                 </a>
                 <a data-bind="attr: {href: pagina + '#' + _id}">
-                <div class="fb-card-info">
-                  <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fb-card-time-small" alt="" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
-              </a>
+                  <div class="fb-card-info">
+                    <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fb-card-time-small" alt="" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
+                  </div>
+                </a>
                   <p data-bind="text: dataFormatada"><strong data-bind="text: nome"></strong>
                   </p>
                 </div>

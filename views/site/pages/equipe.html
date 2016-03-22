@@ -21,6 +21,9 @@
           </div>
           <input type='file' data-js="upload-capa-time" data-bind="event: {change: showModalCoverPicture($element.files[0])}" />
           <!-- /ko -->
+          <!-- ko if:  <%= !loggedOnPage %> -->
+          <div class="fb-team__cover" data-bind="click: $('[data-js=upload-capa-time]').click(), style: { 'background-image': 'url(/dist/img/capa/' + dataModel.pagina + '.png), url(/dist/img/capa/thumb_capa_time.jpg)'}"></div>
+          <!-- /ko -->
 
           <div class="fb-team__info">
             <!-- ko if:  <%= loggedOnPage %> -->
@@ -45,7 +48,7 @@
             <div class="col-md-5">
               <div class="fb-team__description">
                 <h2>Sobre:</h2>
-                <p>YYYYYY</p>
+                <p data-bind="text: dataModel.historia, visible: dataModel.historia"></p>
               </div>
             </div>
 
@@ -57,7 +60,7 @@
                       <span>Cidade: <strong data-bind="text: dataModel.cidade + ' - ' + dataModel.siglaEstado" data-js="fb-cidade"></strong>
                   </div>
                   <div class="fb-team_information">
-                    <span>Cor: <strong>YYYYYYYYYYYYYYYYYYYYYYYYYY</strong>
+                    <span>Cores: <strong data-bind="text: dataModel.cores, visible: dataModel.cores"></strong>
                   </div>
                   <div class="fb-team_information">
                     <span>Campo: <strong data-bind="text: dataModel.campo"></strong>

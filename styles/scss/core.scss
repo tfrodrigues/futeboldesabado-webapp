@@ -146,6 +146,8 @@ a {
   &.fb-box__highlight {
     padding: 0;
     .fb-box__title--center h3 {
+      -webkit-border-radius: 10px 10px 0 0;
+      border-radius: 10px 10px 0 0;
       background-color: #40a75f;
       color: #FFF;
       padding: 15px;
@@ -420,7 +422,7 @@ a {
 }
 .fb-icon--camiseta {
   width: 29px;
-  height: 25px;
+  height: 26px;
   background-position: 0 0;
 }
 .fb-icon--grupo {
@@ -435,7 +437,7 @@ a {
 }
 .fb-icon--escudo {
   width: 23px;
-  height: 25px;
+  height: 26px;
   background-position: -102px 0;
 }
 .fb-team__upload__picture {
@@ -651,7 +653,9 @@ a {
   border-radius: 4px;
   border: 1px solid #e2e2e2;
   background: #eee;
-  font-size: 13px;
+  font-size: 14px;
+  height: 40px;
+  font-variant: small-caps;
   &:focus,
   &:hover {
     outline: none;
@@ -665,6 +669,10 @@ a {
   &.col-centered--bottom {
     margin-top: -150px;
   }
+}
+.asterisk {
+  margin-top: -25px;
+  margin-left: 400px;
 }
 textarea {
   resize: none;
@@ -693,4 +701,34 @@ select[class='form-control form-control-error'] {
 }
 .form-control-error ::-ms-input-placeholder {
   color: #FF0000;
+}
+form {
+  padding: 12px;
+}
+.fb-box {
+  &.fb-table {
+    padding: 0 20px 20px;
+    .fb-header-table {
+      background-color: #868484;
+      color: #FFF;
+      height: 30px;
+      font-weight: normal;
+    }
+    .fb-row-table {
+      font-weight: bold;
+      height: 100px;
+      span {
+        top: 30px;
+        position: relative;
+        color: #868484;
+      }
+      .fb-card-time-small {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        left: 0;
+        top: 10px;
+      }
+    }
+  }
 }

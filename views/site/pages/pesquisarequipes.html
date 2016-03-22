@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="pt-BR">
+  <% include ../partials/head %>
+</head>
+
+<body class="<%= path %>">
+
+  <% include ../partials/header %>
+
+    <div id="fb-pesquisar-equipes-page" class="fb-page">
+
+      <div class="fb-banner fb-banner-min">
+
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-centered col-centered--bottom">
+          <div class="fb-box fb-box__highlight">
+            <div class="fb-box__title fb-box__title--center ">
+              <h3>BUSCA AVANÇADA DE TIMES</h3>
+            </div>
+            <form method="post" class="reply" id="pesquisa-equipes" data-bind="submit: pesquisarTimes">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group" data-bind="">
+                    <input type="text" class="form-control" placeholder="Digite o nome que você procura..." maxlength="60" data-bind="value: dataModel.nome" id="nome" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-group--icon">
+                    <select class="form-control" data-bind="value: dataModel.estado, options: estadoList, optionsCaption: 'Selecione um estado...',  optionsText: 'sigla', event: {change: loadCidades()}" id="estado"></select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-group--icon">
+                    <select class="form-control" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione uma cidade...'" id="cidade"></select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group form-group--icon">
+                    <select class="form-control" placeholder="Modalidade" data-bind="value: dataModel.modalidade, options: modalidadeList, optionsCaption: 'Selecione uma modalidade...', optionsText: 'nome'" id="modalidade"></select>
+                    <!--<i class="fa fa-arrow-down"></i>-->
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-group--icon">
+                    <button class="btn btn-primary">Buscar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-centered">
+          <div class="fb-box fb-table"  id="resultados">
+            <div class="row">
+              <div class="col-md-3 fb-header-table" style="width: 40%">
+                <span>Nome do time</span>
+              </div>
+              <div class="col-md-3 fb-header-table" style="width: 20%">
+                <span>Cidade</span>
+              </div>
+              <div class="col-md-3 fb-header-table" style="width: 20%">
+                <span>Estado</span>
+              </div>
+              <div class="col-md-3 fb-header-table" style="width: 20%">
+                <span>Modalidade</span>
+              </div>
+            </div>
+            <div data-bind="foreach: equipePesquisaList, visible: equipePesquisaList().length > 0">
+              <div class="row">
+                <div class="col-md-3 fb-row-table" style="width: 40%">
+                  <div class="col-md-3">
+                    <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fb-card-time-small" alt="" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
+                  </div>
+                  <div class="col-md-9">
+                    <span data-bind="text: nome"></span>
+                  </div>
+                </div>
+                <div class="col-md-3 fb-row-table" style="width: 20%">
+                  <span data-bind="text: cidade"></span>
+                </div>
+                <div class="col-md-3 fb-row-table" style="width: 20%">
+                  <span data-bind="text: siglaEstado"></span>
+                </div>
+                <div class="col-md-3 fb-row-table" style="width: 20%">
+                  <span data-bind="text: modalidade"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% include ../partials/footer %>
+</body>
+
+</html>

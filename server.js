@@ -63,25 +63,21 @@ function objToString(obj) {
   return str;
 }
 
-app.post('/:pagina/uploadteampicture', function(req, res) {
+app.post('/:pagina/uploadpicture/:name', function(req, res) {
   var image = req.body;
   image = objToString(image);
   var noHeader = image.substring(image.indexOf(',') + 1);
   var decoded = new Buffer(noHeader, 'base64');
-  fs.writeFile('uploads/img/logo/' + req.params.pagina + '.png', decoded, function(err) {
-    res.send("without header " + noHeader + "decoded " + decoded);
-  });
+  fs.writeFile('uploads/img/' + req.params.name + '/' +
+    req.params.pagina + '.png', decoded,
+    function(err) {
+      if (err) {
+        res.send("without header " + noHeader + "decoded " + decoded);
+      }
+      res.send('success');
+    });
 });
 
-app.post('/:pagina/uploadcoverpicture', function(req, res) {
-  var image = req.body;
-  image = objToString(image);
-  var noHeader = image.substring(image.indexOf(',') + 1);
-  var decoded = new Buffer(noHeader, 'base64');
-  fs.writeFile('uploads/img/capa/' + req.params.pagina + '.png', decoded, function(err) {
-    res.send("without header " + noHeader + "decoded " + decoded);
-  });
-});
 
 app.get('/:pagina', function(req, res) {
   db['Equipe'].Model.findOne({
@@ -140,18 +136,18 @@ app.post('/loginnewuser', function(req, res) {
 });
 
 app.post('/login', function(req, res) {
-var cryptPass = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(self.dataModel.senha, "futebolDeSabadoPassKey"));
-var query = {};
-query['email'] = self.dataModel.email;
-query['senha'] = cryptPass;
-base.findAll('equipe', self.equipeList, query, function(equipe) {
-  if (equipe) {
-    var crypt = equipe.pagina + equipe.email + equipe.senha;
-    var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
-    document.cookie = "SESSION_ID=" + SESSION_ID + ";path=/";
-    window.location = '/' + equipe.pagina;
-  }
-});
+  var cryptPass = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(self.dataModel.senha, "futebolDeSabadoPassKey"));
+  var query = {};
+  query['email'] = self.dataModel.email;
+  query['senha'] = cryptPass;
+  base.findAll('equipe', self.equipeList, query, function(equipe) {
+    if (equipe) {
+      var crypt = equipe.pagina + equipe.email + equipe.senha;
+      var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
+      document.cookie = "SESSION_ID=" + SESSION_ID + ";path=/";
+      window.location = '/' + equipe.pagina;
+    }
+  });
 });
 
 

@@ -19,27 +19,9 @@ ViewModel = function() {
     comentario["nome"] = equipe.nome;
     comentario["pagina"] = equipe.pagina;
     self.comentarioList.push(comentario);
-  }, function() {
-    //self.ajustarComentarioList();
   });
-
-  /*self.ajustarComentarioList = function() {
-    console.log('length', self.comentarioList().length);
-    for (var i = 0, j = self.comentarioList().length; i < j; i++) {
-      if (i % 6 === 0) {
-        if (row) {
-          self.comentarioListHome.push(row);
-        }
-        row = [];
-      }
-      row.push(self.comentarioList()[i]);
-    }
-    if (row) {
-      self.comentarioListHome.push(row);
-    }
-  };*/
 
   ko.utils.extend(self, new base.ViewModel());
 };
 
-ko.applyBindings(new ViewModel(), document.getElementById('fb-home-page'));
+ko.applyBindings(new ViewModel(), document.getElementById('fb-pesquisar-equipes-page'));

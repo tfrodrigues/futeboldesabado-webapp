@@ -40,12 +40,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group" data-bind="">
-                    <input type="text" class="form-control" placeholder="Nome do time" maxlength="60" data-bind="value: dataModel.nome, css: {'form-control-error': !dataModel.nome.isValid() && showErrors}" id="nome">
+                    <input type="text" class="form-control" placeholder="Nome do time" maxlength="60" data-bind="value: dataModel.nome, css: {'form-control-error': !dataModel.nome.isValid() && showErrors}" id="nome"/>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Página" maxlength="30" data-bind="value: dataModel.pagina, css: {'form-control-error': !dataModel.pagina.isValid() && showErrors}" id="pagina">
+                    <input type="text" class="form-control" placeholder="Página" maxlength="30" data-bind="value: dataModel.pagina, css: {'form-control-error': !dataModel.pagina.isValid() && showErrors}" id="pagina"/>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
               </div>
@@ -53,13 +55,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nome do representante" maxlength="60" data-bind="value: dataModel.representante, css: {'form-control-error': !dataModel.representante.isValid() && showErrors}" id="representante">
+                    <input type="text" class="form-control" placeholder="Nome do representante" maxlength="60" data-bind="value: dataModel.representante, css: {'form-control-error': !dataModel.representante.isValid() && showErrors}" id="representante"/>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Cores" maxlength="30" data-bind="value: dataModel.cores" id="cores">
+                    <input type="text" class="form-control" placeholder="Cores" maxlength="30" data-bind="value: dataModel.cores" id="cores"/>
                   </div>
                 </div>
               </div>
@@ -74,6 +77,7 @@
                   <div class="form-group form-group--icon">
                     <select class="form-control" placeholder="Modalidade" data-bind="value: dataModel.modalidade, options: modalidadeList, optionsCaption: 'Selecione uma modalidade...', optionsText: 'nome', css: {'form-control-error': !dataModel.modalidade.isValid() && showErrors}"
                       id="modalidade"></select>
+                      <p class="asterisk">*</p>
                     <!--<i class="fa fa-arrow-down"></i>-->
                   </div>
                 </div>
@@ -82,11 +86,13 @@
                 <div class="col-md-6">
                   <div class="form-group form-group--icon">
                     <select class="form-control" data-bind="value: dataModel.estado, options: estadoList, optionsCaption: 'Selecione um estado...',  optionsText: 'sigla', event: {change: loadCidades()}, css: {'form-control-error': !dataModel.estado.isValid() && showErrors}" id="estado"></select>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group form-group--icon">
                     <select class="form-control" data-bind="value: dataModel.cidade, options: cidadeList, optionsCaption: 'Selecione uma cidade...', css: {'form-control-error': !dataModel.cidade.isValid() && showErrors}" id="cidade"></select>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
               </div>
@@ -94,7 +100,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nome do campo" maxlength="60" data-bind="value: dataModel.campo" id="campo">
+                    <input type="text" class="form-control" placeholder="Nome do campo" maxlength="60" data-bind="value: dataModel.campo" id="campo"/>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -107,12 +113,13 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Telefone" maxlength="60" data-bind="value: dataModel.telefone, css: {'form-control-error': !dataModel.telefone.isValid() && showErrors}" id="telefone">
+                    <input type="text" class="form-control" placeholder="Telefone" maxlength="60" data-bind="value: dataModel.telefone, css: {'form-control-error': !dataModel.telefone.isValid() && showErrors}" id="telefone"/>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" placeholder="E-mail" maxlength="60" data-bind="value: dataModel.email, css: {'form-control-error': !dataModel.email.isValid() && showErrors}" id="email">
+                    <input class="form-control" placeholder="E-mail" maxlength="60" data-bind="value: dataModel.email, css: {'form-control-error': !dataModel.email.isValid() && showErrors}" id="email"/>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
               </div>
@@ -120,12 +127,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Senha" maxlength="8" data-bind="value: dataModel.senha, css: {'form-control-error': !dataModel.senha.isValid() && showErrors}" id="telefone">
+                    <input type="password" class="form-control" placeholder="Senha" maxlength="8" data-bind="value: dataModel.senha, css: {'form-control-error': !dataModel.senha.isValid() && showErrors}" id="senha"/>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Confirmar Senha" maxlength="8" data-bind="value: dataModel.confirmarSenha, css: {'form-control-error': !dataModel.confirmarSenha.isValid() && showErrors}" id="confirmarSenha">
+                    <input type="password" class="form-control" placeholder="Confirmar Senha" maxlength="8" data-bind="value: dataModel.confirmarSenha, css: {'form-control-error': !dataModel.confirmarSenha.isValid() && showErrors}" id="confirmarSenha"/>
+                    <p class="asterisk">*</p>
                   </div>
                 </div>
               </div>
@@ -144,7 +153,7 @@
     </div>
     </div>
     <% include ../partials/footer %>
-      <script type="text/javascript" src="/dist/js/site/bootstrap-notify.min.js"></script>
+    <script type="text/javascript" src="/dist/js/site/bootstrap-notify.min.js"></script>
 </body>
 
 </html>
