@@ -84,10 +84,9 @@ app.get('/:pagina', function(req, res) {
     pagina: req.params.pagina
   }, function(err, value) {
     if (value) {
-      var logged, loggedOnPage = false;
+      var logged = false, loggedOnPage = false;
       var cookie = req.cookies.SESSION_ID;
-      var crypt = value.pagina + value.email + value.senha;
-      var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
+      var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(value.pagina + value.email + value.senha, "futebolDeSabadoSessionKey"));
       if (cookie !== undefined) {
         logged = true;
         if (cookie === SESSION_ID) {
@@ -119,6 +118,9 @@ app.get('/:name/find', function(req, res) {
 
 app.post('/:name/save', function(req, res) {
   var name = utils.capitalize(req.params.name);
+  if (name === 'Equipe' && !req.body._id) {
+    req.body.senha =  getCryptPass(req.body.senha);
+  }
   db.saveOrUpdate(db[name].Model, req.body, function(err, value) {
     if (err) {
       res.status(404).send(err);
@@ -128,29 +130,16 @@ app.post('/:name/save', function(req, res) {
   });
 });
 
-app.post('/loginnewuser', function(req, res) {
-  var passCrypt = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(req.body.senha, "futebolDeSabadoPassKey"));
-  var crypt = req.body.pagina + req.body.email + req.body.senha;
-  var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
-  res.send("SESSION_ID=" + SESSION_ID + ";path=/");
-});
+function getCryptPass(senha) {
+  var cryptPass = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(senha, "futebolDeSabadoPassKey"));
+  return cryptPass;
+}
 
 app.post('/login', function(req, res) {
-  var cryptPass = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(self.dataModel.senha, "futebolDeSabadoPassKey"));
-  var query = {};
-  query['email'] = self.dataModel.email;
-  query['senha'] = cryptPass;
-  base.findAll('equipe', self.equipeList, query, function(equipe) {
-    if (equipe) {
-      var crypt = equipe.pagina + equipe.email + equipe.senha;
-      var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
-      document.cookie = "SESSION_ID=" + SESSION_ID + ";path=/";
-      window.location = '/' + equipe.pagina;
-    }
-  });
+  var cryptPass = getCryptPass(req.body.senha);
+  var cryptSession = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(req.body.pagina + req.body.email + cryptPass, "futebolDeSabadoSessionKey"));
+  res.send("SESSION_ID=" + cryptSession + ";path=/");
 });
-
-
 
 app.set('port', process.env.PORT || 3000);
 

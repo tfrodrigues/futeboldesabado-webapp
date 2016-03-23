@@ -39,23 +39,30 @@
 				</ul>
 			</span>
 		</div>
+		<div class="row" data-js="ver-todos-times">
+			<div class="col-md-12 col-centered">
+				<div class="form-group">
+					<a class="btn-primary" href="/views/pesquisarequipes">Ver todos times >></a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
 	function abreMenuTimes(menu) {
 		$("[data-js='menu-times']").removeClass("is-active");
-		$("[data-menu='"+menu+"']").addClass("is-active");
+		$("[data-menu='" + menu + "']").addClass("is-active");
 		$("[data-js='submenu']").removeClass("is-active");
-		$("[data-submenu='"+menu+"']").addClass("is-active");
+		$("[data-submenu='" + menu + "']").addClass("is-active");
 		abreLetra('A');
 	}
 
 	function abreLetra(letra) {
 		$("[data-js='letra']").removeClass("is-active");
-		$("[data-letra='"+letra+"']").addClass("is-active");
+		$("[data-letra='" + letra + "']").addClass("is-active");
 		$("[data-js='timesLetra']").removeClass("is-active");
-		$("[data-timesLetra='"+letra+"']").addClass("is-active");
+		$("[data-timesLetra='" + letra + "']").addClass("is-active");
 	}
 
 	function fechaMenuTimes() {

@@ -24,4 +24,4 @@ ViewModel = function() {
   ko.utils.extend(self, new base.ViewModel());
 };
 
-ko.applyBindings(new ViewModel(), document.getElementById('fb-pesquisar-equipes-page'));
+ko.applyBindings(new ViewModel(), document.getElementById('fb-home-page'));

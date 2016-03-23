@@ -20,7 +20,7 @@ ViewModel = function() {
     self.comentario.data = new Date();
     self.comentario.dataFormatada = utils.formatDate(new Date(), "dd/mm/yyyy HH:MM");
     self.dataModel.comentarios.push(self.comentario);
-    crud.save('equipe', self.dataModel, function() {
+    crud.save('equipe', ko.toJSON(self.dataModel), function() {
       window.location.reload();
     });
   };
@@ -81,10 +81,9 @@ ViewModel = function() {
       width: 970,
       height: 400
     });
+    $('[data-js="team-cover"]').css('background-image', 'url(' + imageCanvas.toDataURL('image/png') + ')');
     crud.uploadPicture('capa', self.dataModel.pagina, imageCanvas, function() {
-      console.log('salvo');
       $('[data-remodal-id=fb-upload-cover-picture-modal]').remodal().close();
-      window.location.reload();
     });
   };
 

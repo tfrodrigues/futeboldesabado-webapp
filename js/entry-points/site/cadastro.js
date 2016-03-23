@@ -78,11 +78,12 @@ ViewModel = function() {
     } else if (self.validateExistingData()) {
       self.dataModel.siglaEstado = self.dataModel.estado().sigla;
       self.dataModel.modalidade = self.dataModel.modalidade().nome;
+      console.log(self.dataModel);
       crud.save('equipe', ko.toJSON(self.dataModel), function() {
         $.ajax({
           type: 'POST',
           contentType: 'application/json',
-          url: '/loginnewuser',
+          url: '/login',
           data: ko.toJSON(self.dataModel)
         }).done(function(value) {
           document.cookie = value;
