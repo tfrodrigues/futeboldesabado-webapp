@@ -46,11 +46,13 @@ app.use('/dist/js', browserify(__dirname + '/dist/js/entry-points', {
 }));
 
 app.get('/', function(req, res) {
-  renderPage(res, 'home', 'site');
+  var logged = req.cookies.SESSION_ID != undefined;
+  renderPage(res, 'home', 'site', undefined, logged);
 });
 
 app.get('/views/:name', function(req, res) {
-  renderPage(res, req.params.name, 'site', req.query);
+  var logged = req.cookies.SESSION_ID != undefined;
+  renderPage(res, req.params.name, 'site', req.query, logged);
 });
 
 function objToString(obj) {
