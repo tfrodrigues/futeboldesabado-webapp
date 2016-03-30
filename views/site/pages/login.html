@@ -11,52 +11,61 @@
 
     <div id="fb-login-page" class="fb-page">
       <div class="fb-banner fb-banner-min">
-
+        <span class="fb-banner-text">faça o futebol acontecer</span>
       </div>
-      <div class="row">
-        <div class="col-md-8 col-centered col-centered--bottom">
-          <div class="fb-box fb-box__highlight">
-            <div class="fb-box__title fb-box__title--center ">
-              <h3>LOGIN</h3>
-              <p>
-                XXXXXXXXXXXXXXXXXXXXXXXXXX
-              </p>
-              <h4>#FACAOFUTEBOLACONTECER</h4>
+      <div class="fb-container">
+        <div class="row">
+          <div class="col-md-12 col-centered col-centered--bottom">
+            <div class="fb-box fb-box__highlight">
+              <div class="fb-box__title fb-box__title--center ">
+                <h3>LOGIN</h3>
+                <p>
+                  XXXXXXXXXXXXXXXXXXXXXXXXXX
+                </p>
+                <h4>#FACAOFUTEBOLACONTECER</h4>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 col-centered">
-          <div class="fb-box">
-            <div class="fb-box__title fb-box__title--center">
+        <div class="row">
+          <div class="col-md-12 col-centered">
+            <div class="fb-box">
+              <!-- ko if:  <%= !logged %> -->
+              <div class="fb-box__title fb-box__title--center">
                 <h3>INFORME SEU USUÁRIO E SENHA</h3>
-            </div>
-            <form method="post" class="reply" id="cadastreseutime" data-bind="submit: login">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group" data-bind="">
-                    <input type="text" class="form-control" placeholder="Login" maxlength="60" data-bind="value: dataModel.email" id="login"/>
-                    <p class="asterisk">*</p>
-                  </div>
-                </div>
               </div>
+              <form method="post" class="reply" id="cadastreseutime" data-bind="submit: login">
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="password" class="form-control" placeholder="Senha" maxlength="8" data-bind="value: dataModel.senha" id="senha"/>
+                  <div class="col-md-12">
+                    <div class="form-group" data-bind="">
+                      <input type="text" class="form-control" placeholder="Login" maxlength="60" data-bind="value: dataModel.email" id="login" />
                       <p class="asterisk">*</p>
                     </div>
                   </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group form-group--icon">
-                    <button class="btn btn-primary">Login</button>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="password" class="form-control" placeholder="Senha" maxlength="15" data-bind="value: dataModel.senha" id="senha" />
+                      <p class="asterisk">*</p>
+                    </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group form-group--icon">
+                      <button class="btn btn-primary">Login</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <!-- /ko -->
+              <!-- ko if:  <%= logged %> -->
+              <div class="fb-box__title fb-box__title--center">
+                <h3>VOCÊ JÁ ESTÁ LOGADO</h3>
               </div>
-            </form>
+              <!-- /ko -->
+            </div>
           </div>
         </div>
       </div>

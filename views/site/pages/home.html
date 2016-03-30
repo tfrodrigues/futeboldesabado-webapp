@@ -13,6 +13,7 @@
 
       <div class="fb-banner">
         <span class="fb-banner-text">faça o futebol acontecer</span>
+<!--
         <div class="fb-banner__filter">
           <div class="fb-container">
             <div class="form-group form-group--icon" style="max-width: 170px;">
@@ -32,31 +33,38 @@
             </div>
           </div>
         </div>
+      -->
       </div>
 
       <div class="fb-page-top">
         <div class="fb-container">
-          <ul class="fb-label-list">
-            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link is-active">TODOS</a></li>
-            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link">FUTEBOL CAMPO</a></li>
-            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link">FUTEBOL SETE</a></li>
-            <li class="fb-label-list__item"><a href="#" class="fb-label-list__link">FUTSAL</a></li>
-          </ul>
+          <li class="fb-label-list__item">
+            <a class="fb-label-list__link" data-js="menu-modalidade-TO" data-bind="event: {mouseup: atualizaModalidade('TO', 'Todos')}">Todos</a>
+          </li>
+          <li class="fb-label-list__item">
+            <a class="fb-label-list__link" data-js="menu-modalidade-FC" data-bind="click: atualizaModalidade('FC', 'Futebol Campo')">Futebol Campo</a>
+          </li>
+          <li class="fb-label-list__item">
+            <a class="fb-label-list__link" data-js="menu-modalidade-FS" data-bind="click: atualizaModalidade('FS', 'Futebol Sete')">Futebol Sete</a>
+          </li>
+          <li class="fb-label-list__item">
+            <a class="fb-label-list__link" data-js="menu-modalidade-FU" data-bind="click: atualizaModalidade('FU', 'Futsal')">Futsal</a>
+          </li>
         </div>
       </div>
 
       <div class="fb-page">
         <div class="fb-container fb-fluid">
-          <div class="row" data-bind="foreach: comentarioList, visible: comentarioList().length > 0">
+          <div class="row" data-bind="foreach: comentarioList">
             <div class="col-md-3 col-sm-6">
               <div class="fb-box fb-card">
-                <a data-bind="attr: {href: pagina}">
+                <a data-bind="attr: {href: pagina + '#' + _id}">
                   <div class="fb-card-capa">
                     <img data-bind="attr: {'src': '/dist/img/capa/' + pagina + '.png'}" alt="" onerror="this.src='/dist/img/capa/thumb_capa_time.jpg'">
                   </div>
                 </a>
                 <div class="fb-card-info">
-                  <a data-bind="attr: {href: pagina}">
+                  <a data-bind="attr: {href: pagina  + '#' + _id}">
                     <img data-bind="attr: {'src': '/dist/img/logo/' + pagina + '.png'}" class="fb-card-time-small" alt="" onerror="this.src='/dist/img/logo/thumb_avatar_time.jpg'">
                   </a>
                   <strong data-bind="text: nome"></strong>
@@ -73,5 +81,4 @@
     </div>
     <% include ../partials/footer %>
 </body>
-
 </html>

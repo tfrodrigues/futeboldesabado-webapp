@@ -34,7 +34,7 @@ cadastrados no Futebol de Sábado
 <% include ../../common/partials/script %>
 
 <script>
-  $( function(){
+  $(function(){
     $("[data-js='menu-times']").on("mouseup", function(){
       if($(this).hasClass("is-active")) {
         fechaMenuTimes();
@@ -42,15 +42,15 @@ cadastrados no Futebol de Sábado
         abreMenuTimes($(this).data().menu);
       }
     });
+    $("[data-js='menu-logado']").on("mouseup", function(){
+      if($(this).hasClass("is-active")) {
+        fechaMenuLogado();
+      } else {
+        abreMenuLogado();
+      }
+    });
     $("[data-js='letra']").on("mouseup", function(){
       abreLetra($(this).data().letra);
-    });
-    $("[data-js='menu-login']").on("mouseup", function(){
-      if($(this).hasClass("is-active")) {
-        fechaMenuLogin();
-      } else {
-        abreMenuLogin($(this).data().menu);
-      }
     });
   });
 </script>

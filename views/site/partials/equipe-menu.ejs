@@ -33,8 +33,14 @@
 
 			<span data-bind="foreach: {data: alfabetoList, as: 'letra'}">
 				<ul class="fb-letras__sub" data-js="timesLetra"  data-bind="attr: {'data-timesletra': letra}">
-					<li class="fb-letras__sub__item" data-bind="foreach: { data: $parent.findEquipeByInitialLetter(letra), as: 'equipe' }">
-						<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: '/' + pagina}"></a>
+					<li class="fb-letras__sub__item" data-bind="foreach: { data: $parent.findEquipeByInitialLetter(letra, 0, 5), as: 'equipe'}">
+							<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: '/' + pagina}"></a>
+					</li>
+					<li class="fb-letras__sub__item" data-bind="foreach: { data: $parent.findEquipeByInitialLetter(letra, 6, 10), as: 'equipe'}">
+							<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: '/' + pagina}"></a>
+					</li>
+					<li class="fb-letras__sub__item" data-bind="foreach: { data: $parent.findEquipeByInitialLetter(letra, 11, 15), as: 'equipe'}">
+							<a class="fb-letras__sub__link" data-bind="text: '• ' + equipe.nome, attr: {href: '/' + pagina}"></a>
 					</li>
 				</ul>
 			</span>

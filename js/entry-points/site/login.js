@@ -14,11 +14,16 @@ ViewModel = function() {
     query['senha'] = cryptPass;
     base.findAll('equipe', self.equipeList, query, function(equipe) {
       if (equipe) {
-        console.log(equipe);
-        /*var crypt = equipe.pagina + equipe.email + equipe.senha;
-        var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
-        document.cookie = "SESSION_ID=" + SESSION_ID + ";path=/";
-        window.location = '/' + equipe.pagina;*/
+        self.dataModel.pagina = equipe.pagina;
+        $.ajax({
+          type: 'POST',
+          contentType: 'application/json',
+          url: '/login',
+          data: ko.toJSON(self.dataModel)
+        }).done(function(value) {
+          document.cookie = value;
+          window.location = '/' + equipe.pagina;
+        });
       }
     });
   }

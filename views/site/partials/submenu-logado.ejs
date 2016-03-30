@@ -1,0 +1,26 @@
+<!-- ko if:  <%= logged %> -->
+<div class="fb-header__nav__sub-logado">
+	<div class="fb-container-logado" data-js="submenu-logado">
+		<ul>
+
+		<li class="fb-logado__sub__item">
+			<a class="fb-letras__sub__link-logado" href="#">• Editar Perfil</a>
+			<a class="fb-letras__sub__link-logado" href="#">• Minha página</a>
+			<a class="fb-letras__sub__link-logado" href="#">• Logout</a>
+		</li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function abreMenuLogado() {
+		$("[data-js='menu-logado']").addClass("is-active");
+		$("[data-js='submenu-logado']").addClass("is-active");
+	}
+
+	function fechaMenuLogado() {
+		$("[data-js='menu-logado']").removeClass("is-active");
+		$("[data-js='submenu-logado']").removeClass("is-active");
+	}
+</script>
+<!-- /ko -->

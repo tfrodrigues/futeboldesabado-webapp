@@ -15,26 +15,16 @@ ViewModel = function() {
     window.location = '/' + pagina;
   };
 
-  self.findEquipeByInitialLetter = function(letter) {
+  self.findEquipeByInitialLetter = function(letter, minIndex, maxIndex) {
+    var count = 0;
     return ko.utils.arrayFilter(self.equipeList(), function(item) {
-      return ko.utils.stringStartsWith(item.nome.toUpperCase(), letter);
+      var letterOK = ko.utils.stringStartsWith(item.nome.toUpperCase(), letter);
+      if (letterOK) {
+        count++;
+      }
+      return letterOK && (count >= minIndex && count <= maxIndex);
     });
   };
-
-  self.login = function(req, res) {
-    var cryptPass = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(self.dataModel.senha, "futebolDeSabadoPassKey"));
-    var query = {};
-    query['email'] = self.dataModel.email;
-    query['senha'] = cryptPass;
-    base.findAll('equipe', self.equipeList, query, function(equipe) {
-      if (equipe) {
-        var crypt = equipe.pagina + equipe.email + equipe.senha;
-        var SESSION_ID = cryptoJS.enc.Base64.stringify(cryptoJS.HmacSHA1(crypt, "futebolDeSabadoSessionKey"));
-        document.cookie = "SESSION_ID=" + SESSION_ID + ";path=/";
-        window.location = '/' + equipe.pagina;
-      }
-    });
-  }
 
   ko.utils.extend(self, new base.ViewModel());
 };
